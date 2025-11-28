@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     12863,        279]
-NotebookOptionsPosition[     12217,        259]
-NotebookOutlinePosition[     12681,        277]
-CellTagsIndexPosition[     12638,        274]
+NotebookDataLength[     12991,        283]
+NotebookOptionsPosition[     12345,        263]
+NotebookOutlinePosition[     12809,        281]
+CellTagsIndexPosition[     12766,        278]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -51,14 +51,14 @@ Cell[BoxData[
              RowBox[{"\[Beta]", " ", 
               RowBox[{"Hum", "[", "t", "]"}], " ", 
               RowBox[{"Cook", "[", "t", "]"}]}], "-", 
-             RowBox[{"\[Alpha]", " ", 
+             RowBox[{"\[Gamma]", " ", 
               RowBox[{"Hum", "[", "t", "]"}], " ", 
               RowBox[{"Cook", "[", "t", "]"}]}]}]}], ",", 
            "\[IndentingNewLine]", 
            RowBox[{
             RowBox[{
              RowBox[{"Rem", "'"}], "[", "t", "]"}], "==", 
-            RowBox[{"\[Alpha]", " ", 
+            RowBox[{"\[Gamma]", " ", 
              RowBox[{"Hum", "[", "t", "]"}], " ", 
              RowBox[{"Cook", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
            RowBox[{
@@ -108,16 +108,15 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-        "\[Alpha]", ",", "0.0001", 
-         ",", "\"\<Destruction rate (\[Alpha])\>\""}], "}"}], ",", "0", ",", 
-       ".01", ",", 
+        "\[Beta]", ",", "0.0095", ",", "\"\<Infection rate (\[Beta])\>\""}], 
+        "}"}], ",", "0", ",", "0.02", ",", 
        RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-        "\[Beta]", ",", "0.0095", ",", "\"\<Infection rate (\[Beta])\>\""}], 
-        "}"}], ",", "0", ",", "0.02", ",", 
+        "\[Gamma]", ",", "0.0001", ",", "\"\<Removal rate (\[Gamma])\>\""}], 
+        "}"}], ",", "0", ",", ".01", ",", 
        RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
      "\[IndentingNewLine]", "\[IndentingNewLine]", 
      RowBox[{"(*", 
@@ -142,8 +141,9 @@ Cell[BoxData[
         RowBox[{"(*", 
          RowBox[{"Differential", " ", "equations"}], "*)"}], ";"}], ")"}]}]}],
      "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", 
-   "\n", "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+   "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", "\n", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.970733956333996*^9, 3.970733956333996*^9}, {
    3.9707341959787827`*^9, 3.970734198544161*^9}, {3.9707356723850803`*^9, 
    3.9707356811938305`*^9}, {3.9707357133023624`*^9, 
@@ -169,29 +169,32 @@ Cell[BoxData[
    3.9733258947126923`*^9, 3.9733259074208164`*^9}, {3.9733298098171673`*^9, 
    3.973329879995388*^9}, {3.973329918566763*^9, 3.9733299317942734`*^9}, {
    3.973330044374199*^9, 3.973330063308216*^9}, {3.973350760385601*^9, 
-   3.97335084926173*^9}, {3.9733511503671722`*^9, 3.9733512147879257`*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"bc621a55-9645-5540-9083-4a3861b02c98"],
+   3.97335084926173*^9}, {3.9733511503671722`*^9, 3.9733512147879257`*^9}, {
+   3.973351673974039*^9, 3.973351680516487*^9}, {3.9733517277919807`*^9, 
+   3.973351806580595*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"bc621a55-9645-5540-9083-4a3861b02c98"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`\[Alpha]$$ = 
-    0.0029400000000000003`, $CellContext`\[Beta]$$ = 0.0038, Typeset`show$$ = 
-    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+   DynamicModuleBox[{$CellContext`\[Beta]$$ = 
+    0.0095, $CellContext`\[Gamma]$$ = 0.0001, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`\[Alpha]$$], 0.0001, "Destruction rate (\[Alpha])"}, 
-      0, 0.01, ControlType -> Manipulator}, {{
        Hold[$CellContext`\[Beta]$$], 0.0095, "Infection rate (\[Beta])"}, 0, 
-      0.02, ControlType -> Manipulator}}, Typeset`size$$ = {
-    457.3372049331665, {111.41832681764754`, 117.15026024320065`}}, 
+      0.02, ControlType -> Manipulator}, {{
+       Hold[$CellContext`\[Gamma]$$], 0.0001, "Removal rate (\[Gamma])"}, 0, 
+      0.01, ControlType -> Manipulator}}, Typeset`size$$ = {
+    457.3372049331665, {111.41832681752162`, 117.15026024307473`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`\[Alpha]$$ = 
-        0.0001, $CellContext`\[Beta]$$ = 0.0095}, "ControllerVariables" :> {},
-       "OtherVariables" :> {
+      "Variables" :> {$CellContext`\[Beta]$$ = 
+        0.0095, $CellContext`\[Gamma]$$ = 0.0001}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
@@ -204,10 +207,10 @@ $CellContext`Hum[$CellContext`t] $CellContext`Cook[$CellContext`t],
            Derivative[
             1][$CellContext`Cook][$CellContext`t] == $CellContext`\[Beta]$$ \
 $CellContext`Hum[$CellContext`t] $CellContext`Cook[$CellContext`t] - \
-$CellContext`\[Alpha]$$ $CellContext`Hum[$CellContext`t] \
+$CellContext`\[Gamma]$$ $CellContext`Hum[$CellContext`t] \
 $CellContext`Cook[$CellContext`t], 
            Derivative[
-            1][$CellContext`Rem][$CellContext`t] == $CellContext`\[Alpha]$$ \
+            1][$CellContext`Rem][$CellContext`t] == $CellContext`\[Gamma]$$ \
 $CellContext`Hum[$CellContext`t] $CellContext`Cook[$CellContext`t], \
 $CellContext`Hum[0] == $CellContext`H0, $CellContext`Cook[
             0] == $CellContext`C0, $CellContext`Rem[
@@ -222,13 +225,13 @@ $CellContext`Rem}, {$CellContext`t, 0, 50}]; Plot[
 {$CellContext`t, 0, 50}, PlotLegends -> {"Humans", "Cooked", "Removed"}, 
           PlotLabel -> "Cooked Outbreak ", 
           AxesLabel -> {"Time", "Population"}]], 
-      "Specifications" :> {{{$CellContext`\[Alpha]$$, 0.0001, 
-          "Destruction rate (\[Alpha])"}, 0, 0.01, Appearance -> 
-         "Labeled"}, {{$CellContext`\[Beta]$$, 0.0095, 
-          "Infection rate (\[Beta])"}, 0, 0.02, Appearance -> "Labeled"}}, 
+      "Specifications" :> {{{$CellContext`\[Beta]$$, 0.0095, 
+          "Infection rate (\[Beta])"}, 0, 0.02, Appearance -> 
+         "Labeled"}, {{$CellContext`\[Gamma]$$, 0.0001, 
+          "Removal rate (\[Gamma])"}, 0, 0.01, Appearance -> "Labeled"}}, 
       "Options" :> {}, "DefaultOptions" :> {}],
      ImageSizeCache->{
-      499.9372049331665, {168.07916666139752`, 173.8111000869507}},
+      499.9372049331665, {168.07916666127159`, 173.81110008682475`}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -247,8 +250,9 @@ $CellContext`Rem}, {$CellContext`t, 0, 50}]; Plot[
    3.9707501560544147`*^9, {3.9707501918078575`*^9, 3.970750209502247*^9}, 
    3.970750449490244*^9, 3.970750494463724*^9, {3.9707505446348343`*^9, 
    3.9707505515489826`*^9}, 3.9707508361945705`*^9, 3.9733260089518623`*^9, 
-   3.9733300678387623`*^9, 3.9733508544813366`*^9, 3.9733512231661205`*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"1f2b7536-6d43-7642-a596-48a617468c74"]
+   3.9733300678387623`*^9, 3.9733508544813366`*^9, 3.9733512231661205`*^9, 
+   3.973351774126713*^9, 3.9733518093661823`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"244cf29a-d941-c447-9964-f22c6652f4fa"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -277,10 +281,10 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 7170, 150, 789, "Input",ExpressionUUID->"bc621a55-9645-5540-9083-4a3861b02c98"],
-Cell[7749, 174, 4196, 76, 358, "Output",ExpressionUUID->"1f2b7536-6d43-7642-a596-48a617468c74"]
+Cell[576, 22, 7263, 152, 789, "Input",ExpressionUUID->"bc621a55-9645-5540-9083-4a3861b02c98"],
+Cell[7842, 176, 4231, 78, 358, "Output",ExpressionUUID->"244cf29a-d941-c447-9964-f22c6652f4fa"]
 }, Open  ]],
-Cell[11960, 253, 253, 4, 28, "Input",ExpressionUUID->"f7d7ca31-418c-9c4a-bb94-ae37f8395361"]
+Cell[12088, 257, 253, 4, 28, "Input",ExpressionUUID->"f7d7ca31-418c-9c4a-bb94-ae37f8395361"]
 }
 ]
 *)
