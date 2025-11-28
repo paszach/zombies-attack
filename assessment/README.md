@@ -13,7 +13,7 @@ The assessment criteria of the assignment are derived from the module's learning
     - Define the scope of the system you are studying in terms of its own context.
     - Identify the variables, parameter, and assumptions of the system.
     - Iteratively increase the complexity of the system, starting with the smallest meaningful model, and increasing in complexity to capture new features, behaviours, or interventions.
-**- Apply a range of numerical and computational methods.**
+- **Apply a range of numerical and computational methods.**
     - Implement your system model numerically for analysis and prediction.
     - Evaluate characteristic units of the system, e.g. characteristic time, for scaling / non-dimensionalisation.
 - **Analyse algorithms for stability, accuracy, and computational complexity.**
