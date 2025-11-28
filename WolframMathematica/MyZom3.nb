@@ -1,0 +1,287 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     12863,        279]
+NotebookOptionsPosition[     12217,        259]
+NotebookOutlinePosition[     12681,        277]
+CellTagsIndexPosition[     12638,        274]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", 
+    RowBox[{"Hum", ",", "Cook", ",", "Rem", ",", "t"}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Module", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"eqns", ",", " ", "sol"}], "}"}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"eqns", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Hum", "'"}], "[", "t", "]"}], "==", 
+            RowBox[{
+             RowBox[{"-", "\[Beta]"}], " ", 
+             RowBox[{"Hum", "[", "t", "]"}], " ", 
+             RowBox[{"Cook", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Cook", "'"}], "[", "t", "]"}], "==", 
+            RowBox[{
+             RowBox[{"\[Beta]", " ", 
+              RowBox[{"Hum", "[", "t", "]"}], " ", 
+              RowBox[{"Cook", "[", "t", "]"}]}], "-", 
+             RowBox[{"\[Alpha]", " ", 
+              RowBox[{"Hum", "[", "t", "]"}], " ", 
+              RowBox[{"Cook", "[", "t", "]"}]}]}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Rem", "'"}], "[", "t", "]"}], "==", 
+            RowBox[{"\[Alpha]", " ", 
+             RowBox[{"Hum", "[", "t", "]"}], " ", 
+             RowBox[{"Cook", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Hum", "[", "0", "]"}], "==", "H0"}], ",", 
+           RowBox[{
+            RowBox[{"Cook", "[", "0", "]"}], "==", "C0"}], ",", 
+           RowBox[{
+            RowBox[{"Rem", "[", "0", "]"}], "==", "R0"}]}], "}"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Solve", " ", "system", " ", "numerically"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"sol", "=", 
+         RowBox[{"NDSolve", "[", 
+          RowBox[{"eqns", ",", 
+           RowBox[{"{", 
+            RowBox[{"Hum", ",", "Cook", ",", "Rem"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "0", ",", "50"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Plot", " ", "results"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"Plot", "[", 
+         RowBox[{
+          RowBox[{"Evaluate", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Hum", "[", "t", "]"}], ",", " ", 
+              RowBox[{"Cook", "[", "t", "]"}], ",", 
+              RowBox[{"Rem", "[", "t", "]"}]}], "}"}], "/.", " ", "sol"}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "50"}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"PlotLegends", "->", 
+           RowBox[{"{", 
+            
+            RowBox[{"\"\<Humans\>\"", ",", " ", "\"\<Cooked\>\"", 
+             ",", "\"\<Removed\>\""}], "}"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"PlotLabel", "->", "\"\<Cooked Outbreak \>\""}], ",", 
+          RowBox[{"AxesLabel", "->", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Time\>\"", ",", "\"\<Population\>\""}], "}"}]}]}], 
+         "]"}]}]}], "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\[Alpha]", ",", "0.0001", 
+         ",", "\"\<Destruction rate (\[Alpha])\>\""}], "}"}], ",", "0", ",", 
+       ".01", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\[Beta]", ",", "0.0095", ",", "\"\<Infection rate (\[Beta])\>\""}], 
+        "}"}], ",", "0", ",", "0.02", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Initial", " ", "populations"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Initialization", "->", " ", 
+      RowBox[{"(", "\n", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"H0", "=", "400"}], ";", "    ", 
+         RowBox[{"(*", 
+          RowBox[{"Susceptible", " ", "humans"}], "*)"}], "\n", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{"IM0", "=", "100"}], ";"}], "    ", 
+          RowBox[{"(*", 
+           RowBox[{"Immune", " ", "humans"}], "*)"}], "*)"}], "\n", 
+         RowBox[{"C0", "=", "1"}], ";", "      ", 
+         RowBox[{"(*", 
+          RowBox[{"Initial", " ", "zombie"}], "*)"}], "\n", 
+         RowBox[{"R0", "=", "0"}], ";"}], "      ", 
+        RowBox[{"(*", "Removed", "*)"}], "\n", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Differential", " ", "equations"}], "*)"}], ";"}], ")"}]}]}],
+     "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", 
+   "\n", "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.970733956333996*^9, 3.970733956333996*^9}, {
+   3.9707341959787827`*^9, 3.970734198544161*^9}, {3.9707356723850803`*^9, 
+   3.9707356811938305`*^9}, {3.9707357133023624`*^9, 
+   3.9707359009720097`*^9}, {3.9707360056228027`*^9, 
+   3.9707360063834953`*^9}, {3.9707360662079277`*^9, 
+   3.9707361065038376`*^9}, {3.9707362406636066`*^9, 3.970736333771248*^9}, {
+   3.970736390666334*^9, 3.9707363984965153`*^9}, {3.970736683027939*^9, 
+   3.970736814855772*^9}, {3.970736899256796*^9, 3.970736975102644*^9}, 
+   3.9707370316525383`*^9, {3.9707372050828056`*^9, 3.970737309433361*^9}, {
+   3.9707375397322655`*^9, 3.9707375797070656`*^9}, {3.9707376617991543`*^9, 
+   3.9707378965713673`*^9}, {3.970737967076723*^9, 3.970738077120577*^9}, {
+   3.970738120563959*^9, 3.9707381264845924`*^9}, {3.9707381688641415`*^9, 
+   3.9707381763715096`*^9}, {3.970738283544422*^9, 3.9707383026554985`*^9}, {
+   3.97073836350054*^9, 3.970738363889044*^9}, {3.9707383943400745`*^9, 
+   3.9707384128226376`*^9}, {3.9707385018826504`*^9, 3.9707385035065727`*^9}, 
+   3.9707491422226105`*^9, {3.9707496929715767`*^9, 3.9707497452153187`*^9}, {
+   3.970749980497404*^9, 3.9707499809377193`*^9}, {3.970750049577116*^9, 
+   3.9707501484402065`*^9}, {3.970750201297842*^9, 3.9707502044359436`*^9}, {
+   3.970750299547127*^9, 3.970750442174631*^9}, {3.97075048312261*^9, 
+   3.970750489097662*^9}, {3.9707505376028004`*^9, 3.970750540886572*^9}, {
+   3.970750828180504*^9, 3.970750829941183*^9}, {3.9733254450000744`*^9, 
+   3.97332545261343*^9}, {3.973325644804447*^9, 3.9733258516559353`*^9}, {
+   3.9733258947126923`*^9, 3.9733259074208164`*^9}, {3.9733298098171673`*^9, 
+   3.973329879995388*^9}, {3.973329918566763*^9, 3.9733299317942734`*^9}, {
+   3.973330044374199*^9, 3.973330063308216*^9}, {3.973350760385601*^9, 
+   3.97335084926173*^9}, {3.9733511503671722`*^9, 3.9733512147879257`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"bc621a55-9645-5540-9083-4a3861b02c98"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Alpha]$$ = 
+    0.0029400000000000003`, $CellContext`\[Beta]$$ = 0.0038, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Alpha]$$], 0.0001, "Destruction rate (\[Alpha])"}, 
+      0, 0.01, ControlType -> Manipulator}, {{
+       Hold[$CellContext`\[Beta]$$], 0.0095, "Infection rate (\[Beta])"}, 0, 
+      0.02, ControlType -> Manipulator}}, Typeset`size$$ = {
+    457.3372049331665, {111.41832681764754`, 117.15026024320065`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`\[Alpha]$$ = 
+        0.0001, $CellContext`\[Beta]$$ = 0.0095}, "ControllerVariables" :> {},
+       "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> 
+      Module[{$CellContext`eqns$, $CellContext`sol$}, $CellContext`eqns$ = {
+          Derivative[
+            1][$CellContext`Hum][$CellContext`t] == (-$CellContext`\[Beta]$$) \
+$CellContext`Hum[$CellContext`t] $CellContext`Cook[$CellContext`t], 
+           Derivative[
+            1][$CellContext`Cook][$CellContext`t] == $CellContext`\[Beta]$$ \
+$CellContext`Hum[$CellContext`t] $CellContext`Cook[$CellContext`t] - \
+$CellContext`\[Alpha]$$ $CellContext`Hum[$CellContext`t] \
+$CellContext`Cook[$CellContext`t], 
+           Derivative[
+            1][$CellContext`Rem][$CellContext`t] == $CellContext`\[Alpha]$$ \
+$CellContext`Hum[$CellContext`t] $CellContext`Cook[$CellContext`t], \
+$CellContext`Hum[0] == $CellContext`H0, $CellContext`Cook[
+            0] == $CellContext`C0, $CellContext`Rem[
+            0] == $CellContext`R0}; $CellContext`sol$ = 
+         NDSolve[$CellContext`eqns$, {$CellContext`Hum, $CellContext`Cook, \
+$CellContext`Rem}, {$CellContext`t, 0, 50}]; Plot[
+          Evaluate[
+           ReplaceAll[{
+             $CellContext`Hum[$CellContext`t], 
+             $CellContext`Cook[$CellContext`t], 
+             $CellContext`Rem[$CellContext`t]}, $CellContext`sol$]], \
+{$CellContext`t, 0, 50}, PlotLegends -> {"Humans", "Cooked", "Removed"}, 
+          PlotLabel -> "Cooked Outbreak ", 
+          AxesLabel -> {"Time", "Population"}]], 
+      "Specifications" :> {{{$CellContext`\[Alpha]$$, 0.0001, 
+          "Destruction rate (\[Alpha])"}, 0, 0.01, Appearance -> 
+         "Labeled"}, {{$CellContext`\[Beta]$$, 0.0095, 
+          "Infection rate (\[Beta])"}, 0, 0.02, Appearance -> "Labeled"}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      499.9372049331665, {168.07916666139752`, 173.8111000869507}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(Null; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.970738086236101*^9, 3.9707381336040993`*^9, 3.970738181459633*^9, 
+   3.9707383670820656`*^9, {3.9707384197669277`*^9, 3.970738439749647*^9}, 
+   3.9707385082626724`*^9, 3.9707500161356792`*^9, 3.9707501044680614`*^9, 
+   3.9707501560544147`*^9, {3.9707501918078575`*^9, 3.970750209502247*^9}, 
+   3.970750449490244*^9, 3.970750494463724*^9, {3.9707505446348343`*^9, 
+   3.9707505515489826`*^9}, 3.9707508361945705`*^9, 3.9733260089518623`*^9, 
+   3.9733300678387623`*^9, 3.9733508544813366`*^9, 3.9733512231661205`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"1f2b7536-6d43-7642-a596-48a617468c74"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9707359229831505`*^9, 3.970735939201235*^9}, {
+   3.970736820892521*^9, 3.9707368459358997`*^9}, 3.9707369254996014`*^9},
+ CellLabel->
+  "In[336]:=",ExpressionUUID->"f7d7ca31-418c-9c4a-bb94-ae37f8395361"]
+},
+WindowSize->{1152, 651.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+Magnification:>1. Inherited,
+FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3ad884b9-d663-1f4a-a85c-62acd440fac0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 7170, 150, 789, "Input",ExpressionUUID->"bc621a55-9645-5540-9083-4a3861b02c98"],
+Cell[7749, 174, 4196, 76, 358, "Output",ExpressionUUID->"1f2b7536-6d43-7642-a596-48a617468c74"]
+}, Open  ]],
+Cell[11960, 253, 253, 4, 28, "Input",ExpressionUUID->"f7d7ca31-418c-9c4a-bb94-ae37f8395361"]
+}
+]
+*)
+
