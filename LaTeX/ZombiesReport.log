@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  18 NOV 2025 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  28 NOV 2025 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -353,13 +353,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `ZombiesReport.toc'.
 
  [2]
-<Figures/placeholder-img.jpg, id=71, 586.1097pt x 364.4817pt>
-File: Figures/placeholder-img.jpg Graphic file (type jpg)
-<use Figures/placeholder-img.jpg>
-Package pdftex.def Info: Figures/placeholder-img.jpg  used on input line 52.
-(pdftex.def)             Requested size: 440.84746pt x 274.15033pt.
- [3] [4 <./Figures/placeholder-img.jpg>] [5] [6]
-(ZombiesReport.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
+
+ []
+
+<Figures/SIR.png, id=72, 1460.45625pt x 251.94125pt>
+File: Figures/SIR.png Graphic file (type png)
+<use Figures/SIR.png>
+Package pdftex.def Info: Figures/SIR.png  used on input line 62.
+(pdftex.def)             Requested size: 440.84746pt x 76.04811pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3]
+<Figures/HCR1.png, id=79, 1460.45625pt x 251.94125pt>
+File: Figures/HCR1.png Graphic file (type png)
+<use Figures/HCR1.png>
+Package pdftex.def Info: Figures/HCR1.png  used on input line 88.
+(pdftex.def)             Requested size: 440.84746pt x 76.04811pt.
+ [4 <./Figures/SIR.png> <./Figures/HCR1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
+
+ []
+
+[5] [6] (ZombiesReport.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `eng'. Using the pattern for
 ** the default language instead.
@@ -369,27 +391,34 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `ZombiesReport.out' has not changed.
-(rerunfilecheck)             Checksum: 4490330C04D3C60A2CD3FF3673A9F8BE;1170.
+(rerunfilecheck)             Checksum: BA3920602480A74132FF622015A6F851;1178.
  ) 
 Here is how much of TeX's memory you used:
- 9885 strings out of 474486
- 157816 string characters out of 5743755
- 1934542 words of memory out of 5000000
- 32026 multiletter control sequences out of 15000+600000
+ 9890 strings out of 474486
+ 157882 string characters out of 5743755
+ 1933542 words of memory out of 5000000
+ 32034 multiletter control sequences out of 15000+600000
  566295 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,6n,93p,276b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,6n,93p,556b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/micro/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/micro/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/micro/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ZombiesReport.pdf (7 pages, 914848 bytes).
+ublic/amsfonts/cm/cmmi10.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/micro/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/micro/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/micro/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/micro/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/m
+icro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
+Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmti10.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmtt10.pfb>
+Output written on ZombiesReport.pdf (7 pages, 200933 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

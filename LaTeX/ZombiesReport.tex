@@ -33,59 +33,142 @@ GitHub link to code: \href{https://github.com/paszach/zombies-attack/}{\texttt{h
 
 \section{Context}
 
-Introduction to the zombie takeover along with introduction to the model\cite{smith_mathematical_2014} \lipsum[1][2-9]
+An unexpected outbreak has recently spread through Imperial, causing chaos during deadline season. Students and professors alike are having their humanity stripped by a disease of unknown characteristics. 
 
-\begin{enumerate}
-\item Zombie characteristic numero uno\lipsum[1][1-5]
-\item duo \lipsum[1][5-8]
-\item tria\lipsum[1][9-12]
-\item pende etc \lipsum[1][12-16]
-\end{enumerate}
+Although not too dissimilar from the behaviour of regular Imperial students, remaining students are being cautioned to stay away from individuals that appear to be stumbling around aimlessly with a blank, gaunt look on their faces. Disaster analysts have determined that the outbreak of mindless husks, dubbed the 'Cooked,' originated from the underneath the Huxley tunnels.
 
-Closing statement of what model to choose based off these points
+In an attempt to understand and hopefully mitigate the impact of this outbreak, I have been enlisted as the only remaining person with a educational license to Wolfram Mathematica. My aim is to utilise my modelling and simulation knowledge to model the current known characteristics of the outbreak in order to determine the fate of Imperial as we know it. I will assess different strategies to employ against the Cooked, as well as providing analysis on the efficacy of different strategies to vanquish the Cooked.
+\\
 
-\section{Initial Model}
+If I get Cooked during this report, I've uploaded all my code to GitHub, in hope it will be found and used for good: \href{https://github.com/paszach/zombies-attack/}{\texttt{https://github.com/paszach/zombies-attack|}}
+\\
 
-\lipsum[1]
+This report begins with constructing a basic model of the Cooked. As more information is discovered about their characteristics, the model will be built on to better represent the behaviours of the system, including what remaining students can to do reclaim student hub from the Cooked.
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{Figures/placeholder-img.jpg}
-  \caption{Placeholder graph.}
-  \label{fig:placeholder}
+From initial observations, I'll be using an SIR model as the starting point. 
+
+\section{SIR Model}
+
+The SIR model has been proven vital in understanding the approach used to tackle pandemics such as COVID-19. Although traditionally used for spread of infectious diseases, it can also be adapted for our re-risen \cite{smith_mathematical_2014}. 
+\\
+The basic SIR model is a compartmental system which represents three states a member of the population can be in.
+\begin{description}
+\item[Susceptible] Members of the susceptible population are those which have not yet been infected and are susceptible to becoming infected.
+\item[Infected] Infected members of the population spread the disease by infecting members of the susceptible population. Once infected, infected members stay infected and contagious for a period of time. 
+\item[Removed] Once the infectious period of an infected member has subsided, they enter the removed population. Members of the removed population are unable to become reinfected by members of the infected population.
+\end{description}
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{Figures/SIR.png}
+  \caption{Diagram of basic SIR model.}
+  \label{fig:SIR}
 \end{figure}
 
-\subsection{Assumptions}
+This model will be the starting point of simulating the imperial outbreak, as it can be easily contextualised as follows, as an altered 'HCR' model;
 
-\lipsum[1]
-This can be seen in Figure \ref{fig:placeholder}.
+\begin{description}
+\item[Humans] Members of the human population have not yet been infected and are susceptible to becoming infected.
+\item[Cooked] The Cooked can infect humans. Once infected, Cooked stay infected and contagious for a period of time. 
+\item[Removed] Removed now becomes humans that have died, or zombies that have died/been destroyed. Cooked in the removed population are unable to re-animate and dead humans in the removed population are unable to become Cooked.
+\end{description}
+
 
 \subsection{Parameters}
 
-\lipsum[1]
+\begin{description}
+\item[$\beta_c$] The transmission parameter $\beta_c$ defines the number of humans that a Cooked is able to 'Cook' per unit time. If the total population without any modelled infection is $P$, then the the number per unit time one Cooked can Cook on average is given by $\beta_c P$.
+This means that the probability that a given Cooked and human randomly make contact is $\frac{H}{P}$ and thus the new Cookeds per unit time can be expressed as a product of these two expressions;
 
-\subsection{Model Evaluation}
+\[(\beta_cP)(\frac{H}{P})Z = \beta_cHC\]
 
-\lipsum[1]
+\item[$\gamma_c$] This is the removal rate that at which the Cooked naturally enter the removed population. For now, these reasons are completely independent of the human population, i.e. not due to humans killing Cooked or by any direct effect of the human population.
+\end{description}
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{Figures/HCR1.png}
+  \caption{Diagram of basic HCR model.}
+  \label{fig:HCR1}
+\end{figure}
+
+\subsection{Governing Equations}
+
+Implementing these parameters we have the basic equations that form the HCR model;
+
+\[H' = - \beta_cHC\]
+\[C' = \beta_cHC-\gamma_cC\]
+\[R' = \gamma_cC\]
+
+Each of these is a simple numerical equation showing the change in the population of each category. Positive terms show what entities are moving to that population, and negative show entities that are leaving that population.
+
+
+\subsection{Natural Units}
+
+As $\beta_z$ is the rate of infection, this will govern the time scale of the model. 
+\\
+
+$\beta_z$ has units of $t^(-1)$, therefore to non-dimensionalise;
+
+\[\hat{t} = \beta_ct\]
+\[\frac{d\hat{t}}{dt}= \beta_c\]
+
+To apply this to the original first equation of the human population;
+
+\[H' = \frac{dH}{dt} = \beta_cHC\]
+
+\[\frac{d}{dt} = \frac{d\hat{t}}{dt} \cdot \frac{d}{d\hat{t}} = \beta_c \cdot \frac{d}{dt}\]
+
+Now we have this, we can finish non-dimensionalising the original H equation;
+
+\[\beta_c\frac{dH}{d\hat{t}} = -\beta_cHC\]
+\[\frac{dH}{d\hat{t}} = -HC\]
+\[\hat{H}' = -HC\]
+
+This process can be repeated for the C and R equations, yielding the dimensionless system of equations;
+
+\[\hat{H}' = - HC\]
+\[\hat{C}' = HC-\gamma_cC\]
+\[\hat{R}' = \gamma_cC\]
+
+Using natural units helps makes understanding the behaviour of a model easier. In this instance, scaling the model relative to the infection rate ensured that the time scale will encapsulate one of the most important physical properties of the system.
+
+To further non-dimensionalise this model, we can scale the model with respect to the initial population of the humans ($H_0$). This step simply requires replacing H, C and R with $\frac{H}{H_0}, \frac{C}{H_0}$ and $\frac{R}{H_0}$ respectively. 
+
+Therefore our system of equations becomes;
+
+\[\hat{H}' = - \frac{H}{H_0}\frac{C}{H_0}\]
+\[\hat{C}' = \frac{H}{H_0}\frac{C}{H_0}-\gamma_c\frac{C}{H_0}\]
+\[\hat{R}' = \gamma_c\frac{C}{H_0}\]
+
+These can be rewritten as;
+
+\[\hat{H}' = - \tilde{H}\tilde{C}\]
+\[\hat{C}' = \tilde{H}\tilde{C}-\gamma_c\tilde{C}\]
+\[\hat{R}' = \gamma_c\tilde{C}\]
+
+For readability and simplicity, from this point onward, $\beta_c = \beta$, $\gamma_c = \gamma$, and all accented symbols will be dropped.
+
+\[H' = - HC\]
+\[C' = HC-\gamma C\]
+\[R' = \gamma C\]
 
 \section{First Alteration}
 
-\lipsum[1]
 
 \subsection{Updated Assumptions}
 
-\lipsum[1]
+
 
 \subsection{Parameters}
 
-\lipsum[1]
+
 
 \subsection{Model Evaluation}
 
-\lipsum[1]
+
 
 \section{Conclusion}
 
-\lipsum[2-3]
+
 
 
 \pagebreak
