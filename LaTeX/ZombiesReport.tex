@@ -1,7 +1,11 @@
 \documentclass[11pt]{article}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
 \usepackage{lipsum}
+\usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage[margin=1.2in]{geometry}
 
@@ -47,7 +51,7 @@ This report begins with constructing a basic model of the Cooked. As more inform
 
 From initial observations, I'll be using an SIR model as the starting point. 
 
-\section{SIR Model}
+\section{Basic SIR Model}
 
 The SIR model has been proven vital in understanding the approach used to tackle pandemics such as COVID-19. Although traditionally used for spread of infectious diseases, it can also be adapted for our re-risen \cite{smith_mathematical_2014}. 
 \\
@@ -69,7 +73,7 @@ This model will be the starting point of simulating the imperial outbreak, as it
 \begin{description}
 \item[Humans] Members of the human population have not yet been infected and are susceptible to becoming infected.
 \item[Cooked] The Cooked can infect humans. Once infected, Cooked stay infected and contagious for a period of time. 
-\item[Removed] Removed now becomes humans that have died, or zombies that have died/been destroyed. Cooked in the removed population are unable to re-animate and dead humans in the removed population are unable to become Cooked.
+\item[Removed] Removed now becomes students that have died, or Cooked that have dropped out of Imperial. Cooked in the removed population are unable to re-animate and dead humans in the removed population are unable to become Cooked.
 \end{description}
 
 
@@ -103,31 +107,30 @@ Each of these is a simple numerical equation showing the change in the populatio
 
 \subsection{Natural Units}
 
-As $\beta_z$ is the rate of infection, this will govern the time scale of the model. 
-\\
+$\beta_c$ is the only term in the governing equations that has units ($t^-1$), therefore the equation can be non-dimentionalised by using the following equation.
 
-$\beta_z$ has units of $t^(-1)$, therefore to non-dimensionalise;
+\[t = k\hat{t}\]
 
-\[\hat{t} = \beta_ct\]
-\[\frac{d\hat{t}}{dt}= \beta_c\]
+Where $k$ has units of time, $t$. From here, the relationship between $\frac{d}{dt}$ and $\frac{d}{d\hat{t}}$ can be determined;
 
-To apply this to the original first equation of the human population;
+\[\frac{d}{dt} = \frac{d\hat{t}}{dt}\cdot\frac{d}{d\hat{t}} = \frac{1}{k}\cdot \frac{d}{d\hat{t}}\]
 
-\[H' = \frac{dH}{dt} = \beta_cHC\]
+Now, applying this to the original first equation of the human population;
 
-\[\frac{d}{dt} = \frac{d\hat{t}}{dt} \cdot \frac{d}{d\hat{t}} = \beta_c \cdot \frac{d}{dt}\]
+\[H' = \frac{dH}{dt} = \frac{d}{dt}(H) = \frac{1}{k}\cdot\frac{dH}{d\hat{t}} = -\beta_c HC\]
 
-Now we have this, we can finish non-dimensionalising the original H equation;
+\[\therefore \frac{dH}{d\hat{t}} = -k\beta_c HC\]
 
-\[\beta_c\frac{dH}{d\hat{t}} = -\beta_cHC\]
-\[\frac{dH}{d\hat{t}} = -HC\]
-\[\hat{H}' = -HC\]
+Now, choosing $k = \frac{1}{\beta_C}$ for simplicity, our equation becomes;
+
+\[\frac{dH}{d\hat{t}} = H' = -HC\]
+
 
 This process can be repeated for the C and R equations, yielding the dimensionless system of equations;
 
-\[\hat{H}' = - HC\]
-\[\hat{C}' = HC-\gamma_cC\]
-\[\hat{R}' = \gamma_cC\]
+\[H' = -HC \]
+\[C' = HC-\frac{\gamma_c}{\beta_c}C\]
+\[R' = \frac{\gamma_c}{\beta_c}C\]
 
 Using natural units helps makes understanding the behaviour of a model easier. In this instance, scaling the model relative to the infection rate ensured that the time scale will encapsulate one of the most important physical properties of the system.
 
@@ -135,23 +138,294 @@ To further non-dimensionalise this model, we can scale the model with respect to
 
 Therefore our system of equations becomes;
 
-\[\hat{H}' = - \frac{H}{H_0}\frac{C}{H_0}\]
-\[\hat{C}' = \frac{H}{H_0}\frac{C}{H_0}-\gamma_c\frac{C}{H_0}\]
-\[\hat{R}' = \gamma_c\frac{C}{H_0}\]
+\[H' = -\frac{H}{H_0}\frac{C}{H_0}\]
+\[C' = \frac{H}{H_0}\frac{C}{H_0}-\frac{\gamma_c}{\beta_c}\frac{C}{H_0}\]
+\[R' = \frac{\gamma_c}{\beta_c}\frac{C}{H_0}\]
 
 These can be rewritten as;
 
-\[\hat{H}' = - \tilde{H}\tilde{C}\]
-\[\hat{C}' = \tilde{H}\tilde{C}-\gamma_c\tilde{C}\]
-\[\hat{R}' = \gamma_c\tilde{C}\]
+\[H' = - \tilde{H}\tilde{C} + \frac{\alpha_c}{\beta_c}\tilde{C}\]
+\[C' = \tilde{H}\tilde{C}-\frac{\gamma_c}{\beta_c}\tilde{C}\]
+\[R' = \frac{\gamma_c}{\beta_c}\tilde{C}\]
 
-For readability and simplicity, from this point onward, $\beta_c = \beta$, $\gamma_c = \gamma$, and all accented symbols will be dropped.
+For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c} = \gamma$, and all accented symbols will be dropped.
 
 \[H' = - HC\]
 \[C' = HC-\gamma C\]
 \[R' = \gamma C\]
 
+\subsection{Fixed Points and Stability Analysis}
+
+Fixed points, or equilibrium points, can be found by equating the above differential equations to 0. The phrase `fixed point' is used as once the fixed point is reached, there is no possible change to the populations in the system for all future time.
+
+\[H' = - HC = 0\]
+\[C' = HC-\gamma C = 0\]
+\[R' = \gamma C = 0\]
+
+From the last equation, $R' = \gamma C = 0$, as $\gamma$ is a constant $>0$ (assumption), $C = 0$. Taking the first of these equations, either $H = 0$ or $C = 0$, as their product must equal zero.  This presents us with two cases wherein $H$ can also be zero, or non-zero.
+\begin{description}
+\item[$H=0, C=0, R=R$] This can be interpreted as the scenario where there are only members of the removed population left.
+\item[$H=H, C=0, R=R$] This can be interpreted as the scenario where there are no Cooked on campus, and the humans have managed to eradicate/outlive the Cooked.
+\end{description}
+
+\begin{figure}[H]
+
+\begin{subfigure}{0.325\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.05/timepop} 
+\caption{$\lambda = 0.05$}
+\end{subfigure}
+\begin{subfigure}{0.325\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.5/timepop}
+\caption{$\lambda = 0.5$}
+\end{subfigure}
+\begin{subfigure}{0.325\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,1/timepop}
+\caption{$\lambda = 1$}
+\end{subfigure}
+
+\caption{H (blue), C (red) and R (purple) population change over time at different $\lambda$ values.}
+\end{figure}
+
+These fixed points show that co-existence is impossible, as for there to be co-existence, C must be $>0$. If $C > 0$, then $R' > 0$ which would result in a non-stationary system, and a fixed point with co-existence cannot exist.
+
+Both fixed point states can be seen in the time evolution graphs below, with Case 1's graph tending toward an ($H=0, C=0, R=R$) state, and Case 2's graph tending toward ($H=H, C=0, R=R$).
+
+
+\subsection{Stability Analysis}
+
+Stability analysis shows what happens when the parameters of the system start close-by, but not equalling to a fixed point. Practically, this will help us to understand whether if we manage to reach the (H, 0, R) state in which the humans have triumphed, will the re-introduction of one or two Cooked send Imperial into mass shut-down again? Or will the Cooked population quickly decline back to 0?
+
+Due to co-existence not being possible (shown above), stability analysis for co-existence will not be performed for this system equations. We can, however, perform stability analysis for the two fixed points found earlier.
+
+To carry out stability analysis for the two above fixed points, a Jacobian matrix will be formed to represent the system. Following this, we will use eigen analysis, as well as examining the determinant and trace of the matrices
+
+The system matrix is:
+
+\[ J(H, C, R) = 
+\begin{bmatrix}
+-C & -H & 0\\
+C  &  H-\gamma & 0\\
+0 & \gamma & 0
+\end{bmatrix}\]
+
+As the Jacobian in singular (R does not influence H or C,
+
+\[det(J) = 0\]
+
+The determinant can also be expressed as a product of the eigenvalues. Since the determinant is 0, one of the eigenvalues must also be 0. This means that there will be a direction in which disruptions do not get restored to the fixed point or blown up. \textcolor{red}{System shows the borderline case in the trace determinant place and requires further analysis??}
+
+\textcolor{red}{The trace can be defined as:}
+
+\[Tr(J) = H - C - \gamma\]
+
+This differs for both fixed points  and (H, 0, R). 
+\begin{description}
+\item[(0,0,R)] in this case, $Tr(J)=-\gamma$. Since $\gamma > 0, Tr(J) < 0$.
+\item[(H,0,R)] in this case, $Tr(J)=H -\gamma$.
+\end{description}
+
+\begin{figure}[h]
+
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/del,0.05/TrD} 
+\caption{$\lambda = 0.05$}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/del,0.5/TrD}
+\caption{$\lambda = 0.5$}
+\end{subfigure}
+
+\caption{Human to Cooked behaviour at different $\lambda$ values.}
+\end{figure}
+
+\textcolor{red}{EXPLANATION WITH DIAGRAMS!}
+
+\subsection{Eigenvalues}
+
+Finding the Eigen values of the Jacobian allows us to further explore the stability of the system, however due to the presence of 0-eigenvalues, further methods must be used. 
+
+Solving the following equation for the eigenvalues;
+
+\[det(J-\lambda I) = 0\]
+\[det(J-\lambda I) = 
+\begin{bmatrix}
+-C-\lambda & -H & 0\\
+C  &  H-\gamma-\lambda & 0\\
+0 & \gamma & -\lambda
+\end{bmatrix}
+= 0\]
+\[-\lambda 
+\begin{vmatrix}
+-C-\lambda & -H \\
+C & H-\gamma-\lambda
+\end{vmatrix}
+= 0\]
+
+\[-\lambda ( (-C-\lambda)(H - \gamma - \lambda ) + HC) = 0\]
+\[\lambda ( (C+\lambda)(H - \gamma - \lambda ) + HC) = 0\]
+
+At this point, we can immediately remove a factor of $\lambda$ as the first eigenvalue.
+
+\[(C+ \lambda ) (H - \gamma - \lambda ) - HC = 0\]
+\[(-1)\lambda ^2 + (H - \gamma - C)\lambda - C\lambda = 0\]
+
+Then, using the quadratic formula;
+
+\[\lambda _{2,3} = \frac{(H - \gamma - C) \pm \sqrt{(H- \gamma - C)^2 - 4(-1)(-C \gamma )}}{2}\]
+\[\lambda _{2,3} = \frac{(H - \gamma - C) \pm \sqrt{H^2 - 2HC - 2H\gamma + C^2 - 2C\gamma + \gamma ^2}}{2}\]
+
+From here, the fixed points are substituted into the equation to find the remaining eigenvalues for each case.
+
+For case $(0, 0, R)$;
+
+\[\lambda _{2,3} = \frac{((0) - \gamma - (0)) \pm \sqrt{(0)^2 - 2(0)(0) - 2(0)\gamma + (0)^2 - (0)\gamma + \gamma ^2}}{2}\]
+\[\lambda _{2,3} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2}\]
+\[\lambda_2 = \frac{- \gamma + \gamma}{2} = \frac{0}{2} = 0\]
+
+\[\lambda _{3} = \frac{- \gamma - \gamma}{2} = -\gamma\]
+
+
+For case $(H, 0, R)$;
+
+\[\lambda _{2,3} = \frac{(H - \gamma - (0)) \pm \sqrt{H^2 - 2H(0) - 2H\gamma + (0)^2 - 2(0)\gamma + \gamma ^2}}{2}\]
+\[= \frac{(H - \gamma) \pm \sqrt{H^2 - 2H\gamma + \gamma ^2}}{2} = \frac{(H - \gamma) \pm \sqrt{(H-\gamma)^2}}{2}\] 
+
+\[\lambda_2 = \frac{(H - \gamma) - (H-\gamma)}{2} = 0\]
+\[\lambda_3 = \frac{(H - \gamma) + (H-\gamma)}{2} = H - \gamma\]
+
+To summarise:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ Fixed Point & $\lambda_1$ & $\lambda_2$ & $\lambda_3$\\ 
+  \hline
+ (0, 0, R) & 0 & H - $\gamma$ & 0 \\ 
+  \hline
+ (H, 0, R) & 0 & -$\gamma$ & 0 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+For $\lambda_2$ in Case 1, the sign of the eigenvalue depends on the values of H and $\gamma$. Once at the fixed point (0, 0, R), stability  is dependent on the manner in which the perturbations end up arising. If H suddenly = 5, then $\gamma$ must be > 5 to ensure the system evolves back to the fixed point ($\lambda_2 < 0$), otherwise if $\gamma$ < 5, the system will become unstable as $\lambda_2$ > 0.
+
+However in Case 2, $\gamma$ is always negative, as $\gamma > 0$. From this we can interpret that there is stability in this direction, and any small perturbations will quickly re-normalise back to the fixed point.
+
+\subsection{Phase Space Analysis}
+
+Due to the presence of zero-eigenvalues we can interpret that the behaviour in these directions as driven by non-linear terms in the system. To better analyse the system behaviour, we will next examine the 'phase space.'
+
+Phase space analysis gives us a way to examine the way in which the population of humans and the Cooked will evolve over time from different states. 
+
+The behaviour of the system is governed by the factor removal rate $\gamma$, and the initial starting conditions. Phase space diagrams show the behaviours over a range of initial population conditions, so the graphs are generated solely from differing values of $\gamma$.
+
+Three graphs have been generated, one with a low removal rate (0.05), one with a mid-level removal rate (0.5) and one with a high level removal rate (2.0). To restate, these numbers represent the rate at which the Cooked naturally enter the removed population, without the influence of any external factors.
+
+\begin{figure}[H]
+
+\begin{subfigure}{0.315\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.05/HCphase} 
+\caption{$\lambda = 0.05$}
+\end{subfigure}
+\begin{subfigure}{0.315\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.5/HCphase}
+\caption{$\lambda = 0.5$}
+\end{subfigure}
+\begin{subfigure}{0.315\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,1/HCphase}
+\caption{$\lambda = 1$}
+\end{subfigure}
+
+\caption{Human to Cooked behaviour at different $\lambda$ values.}
+\end{figure}
+
+
+\begin{figure}[H]
+
+\begin{subfigure}{0.31\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.05/CRphase} 
+\caption{$\lambda = 0.05$}
+\end{subfigure}
+\begin{subfigure}{0.31\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.5/CRphase}
+\caption{$\lambda = 0.5$}
+\end{subfigure}
+\begin{subfigure}{0.31\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,1/CRphase}
+\caption{$\lambda = 1$}
+\end{subfigure}
+
+\caption{Cooked to Removed behaviour at different $\lambda$ values.}
+\end{figure}
+
+\textcolor{red}{how do eigenvalues correspond to the direction 'stability in this direction'}
+
+In all of the phase space diagrams in Figure 5, we can see that the arrows point toward a decline in both populations, representing the Humans gradually being Cooked and the Cooked gradually entering the Removed population.
+
+\begin{description}
+\item[$\lambda = 0.05$, 0,0,R] In Figure 5 (a), we can see that with a very low removal rate, the Cooked are very successful at Cooking the remaining students on campus. By the time that almost all of the Humans are Cooked, the Cooked have only just begun to enter the Removed population. It can be seen that all arrows are converging around the point (0,0), which aligns with our fixed point.
+
+\item[$\lambda = 0.5$, Small H,0,R] With a mid-level removal rate, the Cooked have an initial gain in population, but the gain quickly levels out and then declines. This graph also shows that the Human population eventually stabilises above 0 when there are no remaining Cooked present.
+
+\item[$\lambda = 1$, Large H,0,R] In contrast, in Figure 5 (c), the Cooked population is in constant gradual decline over time. This decline in Cooked is slowed by larger initial values of Human population, but always ends with the Cooked population converging toward 0. Also, it can be seen that the Human population stabilises at higher values than in Fig 5. (b). 
+\end{description}
+
+\textcolor{red}{I need to write more here explaining stuff}
+
+\subsection{Model Evaluation}
+
+Although this model gives us helpful insight into important factors influencing the outcome of the Cooked take-over, such as maximising $\lambda$ for higher stabilisation rates of the Human Population, in this model there is no way for Human choice or behaviour to influence the situation. This model implies that the best hope for Imperial is for the students to all leave campus and just wait for the Cooked to run out of energy and enter the Removed population.
+
+However, whilst trying to research into how this all started, I found a link for students to be able to book 'well-being meetings.' Maybe these meetings can provide the Cooked students with a way to enter the normal student population again-or even for normal students to learn some management strategies to ensure they never get Cooked in the first place!
+
 \section{First Alteration}
+
+With the introduction of well-being meetings, we must update our model. Now, there is a sub-group of Human students who are Immune to becoming Cooked, as well as
+
+\subsection{Governing Equations}
+
+Adding in the terms to represent the Un-Cooked students rejoining the Human student population ($\alpha_c C$), and the Cooked rejoining the human student population after their well-being meetings ($-\alpha_c C$), we have our new system of equations.
+
+\[H' = - \beta_cHC + \alpha_c C\]
+\[C' = \beta_cHC-\gamma_cC - \gamma_c C\]
+\[R' = \gamma_cC\]
+
+The Immune Human group does not change the system of equations, as having any immune population of humans 
+
+\subsection{Natural Units}
+
+The same process from earlier will be used to non-dimentionalise the equations. For the Human population;
+
+\[H' = \frac{dH}{dt} = \frac{d}{dt}(H) = \frac{1}{k}\cdot\frac{dH}{d\hat{t}} = -\beta_c HC + \alpha_c C\]
+
+\[\therefore \frac{dH}{d\hat{t}} = -k\beta_c HC + k\alpha_c C\]
+
+Now, choosing $k = \frac{1}{\beta_C}$ for simplicity, our equation becomes;
+
+\[\frac{dH}{d\hat{t}} = \hat{H'} = -HC + \frac{\alpha_c}{\beta_c}C\]
+
+
+This process can be repeated for the C and R equations, yielding the dimensionless system of equations;
+
+\[\hat{H'} = -HC + \frac{\alpha_c}{\beta_c}C\]
+\[\hat{C}' = HC-\frac{\gamma_c}{\beta_c}C - \frac{\alpha_c}{\beta_c}C\]
+\[\hat{R}' = \frac{\gamma_c}{\beta_c}C\]
+
+And again repeating the process of scaling the model relative to the initial population ($H_0$). Therefore our system of equations becomes;
+
+\[H' = - \tilde{H}\tilde{C} + \frac{\alpha_c}{\beta_c}\tilde{C}\]
+\[C' = \tilde{H}\tilde{C}-\frac{\gamma_c}{\beta_c}\tilde{C} -\frac{\alpha_c}{\beta_c}\tilde{C} \]
+\[R' = \frac{\gamma_c}{\beta_c}\tilde{C}\]
+
+For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c} = \gamma, \frac{\alpha_c}{\beta_c} = \alpha $, and all accented symbols will be dropped.
+
+\[H' = - HC + \alpha	C\]
+\[C' = HC-\gamma C - \alpha	C\]
+\[R' = \gamma C\]
+
+
+\subsection{Fixed Point Analysis 2.0}
+
 
 
 \subsection{Updated Assumptions}

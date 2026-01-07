@@ -1,10 +1,17 @@
 \contentsline {section}{\numberline {1}Context}{3}{section.1}%
-\contentsline {section}{\numberline {2}SIR Model}{3}{section.2}%
+\contentsline {section}{\numberline {2}Basic SIR Model}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Parameters}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Governing Equations}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Natural Units}{5}{subsection.2.3}%
-\contentsline {section}{\numberline {3}First Alteration}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Updated Assumptions}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Parameters}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Model Evaluation}{6}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}%
+\contentsline {subsection}{\numberline {2.4}Fixed Points and Stability Analysis}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Stability Analysis}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Eigenvalues}{8}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Phase Space Analysis}{10}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Model Evaluation}{11}{subsection.2.8}%
+\contentsline {section}{\numberline {3}First Alteration}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Governing Equations}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Natural Units}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Updated Assumptions}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Parameters}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Model Evaluation}{12}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Conclusion}{12}{section.4}%
