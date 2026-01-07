@@ -175,15 +175,15 @@ As a note, the initial parameters for running Wolfram are that $H_0 = 25000, C_0
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.325\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.05/timepop} 
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,0.05/timepop} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
 \begin{subfigure}{0.325\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.5/timepop}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,0.5/timepop}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.325\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,1/timepop}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,1/timepop}
 \caption{$\lambda = 1$}
 \end{subfigure}
 
@@ -212,7 +212,7 @@ C  &  H-\gamma & 0\\
 0 & \gamma & 0
 \end{bmatrix}\]
 
-As the Jacobian in singular (R does not influence H or C,
+As the Jacobian in singular (R does not influence H or C),
 
 \[det(J) = 0\]
 
@@ -232,12 +232,12 @@ This differs for both fixed points  and (H, 0, R).
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.05/TrD} 
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Org/del,0.05/TrD} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/TrD}
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Org/del,0.5/TrD}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 
@@ -252,13 +252,12 @@ Finding the Eigen values of the Jacobian allows us to further explore the stabil
 
 Solving the following equation for the eigenvalues;
 
-\[det(J-\lambda I) = 0\]
 \[det(J-\lambda I) = 
-\begin{bmatrix}
+\begin{vmatrix}
 -C-\lambda & -H & 0\\
 C  &  H-\gamma-\lambda & 0\\
 0 & \gamma & -\lambda
-\end{bmatrix}
+\end{vmatrix}
 = 0\]
 \[-\lambda 
 \begin{vmatrix}
@@ -277,21 +276,21 @@ At this point, we can immediately remove a factor of $\lambda$ as the first eige
 
 Then, using the quadratic formula;
 
-\[\lambda _{2,3} = \frac{(H - \gamma - C) \pm \sqrt{(H- \gamma - C)^2 - 4(-1)(-C \gamma )}}{2}\]
 \[\lambda _{2,3} = \frac{(H - \gamma - C) \pm \sqrt{H^2 - 2HC - 2H\gamma + C^2 - 2C\gamma + \gamma ^2}}{2}\]
 
 From here, the fixed points are substituted into the equation to find the remaining eigenvalues for each case.
 
 For case $(0, 0, R)$;
 
-\[\lambda _{2,3} = \frac{((0) - \gamma - (0)) \pm \sqrt{(0)^2 - 2(0)(0) - 2(0)\gamma + (0)^2 - (0)\gamma + \gamma ^2}}{2}\]
-\[\lambda _{2,3} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2}\]
-\[\lambda_2 = \frac{- \gamma + \gamma}{2} = \frac{0}{2} = 0, \lambda _{3} = \frac{- \gamma - \gamma}{2} = -\gamma\]
+\[\lambda _{2,3} = \frac{((0) - \gamma - (0)) \pm \sqrt{(0)^2 - 2(0)(0) - 2(0)\gamma + (0)^2 - (0)\gamma + \gamma ^2}}{2}= \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2}\]
+
+\[\therefore \lambda_2 = \frac{- \gamma + \gamma}{2} = \frac{0}{2} = 0, \lambda _{3} = \frac{- \gamma - \gamma}{2} = -\gamma\]
 
 
 For case $(H, 0, R)$;
 
 \[\lambda _{2,3} = \frac{(H - \gamma - (0)) \pm \sqrt{H^2 - 2H(0) - 2H\gamma + (0)^2 - 2(0)\gamma + \gamma ^2}}{2}\]
+
 \[= \frac{(H - \gamma) \pm \sqrt{H^2 - 2H\gamma + \gamma ^2}}{2} = \frac{(H - \gamma) \pm \sqrt{(H-\gamma)^2}}{2}\] 
 
 \[\lambda_2 = \frac{(H - \gamma) - (H-\gamma)}{2} = 0, \lambda_3 = \frac{(H - \gamma) + (H-\gamma)}{2} = H - \gamma\]
@@ -328,15 +327,15 @@ Three graphs have been generated, one with a low removal rate (0.05), one with a
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.315\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.05/HCphase} 
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,0.05/HCphase} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
 \begin{subfigure}{0.315\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.5/HCphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,0.5/HCphase}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.315\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,1/HCphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,1/HCphase}
 \caption{$\lambda = 1$}
 \end{subfigure}
 
@@ -347,15 +346,15 @@ Three graphs have been generated, one with a low removal rate (0.05), one with a
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.31\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.05/CRphase} 
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,0.05/CRphase} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
 \begin{subfigure}{0.31\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.5/CRphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,0.5/CRphase}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.31\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,1/CRphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Org/del,1/CRphase}
 \caption{$\lambda = 1$}
 \end{subfigure}
 
@@ -414,29 +413,21 @@ The same process from earlier will be used to non-dimentionalise the equations. 
 
 Now, choosing $k = \frac{1}{\beta_C}$ for simplicity, our equation becomes;
 
-\[\frac{dH}{d\hat{t}} = \hat{H'} = -HC + \frac{\alpha_c}{\beta_c}C\]
-
+\[\frac{dH}{d\hat{t}} = H' = -HC + \frac{\alpha_c}{\beta_c}C\]
 
 This process can be repeated for the C and R equations, yielding the dimensionless system of equations;
 
-\[\hat{H'} = -HC + \frac{\alpha_c}{\beta_c}C\]
-\[\hat{C}' = HC-\frac{\gamma_c}{\beta_c}C - \frac{\alpha_c}{\beta_c}C\]
-\[\hat{R}' = \frac{\gamma_c}{\beta_c}C\]
+\[H' = -HC + \frac{\alpha_c}{\beta_c}C, \quad C' = HC-\frac{\gamma_c}{\beta_c}C - \frac{\alpha_c}{\beta_c}C, \quad R' = \frac{\gamma_c}{\beta_c}C\]
 
 And again repeating the process of scaling the model relative to the initial population ($H_0$). Therefore our system of equations becomes;
 
-\[H' = - \tilde{H}\tilde{C} + \frac{\alpha_c}{\beta_c}\tilde{C}\]
-\[C' = \tilde{H}\tilde{C}-\frac{\gamma_c}{\beta_c}\tilde{C} -\frac{\alpha_c}{\beta_c}\tilde{C} \]
-\[R' = \frac{\gamma_c}{\beta_c}\tilde{C}\]
+\[H' = - \tilde{H}\tilde{C} + \frac{\alpha_c}{\beta_c}\tilde{C}, , \quad C' = \tilde{H}\tilde{C}-\frac{\gamma_c}{\beta_c}\tilde{C} -\frac{\alpha_c}{\beta_c}\tilde{C}, \quad R' = \frac{\gamma_c}{\beta_c}\tilde{C}\]
 
 For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c} = \gamma, \frac{\alpha_c}{\beta_c} = \alpha $, and all accented symbols will be dropped.
 
-\[H' = - HC + \alpha	C\]
-\[C' = HC-\gamma C - \alpha	C\]
-\[R' = \gamma C\]
+\[H' = - HC + \alpha	C, \quad C' = HC-\gamma C - \alpha	C, \quad R' = \gamma C\]
 
-
-\subsection{Stability Analysis}
+\subsection{Fixed Point Analysis}
 
 Carrying out fixed point analysis again would yield the same results, as the equilibrium conditions of the system to not change through the addition of the $\alpha$ terms, as for equilibrium C=0 still. This means that the determinant of the Jacobian will still always be 0, and there will still be zero-eigenvalues.
 
@@ -467,11 +458,11 @@ Another way to interpret this is to examine the change in the Nullclines. Previo
 \begin{figure}[H]
 
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/timepop} 
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Org/del,0.5/timepop} 
 \caption{No alpha, $\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt2/del,0.5/timepop,al,0.1} 
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/timepop,al,0.1} 
 \caption{$\lambda = 0.5, \alpha = 0.1$}
 \end{subfigure}
 
@@ -482,11 +473,11 @@ Another way to interpret this is to examine the change in the Nullclines. Previo
 
 \begin{figure}[H]
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/HCphase}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Org/del,0.5/HCphase}
 \caption{No alpha, $\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt2/del,0.5/HCph,al,0.1}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/HCph,al,0.1}
 \caption{$\lambda = 0.5, \alpha = 0.1$}
 \end{subfigure}
 

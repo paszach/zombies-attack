@@ -6,18 +6,18 @@
 \contentsline {subsection}{\numberline {2.4}Fixed Points and Stability Analysis}{6}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Stability Analysis}{7}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Eigenvalues}{8}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Phase Space Analysis}{10}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.7}Phase Space Analysis}{9}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Model Evaluation}{11}{subsection.2.8}%
-\contentsline {section}{\numberline {3}First Alteration}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Governing Equations}{12}{subsection.3.1}%
+\contentsline {section}{\numberline {3}First Alteration}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Governing Equations}{11}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Natural Units}{12}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Stability Analysis}{13}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Nullcline Analysis}{14}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Model Evaluation}{15}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Second Alteration}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Governing Equations}{15}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Natural Units}{15}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Analysis Section 1}{15}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Analysis Section 2}{15}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Model Evaluation}{15}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Conclusion}{15}{section.5}%
+\contentsline {subsection}{\numberline {3.3}Fixed Point Analysis}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Nullcline Analysis}{13}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Model Evaluation}{14}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Second Alteration}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Governing Equations}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Natural Units}{14}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Analysis Section 1}{14}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Analysis Section 2}{14}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Model Evaluation}{14}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Conclusion}{14}{section.5}%
