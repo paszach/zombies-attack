@@ -39,7 +39,7 @@ GitHub link to code: \href{https://github.com/paszach/zombies-attack/}{\texttt{h
 
 An unexpected outbreak has recently spread through Imperial, causing chaos during deadline season. Students and professors alike are having their humanity stripped by a disease of unknown characteristics. 
 
-Although not too dissimilar from the behaviour of regular Imperial students, remaining students are being cautioned to stay away from individuals that appear to be stumbling around aimlessly with a blank, gaunt look on their faces. Disaster analysts have determined that the outbreak of mindless husks, dubbed the 'Cooked,' originated from the underneath the Huxley tunnels.
+Although not too dissimilar from the behaviour of regular Imperial students, remaining students are being cautioned to stay away from individuals that appear to be stumbling around aimlessly with a blank, gaunt look on their faces. Disaster analysts have determined that the outbreak of mindless husks, dubbed the 'Cooked,' for their seemingly fried brains, originated from the underneath the Huxley tunnels.
 
 In an attempt to understand and hopefully mitigate the impact of this outbreak, I have been enlisted as the only remaining person with a educational license to Wolfram Mathematica. My aim is to utilise my modelling and simulation knowledge to model the current known characteristics of the outbreak in order to determine the fate of Imperial as we know it. I will assess different strategies to employ against the Cooked, as well as providing analysis on the efficacy of different strategies to vanquish the Cooked.
 \\
@@ -62,11 +62,14 @@ The basic SIR model is a compartmental system which represents three states a me
 \item[Removed] Once the infectious period of an infected member has subsided, they enter the removed population. Members of the removed population are unable to become reinfected by members of the infected population.
 \end{description}
 
+
 \begin{figure}[h]
-  \includegraphics[width=\linewidth]{Figures/SIR.png}
+\centering
+  \includegraphics[width=0.7\linewidth]{Figures/SIR.png}
   \caption{Diagram of basic SIR model.}
   \label{fig:SIR}
 \end{figure}
+
 
 This model will be the starting point of simulating the imperial outbreak, as it can be easily contextualised as follows, as an altered 'HCR' model;
 
@@ -89,7 +92,8 @@ This means that the probability that a given Cooked and human randomly make cont
 \end{description}
 
 \begin{figure}[h]
-  \includegraphics[width=\linewidth]{Figures/HCR1.png}
+\centering
+  \includegraphics[width=0.7\linewidth]{Figures/HCR1.png}
   \caption{Diagram of basic HCR model.}
   \label{fig:HCR1}
 \end{figure}
@@ -117,9 +121,7 @@ Where $k$ has units of time, $t$. From here, the relationship between $\frac{d}{
 
 Now, applying this to the original first equation of the human population;
 
-\[H' = \frac{dH}{dt} = \frac{d}{dt}(H) = \frac{1}{k}\cdot\frac{dH}{d\hat{t}} = -\beta_c HC\]
-
-\[\therefore \frac{dH}{d\hat{t}} = -k\beta_c HC\]
+\[H' = \frac{dH}{dt} = \frac{d}{dt}(H) = \frac{1}{k}\cdot\frac{dH}{d\hat{t}} = -\beta_c HC \therefore \frac{dH}{d\hat{t}} = -k\beta_c HC\]
 
 Now, choosing $k = \frac{1}{\beta_C}$ for simplicity, our equation becomes;
 
@@ -164,22 +166,24 @@ Fixed points, or equilibrium points, can be found by equating the above differen
 
 From the last equation, $R' = \gamma C = 0$, as $\gamma$ is a constant $>0$ (assumption), $C = 0$. Taking the first of these equations, either $H = 0$ or $C = 0$, as their product must equal zero.  This presents us with two cases wherein $H$ can also be zero, or non-zero.
 \begin{description}
-\item[$H=0, C=0, R=R$] This can be interpreted as the scenario where there are only members of the removed population left.
-\item[$H=H, C=0, R=R$] This can be interpreted as the scenario where there are no Cooked on campus, and the humans have managed to eradicate/outlive the Cooked.
+\item[$(0, 0, R)$] This can be interpreted as the scenario where there are only members of the removed population left.
+\item[$(H, 0, R)$] This can be interpreted as the scenario where there are no Cooked on campus, and the humans have managed to eradicate/outlive the Cooked.
 \end{description}
 
-\begin{figure}[H]
+As a note, the initial parameters for running Wolfram are that $H_0 = 25000, C_0 = 160$, reflecting approximations for the number of Imperial students, and the number of JMC students, who seem to have been hit the hardest.
 
+\begin{figure}[H]
+\centering
 \begin{subfigure}{0.325\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.05/timepop} 
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.05/timepop} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
 \begin{subfigure}{0.325\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.5/timepop}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.5/timepop}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.325\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,1/timepop}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,1/timepop}
 \caption{$\lambda = 1$}
 \end{subfigure}
 
@@ -212,7 +216,9 @@ As the Jacobian in singular (R does not influence H or C,
 
 \[det(J) = 0\]
 
-The determinant can also be expressed as a product of the eigenvalues. Since the determinant is 0, one of the eigenvalues must also be 0. This means that there will be a direction in which disruptions do not get restored to the fixed point or blown up. \textcolor{red}{System shows the borderline case in the trace determinant place and requires further analysis??}
+The determinant can also be expressed as a product of the eigenvalues. Since the determinant is 0, one of the eigenvalues must also be 0. This means that there will be a direction in which disruptions do not get restored to the fixed point or blown up.
+
+ \textcolor{red}{System shows the borderline case in the trace determinant place and requires further analysis??}
 
 \textcolor{red}{The trace can be defined as:}
 
@@ -225,13 +231,13 @@ This differs for both fixed points  and (H, 0, R).
 \end{description}
 
 \begin{figure}[h]
-
+\centering
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/del,0.05/TrD} 
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.05/TrD} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/del,0.5/TrD}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/TrD}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 
@@ -280,9 +286,7 @@ For case $(0, 0, R)$;
 
 \[\lambda _{2,3} = \frac{((0) - \gamma - (0)) \pm \sqrt{(0)^2 - 2(0)(0) - 2(0)\gamma + (0)^2 - (0)\gamma + \gamma ^2}}{2}\]
 \[\lambda _{2,3} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2}\]
-\[\lambda_2 = \frac{- \gamma + \gamma}{2} = \frac{0}{2} = 0\]
-
-\[\lambda _{3} = \frac{- \gamma - \gamma}{2} = -\gamma\]
+\[\lambda_2 = \frac{- \gamma + \gamma}{2} = \frac{0}{2} = 0, \lambda _{3} = \frac{- \gamma - \gamma}{2} = -\gamma\]
 
 
 For case $(H, 0, R)$;
@@ -290,8 +294,8 @@ For case $(H, 0, R)$;
 \[\lambda _{2,3} = \frac{(H - \gamma - (0)) \pm \sqrt{H^2 - 2H(0) - 2H\gamma + (0)^2 - 2(0)\gamma + \gamma ^2}}{2}\]
 \[= \frac{(H - \gamma) \pm \sqrt{H^2 - 2H\gamma + \gamma ^2}}{2} = \frac{(H - \gamma) \pm \sqrt{(H-\gamma)^2}}{2}\] 
 
-\[\lambda_2 = \frac{(H - \gamma) - (H-\gamma)}{2} = 0\]
-\[\lambda_3 = \frac{(H - \gamma) + (H-\gamma)}{2} = H - \gamma\]
+\[\lambda_2 = \frac{(H - \gamma) - (H-\gamma)}{2} = 0, \lambda_3 = \frac{(H - \gamma) + (H-\gamma)}{2} = H - \gamma\]
+
 
 To summarise:
 
@@ -307,7 +311,7 @@ To summarise:
 \end{tabular}
 \end{center}
 
-For $\lambda_2$ in Case 1, the sign of the eigenvalue depends on the values of H and $\gamma$. Once at the fixed point (0, 0, R), stability  is dependent on the manner in which the perturbations end up arising. If H suddenly = 5, then $\gamma$ must be > 5 to ensure the system evolves back to the fixed point ($\lambda_2 < 0$), otherwise if $\gamma$ < 5, the system will become unstable as $\lambda_2$ > 0.
+For $\lambda_2$ in Case 1, the sign of the eigenvalue depends on the values of H and $\gamma$. Once at the fixed point (0, 0, R), stability  is dependent on the manner in which the perturbations end up arising. If H suddenly = 5, then $\gamma$ must be $> 5$ to ensure the system evolves back to the fixed point ($\lambda_2 < 0$), otherwise if $\gamma < 5$, the system will become unstable as $\lambda_2 > 0$.
 
 However in Case 2, $\gamma$ is always negative, as $\gamma > 0$. From this we can interpret that there is stability in this direction, and any small perturbations will quickly re-normalise back to the fixed point.
 
@@ -322,17 +326,17 @@ The behaviour of the system is governed by the factor removal rate $\gamma$, and
 Three graphs have been generated, one with a low removal rate (0.05), one with a mid-level removal rate (0.5) and one with a high level removal rate (2.0). To restate, these numbers represent the rate at which the Cooked naturally enter the removed population, without the influence of any external factors.
 
 \begin{figure}[H]
-
+\centering
 \begin{subfigure}{0.315\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.05/HCphase} 
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.05/HCphase} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
 \begin{subfigure}{0.315\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.5/HCphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.5/HCphase}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.315\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,1/HCphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,1/HCphase}
 \caption{$\lambda = 1$}
 \end{subfigure}
 
@@ -341,17 +345,17 @@ Three graphs have been generated, one with a low removal rate (0.05), one with a
 
 
 \begin{figure}[H]
-
+\centering
 \begin{subfigure}{0.31\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.05/CRphase} 
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.05/CRphase} 
 \caption{$\lambda = 0.05$}
 \end{subfigure}
 \begin{subfigure}{0.31\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,0.5/CRphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,0.5/CRphase}
 \caption{$\lambda = 0.5$}
 \end{subfigure}
 \begin{subfigure}{0.31\textwidth}
-\includegraphics[width=0.9\linewidth, height=4cm]{Figures/del,1/CRphase}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt1/del,1/CRphase}
 \caption{$\lambda = 1$}
 \end{subfigure}
 
@@ -380,7 +384,8 @@ However, whilst trying to research into how this all started, I found a link for
 
 \section{First Alteration}
 
-With the introduction of well-being meetings, we must update our model. Now, there is a sub-group of Human students who are Immune to becoming Cooked, as well as
+With the introduction of well-being meetings, we must update our model. Now, there is a sub-group of Human students who are Immune to becoming Cooked, as well as a way for the Cooked to re-enter the Human student population. After the outbreak, the well-being meetings were given priority access to the Cooked, meaning that the number of 'Immune' students is a constant number of Humans.
+This effect can be simplified as removing the Immune students from the system completely. 
 
 \subsection{Governing Equations}
 
@@ -390,7 +395,14 @@ Adding in the terms to represent the Un-Cooked students rejoining the Human stud
 \[C' = \beta_cHC-\gamma_cC - \gamma_c C\]
 \[R' = \gamma_cC\]
 
-The Immune Human group does not change the system of equations, as having any immune population of humans 
+This new parameter $\alpha$ is the 'resurrection' rate, influencing how quickly the Cooked can re-enter the typical student population. The bigger $\alpha$ is, the quicker well-being meetings can be carried out.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[width=0.7\linewidth]{Figures/HCR2.png}
+  \caption{Updated HCR model 2.0.}
+  \label{fig:HCR1}
+\end{figure}
 
 \subsection{Natural Units}
 
@@ -424,20 +436,80 @@ For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c
 \[R' = \gamma C\]
 
 
-\subsection{Fixed Point Analysis 2.0}
+\subsection{Stability Analysis}
+
+Carrying out fixed point analysis again would yield the same results, as the equilibrium conditions of the system to not change through the addition of the $\alpha$ terms, as for equilibrium C=0 still. This means that the determinant of the Jacobian will still always be 0, and there will still be zero-eigenvalues.
+
+\[H' = - HC + \alpha	C = 0\]
+\[C' = HC-\gamma C - \alpha	C = 0\]
+\[R' = \gamma C = 0\]
+
+Instead, we will look at a reduced subsystem, as HC determines the entire behaviour of the system. Our system can be re-written as such;
+
+\[H' =  (\alpha	- H) C\]
+\[C' = (H-\gamma  - \alpha	)C \]
+
+\begin{description}
+\item[Effects on rates of change] The addition of the $\alpha$ factors slows down the rate at which the human population gets Cooked, and also speeds up the rate of reduction of the Cooked population.
+\end{description}
+
+We can also see from $C' = (H-\gamma  - \alpha	)C $, that in a Human only population, if the number of Cooked introduced is less than $\gamma + \alpha$ then the Cooked population will decline, and if more than $\gamma + \alpha$ then the Cooked population will grow.
+
+\subsection{Nullcline Analysis}
+
+\textcolor{red}{join this with logic of previous + add nullcline explanation explicitly for the previous section}
+
+\[H' =  (\alpha	- H) C = 0\]
+\[C' = (H-\gamma  - \alpha)C = 0\]
+
+Another way to interpret this is to examine the change in the Nullclines. Previously, the nullclines were at H = 0 and H = $\gamma$. The introduction of the alpha factors have shifted the nullclines by a factor of $\alpha$. The nullclines are now at H = $\alpha$ and H = $\gamma + \alpha$.
+
+\begin{figure}[H]
+
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/timepop} 
+\caption{No alpha, $\lambda = 0.5$}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt2/del,0.5/timepop,al,0.1} 
+\caption{$\lambda = 0.5, \alpha = 0.1$}
+\end{subfigure}
 
 
+\caption{H (blue), C (red) and R (purple) population change over time with the addition of well-being meetings.}
+\end{figure}
 
-\subsection{Updated Assumptions}
 
+\begin{figure}[H]
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/HCphase}
+\caption{No alpha, $\lambda = 0.5$}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt2/del,0.5/HCph,al,0.1}
+\caption{$\lambda = 0.5, \alpha = 0.1$}
+\end{subfigure}
 
+\caption{H (blue), C (red) and R (purple) population change over time with the addition of well-being meetings.}
+\end{figure}
 
-\subsection{Parameters}
+The shift by $\alpha$ can be seen in the time population graph in all three populations, H and R are shifted up and down respectively, and the peak of C is shifted down by $\alpha$. The effect can also be seen in the phase space diagram, with the nullcline shifting from $H = 0$ to $H = \alpha$.
 
 
 
 \subsection{Model Evaluation}
 
+\section{Second Alteration}
+
+\subsection{Governing Equations}
+
+\subsection{Natural Units}
+
+\subsection{Analysis Section 1}
+
+\subsection{Analysis Section 2}
+
+\subsection{Model Evaluation}
 
 
 \section{Conclusion}
