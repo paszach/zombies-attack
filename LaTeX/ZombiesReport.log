@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  9 JAN 2026 00:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  9 JAN 2026 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -364,14 +364,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@dimlist=\toks26
 
 (C:\Users\micro\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
-(ZombiesReport.aux
-
-LaTeX Warning: Label `fig:HCR1' multiply defined.
-
-
-LaTeX Warning: Label `fig:HCR1' multiply defined.
-
-)
+(ZombiesReport.aux)
 \openout1 = `ZombiesReport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -486,17 +479,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--48
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 
  []
 
 [3]
-<Figures/SIR.png, id=152, 1460.45625pt x 251.94125pt>
+<Figures/SIR.png, id=157, 1460.45625pt x 251.94125pt>
 File: Figures/SIR.png Graphic file (type png)
 <use Figures/SIR.png>
-Package pdftex.def Info: Figures/SIR.png  used on input line 70.
+Package pdftex.def Info: Figures/SIR.png  used on input line 71.
 (pdftex.def)             Requested size: 308.59187pt x 53.23213pt.
-<Figures/HCR1.png, id=154, 1460.45625pt x 251.94125pt>
+<Figures/HCR1.png, id=159, 1460.45625pt x 251.94125pt>
 File: Figures/HCR1.png Graphic file (type png)
 <use Figures/HCR1.png>
 Package pdftex.def Info: Figures/HCR1.png  used on input line 97.
@@ -506,144 +499,186 @@ Package pdftex.def Info: Figures/HCR1.png  used on input line 97.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4 <./Figures/SIR.png>] [5 <./Figures/HCR1.png>]
-<Figures/Org/del,0.05/timepop.png, id=174, 433.62pt x 280.04625pt>
+<Figures/Org/del,0.05/timepop.png, id=179, 433.62pt x 280.04625pt>
 File: Figures/Org/del,0.05/timepop.png Graphic file (type png)
 <use Figures/Org/del,0.05/timepop.png>
 Package pdftex.def Info: Figures/Org/del,0.05/timepop.png  used on input line 1
-65.
+64.
 (pdftex.def)             Requested size: 128.94234pt x 113.81123pt.
-<Figures/Org/del,0.5/timepop.png, id=175, 433.62pt x 280.04625pt>
+<Figures/Org/del,0.5/timepop.png, id=180, 433.62pt x 280.04625pt>
 File: Figures/Org/del,0.5/timepop.png Graphic file (type png)
 <use Figures/Org/del,0.5/timepop.png>
 Package pdftex.def Info: Figures/Org/del,0.5/timepop.png  used on input line 16
-9.
+8.
 (pdftex.def)             Requested size: 128.94234pt x 113.81123pt.
-<Figures/Org/del,1/timepop.png, id=176, 433.62pt x 280.04625pt>
+<Figures/Org/del,1/timepop.png, id=181, 433.62pt x 280.04625pt>
 File: Figures/Org/del,1/timepop.png Graphic file (type png)
 <use Figures/Org/del,1/timepop.png>
-Package pdftex.def Info: Figures/Org/del,1/timepop.png  used on input line 173.
+Package pdftex.def Info: Figures/Org/del,1/timepop.png  used on input line 172.
 
 (pdftex.def)             Requested size: 128.94234pt x 113.81123pt.
  [6 <./Figures/Org/del,0.05/timepop.png (PNG copy)> <./Figures/Org/del,0.5/time
-pop.png (PNG copy)> <./Figures/Org/del,1/timepop.png (PNG copy)>] [7]
-Overfull \hbox (34.02094pt too wide) detected at line 246
-\OML/cmm/m/it/10.95 ^^U[] \OT1/cmr/m/n/10.95 = [] = [] = []
- []
-
-[8]
-<Figures/Org/del,0.05/HCphase2.png, id=192, 433.62pt x 430.60875pt>
+pop.png (PNG copy)> <./Figures/Org/del,1/timepop.png (PNG copy)>] [7] [8]
+<Figures/Org/del,0.05/HCphase2.png, id=197, 433.62pt x 430.60875pt>
 File: Figures/Org/del,0.05/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,0.05/HCphase2.png>
 Package pdftex.def Info: Figures/Org/del,0.05/HCphase2.png  used on input line 
 292.
 (pdftex.def)             Requested size: 124.97906pt x 113.80852pt.
-<Figures/Org/del,0.5/HCphase2.png, id=193, 433.62pt x 430.60875pt>
+<Figures/Org/del,0.5/HCphase2.png, id=198, 433.62pt x 430.60875pt>
 File: Figures/Org/del,0.5/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,0.5/HCphase2.png>
 Package pdftex.def Info: Figures/Org/del,0.5/HCphase2.png  used on input line 2
 96.
 (pdftex.def)             Requested size: 124.97906pt x 113.80852pt.
-<Figures/Org/del,1/HCphase2.png, id=194, 433.62pt x 430.60875pt>
+<Figures/Org/del,1/HCphase2.png, id=199, 433.62pt x 430.60875pt>
 File: Figures/Org/del,1/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,1/HCphase2.png>
 Package pdftex.def Info: Figures/Org/del,1/HCphase2.png  used on input line 300
 .
 (pdftex.def)             Requested size: 124.97906pt x 113.80852pt.
-<Figures/Org/del,0.05/CRphase.png, id=195, 433.62pt x 430.60875pt>
+<Figures/Org/del,0.05/CRphase.png, id=200, 433.62pt x 430.60875pt>
 File: Figures/Org/del,0.05/CRphase.png Graphic file (type png)
 <use Figures/Org/del,0.05/CRphase.png>
 Package pdftex.def Info: Figures/Org/del,0.05/CRphase.png  used on input line 3
 11.
 (pdftex.def)             Requested size: 122.99411pt x 113.80852pt.
-<Figures/Org/del,0.5/CRphase.png, id=196, 433.62pt x 430.60875pt>
+<Figures/Org/del,0.5/CRphase.png, id=201, 433.62pt x 430.60875pt>
 File: Figures/Org/del,0.5/CRphase.png Graphic file (type png)
 <use Figures/Org/del,0.5/CRphase.png>
 Package pdftex.def Info: Figures/Org/del,0.5/CRphase.png  used on input line 31
 5.
 (pdftex.def)             Requested size: 122.99411pt x 113.80852pt.
-<Figures/Org/del,1/CRphase.png, id=197, 433.62pt x 430.60875pt>
+<Figures/Org/del,1/CRphase.png, id=202, 433.62pt x 430.60875pt>
 File: Figures/Org/del,1/CRphase.png Graphic file (type png)
 <use Figures/Org/del,1/CRphase.png>
 Package pdftex.def Info: Figures/Org/del,1/CRphase.png  used on input line 319.
 
 (pdftex.def)             Requested size: 122.99411pt x 113.80852pt.
  [9 <./Figures/Org/del,0.05/HCphase2.png> <./Figures/Org/del,0.5/HCphase2.png> 
-<./Figures/Org/del,1/HCphase2.png>] [10 <./Figures/Org/del,0.05/CRphase.png (PN
-G copy)> <./Figures/Org/del,0.5/CRphase.png (PNG copy)> <./Figures/Org/del,1/CR
-phase.png (PNG copy)>]
-<Figures/HCR2.png, id=211, 1459.70343pt x 579.41469pt>
+<./Figures/Org/del,1/HCphase2.png>]
+[10 <./Figures/Org/del,0.05/CRphase.png (PNG copy)> <./Figures/Org/del,0.5/CRph
+ase.png (PNG copy)> <./Figures/Org/del,1/CRphase.png (PNG copy)>]
+<Figures/Org/bif.png, id=216, 433.62pt x 286.671pt>
+File: Figures/Org/bif.png Graphic file (type png)
+<use Figures/Org/bif.png>
+Package pdftex.def Info: Figures/Org/bif.png  used on input line 357.
+(pdftex.def)             Requested size: 308.59187pt x 204.02336pt.
+ [11 <./Figures/Org/bif.png (PNG copy)>]
+<Figures/HCR2.png, id=222, 1459.70343pt x 579.41469pt>
 File: Figures/HCR2.png Graphic file (type png)
 <use Figures/HCR2.png>
-Package pdftex.def Info: Figures/HCR2.png  used on input line 380.
+Package pdftex.def Info: Figures/HCR2.png  used on input line 384.
 (pdftex.def)             Requested size: 308.59187pt x 122.48521pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12 <./Figures/HCR2.png>]
+ [12 <./Figures/HCR2.png>]
 File: Figures/Org/del,0.5/timepop.png Graphic file (type png)
 <use Figures/Org/del,0.5/timepop.png>
 Package pdftex.def Info: Figures/Org/del,0.5/timepop.png  used on input line 44
-0.
+3.
 (pdftex.def)             Requested size: 178.53963pt x 170.72112pt.
-<Figures/Alt1/del,0.5/timepop,al,0.1.png, id=222, 433.62pt x 280.04625pt>
+<Figures/Alt1/del,0.5/timepop,al,0.1.png, id=229, 433.62pt x 280.04625pt>
 File: Figures/Alt1/del,0.5/timepop,al,0.1.png Graphic file (type png)
 <use Figures/Alt1/del,0.5/timepop,al,0.1.png>
 Package pdftex.def Info: Figures/Alt1/del,0.5/timepop,al,0.1.png  used on input
- line 444.
+ line 447.
 (pdftex.def)             Requested size: 178.53963pt x 170.72112pt.
+ [13]
 File: Figures/Org/del,0.5/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,0.5/HCphase2.png>
 Package pdftex.def Info: Figures/Org/del,0.5/HCphase2.png  used on input line 4
-56.
+60.
 (pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
-<Figures/Alt1/del,0.5/HCph,al,0.12.png, id=223, 433.62pt x 430.60875pt>
+<Figures/Alt1/del,0.5/HCph,al,0.12.png, id=235, 433.62pt x 430.60875pt>
 File: Figures/Alt1/del,0.5/HCph,al,0.12.png Graphic file (type png)
 <use Figures/Alt1/del,0.5/HCph,al,0.12.png>
 Package pdftex.def Info: Figures/Alt1/del,0.5/HCph,al,0.12.png  used on input l
-ine 460.
+ine 464.
 (pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
- [13 <./Figures/Alt1/del,0.5/timepop,al,0.1.png (PNG copy)>]
-<Figures/HCR3.png, id=230, 1459.70343pt x 579.41469pt>
+ [14 <./Figures/Alt1/del,0.5/timepop,al,0.1.png (PNG copy)> <./Figures/Alt1/del
+,0.5/HCph,al,0.12.png>]
+<Figures/Alt1/bif.png, id=243, 433.62pt x 281.25075pt>
+File: Figures/Alt1/bif.png Graphic file (type png)
+<use Figures/Alt1/bif.png>
+Package pdftex.def Info: Figures/Alt1/bif.png  used on input line 483.
+(pdftex.def)             Requested size: 308.59187pt x 200.16577pt.
+<Figures/HCR3.png, id=244, 1459.70343pt x 579.41469pt>
 File: Figures/HCR3.png Graphic file (type png)
 <use Figures/HCR3.png>
-Package pdftex.def Info: Figures/HCR3.png  used on input line 488.
+Package pdftex.def Info: Figures/HCR3.png  used on input line 501.
 (pdftex.def)             Requested size: 308.59187pt x 122.48521pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./Figures/Alt1/del,0.5/HCph,al,0.12.png>] [15 <./Figures/HCR3.png>]
-<Figures/ERO.jpeg, id=243, 1122.44344pt x 1071.25218pt>
-File: Figures/ERO.jpeg Graphic file (type jpg)
-<use Figures/ERO.jpeg>
-Package pdftex.def Info: Figures/ERO.jpeg  used on input line 537.
-(pdftex.def)             Requested size: 308.59187pt x 294.50536pt.
+[15 <./Figures/Alt1/bif.png (PNG copy)>] [16 <./Figures/HCR3.png>]
+<Figures/Alt2/timepop,al,0.5.png, id=256, 433.62pt x 280.04625pt>
+File: Figures/Alt2/timepop,al,0.5.png Graphic file (type png)
+<use Figures/Alt2/timepop,al,0.5.png>
+Package pdftex.def Info: Figures/Alt2/timepop,al,0.5.png  used on input line 53
+5.
+(pdftex.def)             Requested size: 178.53963pt x 170.72112pt.
+<Figures/Alt2/timepop,al,0.7.png, id=257, 433.62pt x 280.04625pt>
+File: Figures/Alt2/timepop,al,0.7.png Graphic file (type png)
+<use Figures/Alt2/timepop,al,0.7.png>
+Package pdftex.def Info: Figures/Alt2/timepop,al,0.7.png  used on input line 53
+9.
+(pdftex.def)             Requested size: 178.53963pt x 170.72112pt.
+<Figures/Alt2/50runs.png, id=258, 433.62pt x 280.04625pt>
+File: Figures/Alt2/50runs.png Graphic file (type png)
+<use Figures/Alt2/50runs.png>
+Package pdftex.def Info: Figures/Alt2/50runs.png  used on input line 552.
+(pdftex.def)             Requested size: 308.59187pt x 199.30853pt.
+<Figures/Alt2/HCphase2.png, id=259, 433.62pt x 430.60875pt>
+File: Figures/Alt2/HCphase2.png Graphic file (type png)
+<use Figures/Alt2/HCphase2.png>
+Package pdftex.def Info: Figures/Alt2/HCphase2.png  used on input line 562.
+(pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
+<Figures/Alt2/CRphase2.png, id=260, 433.62pt x 430.60875pt>
+File: Figures/Alt2/CRphase2.png Graphic file (type png)
+<use Figures/Alt2/CRphase2.png>
+Package pdftex.def Info: Figures/Alt2/CRphase2.png  used on input line 566.
+(pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
+ [17 <./Figures/Alt2/timepop,al,0.5.png (PNG copy)> <./Figures/Alt2/timepop,al,
+0.7.png (PNG copy)> <./Figures/Alt2/50runs.png (PNG copy)>]
+<Figures/Alt2/bif.png, id=267, 433.62pt x 281.25075pt>
+File: Figures/Alt2/bif.png Graphic file (type png)
+<use Figures/Alt2/bif.png>
+Package pdftex.def Info: Figures/Alt2/bif.png  used on input line 584.
+(pdftex.def)             Requested size: 308.59187pt x 200.16577pt.
 
-[16 <./Figures/ERO.jpeg>] [17] (ZombiesReport.bbl
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Figures/Alt2/return.png, id=268, 433.62pt x 281.25075pt>
+File: Figures/Alt2/return.png Graphic file (type png)
+<use Figures/Alt2/return.png>
+Package pdftex.def Info: Figures/Alt2/return.png  used on input line 597.
+(pdftex.def)             Requested size: 308.59187pt x 200.16577pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18 <./Figures/Alt2/HCphase2.png> <./Figures/Alt2/CRphase2.png>] [19 <./Figures
+/Alt2/bif.png (PNG copy)> <./Figures/Alt2/return.png (PNG copy)>] [20]
+(ZombiesReport.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `eng'. Using the pattern for
 ** the default language instead.
-) [18] (ZombiesReport.aux)
+) [21] (ZombiesReport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `ZombiesReport.out' has not changed.
-(rerunfilecheck)             Checksum: 5701FB8D654AD9A383E7961432301D25;3562.
+(rerunfilecheck)             Checksum: 82274199035E175A5806E4890DFD47B0;3774.
  ) 
 Here is how much of TeX's memory you used:
- 12734 strings out of 474486
- 208384 string characters out of 5743755
+ 12823 strings out of 474486
+ 211037 string characters out of 5743755
  1939542 words of memory out of 5000000
- 34805 multiletter control sequences out of 15000+600000
+ 34884 multiletter control sequences out of 15000+600000
  567994 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,8n,93p,844b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,8n,93p,951b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -661,9 +696,9 @@ C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
 1/public/amsfonts/cm/cmti10.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/micro/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ZombiesReport.pdf (18 pages, 1850497 bytes).
+Output written on ZombiesReport.pdf (21 pages, 2008154 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
+ 329 words of extra memory for PDF output out of 10000 (max. 10000000)
 

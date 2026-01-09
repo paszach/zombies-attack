@@ -10,16 +10,17 @@
 \contentsline {subsection}{\numberline {2.8}Control Parameter / Threshold}{10}{subsection.2.8}%
 \contentsline {subsection}{\numberline {2.9}Model Evaluation}{11}{subsection.2.9}%
 \contentsline {section}{\numberline {3}First Alteration}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Governing Equations}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Governing Equations}{12}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Natural Units}{12}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Fixed Point Analysis}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Fixed Point Analysis}{13}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Nullcline Analysis}{13}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Control Parameter / Threshold}{14}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Model Evaluation}{14}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Second Alteration}{14}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Governing Equations}{15}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Natural Units}{15}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Fixed Point Analysis}{15}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Stability \& Phase Space}{16}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Model Evaluation}{16}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Conclusion}{17}{section.5}%
+\contentsline {subsection}{\numberline {3.5}Control Parameter / Threshold}{15}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Model Evaluation}{15}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Second Alteration}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Governing Equations}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Natural Units}{16}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Fixed Point Analysis}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Stability \& Phase Space}{18}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Control Parameter / Threshold}{18}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Model Evaluation}{18}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Conclusion}{20}{section.5}%
