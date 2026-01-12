@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     61146,       1235]
-NotebookOptionsPosition[     59784,       1201]
-NotebookOutlinePosition[     60249,       1219]
-CellTagsIndexPosition[     60206,       1216]
+NotebookDataLength[     61928,       1252]
+NotebookOptionsPosition[     60567,       1218]
+NotebookOutlinePosition[     61032,       1236]
+CellTagsIndexPosition[     60989,       1233]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -731,23 +731,37 @@ Cell[BoxData[
                RowBox[{"\"\<Time (t)\>\"", ",", 
                 " ", "\"\<Population Fractions\>\""}], "}"}]}]}], "\n", 
             "    ", "]"}], ",", "\n", "    ", "phasePlotHZ", ",", "\n", 
-           "    ", "phasePlotZR", ",", "\n", "    ", 
-           RowBox[{"Show", "[", "\[IndentingNewLine]", "\t\t", 
-            RowBox[{"parameterSpace", ",", "\[IndentingNewLine]", "\t\t", 
+           "    ", "phasePlotZR", ",", "\n", "  ", 
+           RowBox[{"Show", "[", "\n", " ", 
+            RowBox[{"parameterSpace", ",", "\n", " ", 
              RowBox[{"ListPlot", "[", 
               RowBox[{
                RowBox[{"{", 
                 RowBox[{"{", 
-                 RowBox[{"finalDetJ", ",", "finalTraceJ"}], "}"}], "}"}], ",", 
-               RowBox[{"PlotStyle", "->", 
-                RowBox[{"PointSize", "[", "Large", "]"}]}]}], "]"}], ",", 
-             "\n", "\t\t", 
-             RowBox[{"Frame", " ", "->", " ", "True"}], ",", "\n", "\t\t", 
+                 RowBox[{"finalDetJ", ",", " ", "finalTraceJ"}], "}"}], "}"}],
+                ",", "\n", "  ", 
+               RowBox[{"PlotStyle", " ", "->", " ", 
+                RowBox[{"{", 
+                 RowBox[{"Red", ",", " ", 
+                  RowBox[{"PointSize", "[", "0.03", "]"}]}], "}"}]}]}], "\n", 
+              " ", "]"}], ",", "\n", " ", 
+             RowBox[{"PlotRange", " ", "->", " ", 
+              RowBox[{"{", "\n", "   ", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "0.5"}], ",", " ", "0.5"}], "}"}], ",", "\n", 
+                "   ", 
+                RowBox[{"{", " ", 
+                 RowBox[{
+                  RowBox[{"-", " ", "0.5"}], ",", " ", "0.5"}], "}"}]}], "\n",
+                " ", "}"}]}], ",", "\n", " ", 
+             RowBox[{"Frame", " ", "->", " ", "True"}], ",", "\n", " ", 
              RowBox[{"FrameLabel", " ", "->", " ", 
               RowBox[{"{", 
                RowBox[{"\"\<Determinant\>\"", ",", " ", "\"\<Trace\>\""}], 
-               "}"}]}]}], "\[IndentingNewLine]", "\t", "]"}]}], "\n", "   ", 
-          "}"}], "]"}]}]}], "\n", " ", "]"}], ",", "\n", " ", "\n", " ", 
+               "}"}]}]}], "\n", "]"}]}], "\n", "   ", "}"}], "]"}]}]}], "\n", 
+      " ", "]"}], ",", "\n", "\n", " ", 
      RowBox[{"(*", " ", 
       RowBox[{
       "Sliders", " ", "for", " ", "parameters", " ", "and", " ", "initial", " ",
@@ -756,7 +770,7 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-        "\[Gamma]Z", ",", " ", "0.015", ",", 
+        "\[Gamma]Z", ",", " ", "0.05", ",", 
          " ", "\"\<Dimensionless Cooked removal rate (\[Gamma]_C)\>\""}], 
         "}"}], ",", " ", "0", ",", " ", "2", ",", " ", "0.01"}], "}"}], ",", 
      "\n", " ", 
@@ -764,14 +778,14 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-        "H0", ",", " ", "1", ",", " ", "\"\<Initial humans (H0)\>\""}], "}"}],
-        ",", " ", "0", ",", " ", "5000", ",", " ", "1"}], "}"}], ",", "\n", 
-     " ", 
+        "H0", ",", " ", "0.95", ",", " ", "\"\<Initial humans (H0)\>\""}], 
+        "}"}], ",", " ", "0", ",", " ", "5000", ",", " ", "1"}], "}"}], ",", 
+     "\n", " ", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-        "Z0", ",", " ", "0.2", ",", " ", "\"\<Initial Cooked (C0)\>\""}], 
+        "Z0", ",", " ", "0.05", ",", " ", "\"\<Initial Cooked (C0)\>\""}], 
         "}"}], ",", " ", "0", ",", " ", "5000", ",", " ", "1"}], "}"}], ",", 
      "\n", " ", 
      RowBox[{"{", 
@@ -789,49 +803,50 @@ Cell[BoxData[
         ",", " ", "10", ",", " ", "1000000", ",", " ", "1"}], "}"}]}], "\n", 
     "]"}], "\n"}]}]], "Code",
  CellChangeTimes->CompressedData["
-1:eJwdz11Ik2EAxfE3e1GbMt2KEidaiLuQ0EEzCEIdNo0+aK00wdFCk8TUyEyn
-runFhDGV2hKaabpphnWxQi9mOWaWOkuFRNqFDaPQ5hYLFT8y1/Q5z8XhB+fu
-f6zwjrw4hGGYZDK4uG27N6/0S6yisUZovBYYgudf572FSrnDCdMHIj5Bz5Xp
-L5Bb5ZqF7qeDR74Rr47NUbu7fkkh17WVQ3+1ygAjH2uofZav/XCEcVPLqhM+
-Q6/TMAVVvR963cQzPRPPYfBkxY8F4m7T2Z+QE2deg9nN0Rswef5AAGrZkCB0
-yKp2lok6AS8A/9haGnzoul2hhabvc+W/iSnLs/ehSbGjhof5JxpgUFwS+p9Y
-Y7FzYP1MHg+K44f5kO3QxcKH7cIE6BNzCpgbxCZRIRTuS6yFeqmU2r4UtQC1
-nXVL8N32OQ1LNF1SUO3DgvdJxHSD8iN85HvhhTLZszV4M5G3X0j02OK40Gq/
-IIWRuUPZ0KXReVOIzkoz1ep6+Q92dkTtwspWGy+VWJrp4MOSLE8alJ++fgqq
-etrKV8x+SeNmy13YX5ehgkdj4luhWqE0QverN0+gnc3thuKuEaoo9QGzSszn
-6KiHwi6yMFw/EQGPTy6GCSx+Sdtl4UH41xiqz4Gro81wZXzUAzNr1F7IZhSt
-w/DqW9Q9Q2NkzA==
+1:eJwdz1tI02EAxuFlf9SmzLakosksxF1EuEEzCMIDaxodaK60oNXCikTTyEyX
+rSkxYcxJbQnNQ3PTCutihQWzHFNrOSuDRBplwyy0HWSh0slcs+/9Ll4eeO9+
+W0rPK87EsVgsERmcWXJenFRF8h1iTyM0H4n2w30PS55ClcLthTl9Sa9g4NDY
+O8ip8Y1Df/vjDZ+Ihz0T1C7rNxnk+H4X0l+jNsHkm1rqXfv7XjjI8lPP1aa/
+hiGv6Q1U9zzv8RN3d4/cgbEdVV+miCtNe75CdpptERY0r/0Jt06uiUIdExeD
+bnnNcpCo53Oj8LvT2BBGV0WVDlo+T1TOEbOC45egRbmsget52xtgTFIW/49Y
+Z3ex4ZW3JVwoEQzwINOh3wSvtwnTYVjCPsY6SWwSl0LhqozL0CCTUdtmU6ag
+rrN+Fj5b2qtliJaDSqprgD+UScwxqV7AG+F7ISiX316EpzO4q4XEgDONAx2u
+/TKYXNxfAH1afSiL6K22UR2++39hZ0fKCqxucXJFxPI8Nw+WSQPZULHrxE6o
+7m6tnLdF8ht/GS/A3vpcNdy8UdACNUqVGfofPLoFXUxxF5RYB6li0VXWAvEo
+W09NTTjAwETDSBLcNjqTwLdH8luLhOvgH3O8oRAuDDfD+ZfDAZhXpwlBJvfU
+D5hYe5bK+K3aMNHjK7oGU0XZfdAf/EBVH88coz4Zok6Xt7PniMYKKQdOfxTw
+qdJR6n9335Sc
   "],
- CellLabel->"In[3]:=",ExpressionUUID->"a54f7314-71ab-4641-8904-2e99c7a8588b"],
+ CellLabel->"In[27]:=",ExpressionUUID->"a54f7314-71ab-4641-8904-2e99c7a8588b"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`H0$$ = 1, $CellContext`R0$$ = 
-    0, $CellContext`tmax$$ = 200, $CellContext`Z0$$ = 
-    0.1, $CellContext`\[Gamma]Z$$ = 0.015, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`H0$$ = 0.95, $CellContext`R0$$ = 
+    0, $CellContext`tmax$$ = 100, $CellContext`Z0$$ = 
+    0.05, $CellContext`\[Gamma]Z$$ = 0.05, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`\[Gamma]Z$$], 0.015, 
+       Hold[$CellContext`\[Gamma]Z$$], 0.05, 
        "Dimensionless Cooked removal rate (\[Gamma]_C)"}, 0, 2, 0.01, 
       ControlType -> Manipulator}, {{
-       Hold[$CellContext`H0$$], 1, "Initial humans (H0)"}, 0, 5000, 1, 
+       Hold[$CellContext`H0$$], 0.95, "Initial humans (H0)"}, 0, 5000, 1, 
       ControlType -> Manipulator}, {{
-       Hold[$CellContext`Z0$$], 0.2, "Initial Cooked (C0)"}, 0, 5000, 1, 
+       Hold[$CellContext`Z0$$], 0.05, "Initial Cooked (C0)"}, 0, 5000, 1, 
       ControlType -> Manipulator}, {{
        Hold[$CellContext`R0$$], 0, "Initial removed (R0)"}, 0, 5000, 1, 
       ControlType -> Manipulator}, {{
        Hold[$CellContext`tmax$$], 100, "Simulation time"}, 10, 1000000, 1, 
       ControlType -> Manipulator}}, Typeset`size$$ = {
-    358.7944921875, {395.22980408834485`, 402.1081244008449}}, 
+    328.89495374679564`, {360.8665953255082, 367.1717224468301}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`H0$$ = 1, $CellContext`R0$$ = 
+      "Variables" :> {$CellContext`H0$$ = 0.95, $CellContext`R0$$ = 
         0, $CellContext`tmax$$ = 100, $CellContext`Z0$$ = 
-        0.2, $CellContext`\[Gamma]Z$$ = 0.015}, "ControllerVariables" :> {}, 
+        0.05, $CellContext`\[Gamma]Z$$ = 0.05}, "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -929,17 +944,18 @@ $CellContext`phasePlotZR$,
            Show[$CellContext`parameterSpace$, 
             
             ListPlot[{{$CellContext`finalDetJ$, $CellContext`finalTraceJ$}}, 
-             PlotStyle -> PointSize[Large]], Frame -> True, 
-            FrameLabel -> {"Determinant", "Trace"}]}]], 
-      "Specifications" :> {{{$CellContext`\[Gamma]Z$$, 0.015, 
+             PlotStyle -> {Red, 
+               PointSize[0.03]}], PlotRange -> {{-0.5, 0.5}, {-0.5, 0.5}}, 
+            Frame -> True, FrameLabel -> {"Determinant", "Trace"}]}]], 
+      "Specifications" :> {{{$CellContext`\[Gamma]Z$$, 0.05, 
           "Dimensionless Cooked removal rate (\[Gamma]_C)"}, 0, 2, 
-         0.01}, {{$CellContext`H0$$, 1, "Initial humans (H0)"}, 0, 5000, 
-         1}, {{$CellContext`Z0$$, 0.2, "Initial Cooked (C0)"}, 0, 5000, 
+         0.01}, {{$CellContext`H0$$, 0.95, "Initial humans (H0)"}, 0, 5000, 
+         1}, {{$CellContext`Z0$$, 0.05, "Initial Cooked (C0)"}, 0, 5000, 
          1}, {{$CellContext`R0$$, 0, "Initial removed (R0)"}, 0, 5000, 
          1}, {{$CellContext`tmax$$, 100, "Simulation time"}, 10, 1000000, 1}},
        "Options" :> {}, "DefaultOptions" :> {}],
      ImageSizeCache->{
-      484.77072656250004`, {512.752811900845, 519.6311322133449}},
+      445.49816630172734`, {468.65851915363316`, 474.96364627495507`}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -958,8 +974,9 @@ $CellContext`phasePlotZR$,
    3.9766929332498055`*^9, 3.976692994552231*^9, {3.9766937528756313`*^9, 
    3.9766937968537464`*^9}, 3.97669385681423*^9, 3.976779944883301*^9, 
    3.976780042639488*^9, 3.97687101789406*^9, 3.9768717205841446`*^9, 
-   3.9768717615452824`*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"6c4bbdd7-839f-0543-9be0-d931c7f5e82a"]
+   3.9768717615452824`*^9, 3.9772047599383926`*^9, 3.977205147009388*^9, 
+   3.97720535414625*^9, 3.9772058802300663`*^9, 3.9772059872245464`*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"a0763df4-c3de-d445-a06d-9fdab5be4424"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1124,7 +1141,7 @@ Cell[BoxData[
     "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`\[Gamma]$$], 0.015, "Removal rate \[Gamma]"}, 0.001, 
       2, 0.01, ControlType -> Manipulator}}, Typeset`size$$ = {
-    531.4526953124999, {139.15268366390302`, 146.03100397640304`}}, 
+    487.1649717521668, {127.62055841269319`, 133.92568553401503`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -1178,7 +1195,7 @@ $CellContext`Hf$, $CellContext`Zf$, $CellContext`Rf$}]], {$CellContext`R0, 0,
           "Removal rate \[Gamma]"}, 0.001, 2, 0.01}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
      ImageSizeCache->{
-      582.2726953124999, {190.43569147640304`, 197.31401178890306`}},
+      533.874971752167, {174.69248224081818`, 180.99760936214003`}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1202,7 +1219,7 @@ $CellContext`Hf$, $CellContext`Zf$, $CellContext`Rf$}]], {$CellContext`R0, 0,
 WindowSize->{1152, 651.6},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
-Magnification:>1.2 Inherited,
+Magnification:>1.1 Inherited,
 FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"062f5583-3f78-45da-a3f6-35f4f2b87a9f"
@@ -1219,22 +1236,22 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 268, 4, 115, "Title",ExpressionUUID->"d1ad6ba4-f57b-4596-bc28-d00e48d9a50d"],
-Cell[847, 28, 21450, 359, 195, "Text",ExpressionUUID->"8e96e7c4-78b6-47fe-9e10-9d909fe4168a"],
+Cell[576, 22, 268, 4, 106, "Title",ExpressionUUID->"d1ad6ba4-f57b-4596-bc28-d00e48d9a50d"],
+Cell[847, 28, 21450, 359, 179, "Text",ExpressionUUID->"8e96e7c4-78b6-47fe-9e10-9d909fe4168a"],
 Cell[CellGroupData[{
-Cell[22322, 391, 309, 5, 62, "Subtitle",ExpressionUUID->"80faa2d1-17c8-4679-a3e3-13b219300588"],
-Cell[22634, 398, 702, 14, 145, "Text",ExpressionUUID->"8bc687ed-1191-444f-ba64-2d3628c7f229"],
+Cell[22322, 391, 309, 5, 57, "Subtitle",ExpressionUUID->"80faa2d1-17c8-4679-a3e3-13b219300588"],
+Cell[22634, 398, 702, 14, 133, "Text",ExpressionUUID->"8bc687ed-1191-444f-ba64-2d3628c7f229"],
 Cell[CellGroupData[{
-Cell[23361, 416, 16953, 388, 2314, "Code",ExpressionUUID->"a54f7314-71ab-4641-8904-2e99c7a8588b"],
-Cell[40317, 806, 8662, 155, 1052, "Output",ExpressionUUID->"6c4bbdd7-839f-0543-9be0-d931c7f5e82a"]
+Cell[23361, 416, 17534, 403, 2238, "Code",ExpressionUUID->"a54f7314-71ab-4641-8904-2e99c7a8588b"],
+Cell[40898, 821, 8865, 157, 962, "Output",ExpressionUUID->"a0763df4-c3de-d445-a06d-9fdab5be4424"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49040, 968, 243, 4, 115, "Title",ExpressionUUID->"0b2c9bc8-4e60-a845-b845-fc176dafb1a7"],
+Cell[49824, 985, 243, 4, 106, "Title",ExpressionUUID->"0b2c9bc8-4e60-a845-b845-fc176dafb1a7"],
 Cell[CellGroupData[{
-Cell[49308, 976, 6246, 139, 987, "Code",ExpressionUUID->"42f2328f-518d-d241-9036-2bb51b835861"],
-Cell[55557, 1117, 4199, 80, 408, "Output",ExpressionUUID->"6861008e-416e-1c4c-a8d9-d784659dab8b"]
+Cell[50092, 993, 6246, 139, 905, "Code",ExpressionUUID->"42f2328f-518d-d241-9036-2bb51b835861"],
+Cell[56341, 1134, 4198, 80, 374, "Output",ExpressionUUID->"6861008e-416e-1c4c-a8d9-d784659dab8b"]
 }, Open  ]]
 }, Open  ]]
 }

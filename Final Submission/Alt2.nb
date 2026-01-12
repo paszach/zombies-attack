@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    287002,       5141]
-NotebookOptionsPosition[    283631,       5080]
-NotebookOutlinePosition[    284096,       5098]
-CellTagsIndexPosition[    284053,       5095]
+NotebookDataLength[    287084,       5144]
+NotebookOptionsPosition[    283713,       5083]
+NotebookOutlinePosition[    284178,       5101]
+CellTagsIndexPosition[    284135,       5098]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -4699,7 +4699,7 @@ Cell[BoxData[
        RowBox[{"Frame", " ", "->", " ", "True"}], ",", "\n", "   ", 
        RowBox[{"FrameLabel", " ", "->", " ", 
         RowBox[{"{", 
-         RowBox[{"\"\<\[Delta] (return rate)\>\"", ",", 
+         RowBox[{"\"\<\[Delta] (Re-entry rate)\>\"", ",", 
           " ", "\"\<Final population\>\""}], "}"}]}]}], "\n", " ", "]"}]}], ",",
      "\n", "\n", " ", 
     RowBox[{"{", 
@@ -4707,8 +4707,8 @@ Cell[BoxData[
       RowBox[{"{", 
        RowBox[{
        "\[Alpha]", ",", " ", "0.7", ",", 
-        " ", "\"\<Resurrection rate \[Alpha]\>\""}], "}"}], ",", " ", "0", ",",
-       " ", "2", ",", " ", "0.01"}], "}"}], ",", "\n", " ", 
+        " ", "\"\<Recovery rate \[Alpha]\>\""}], "}"}], ",", " ", "0", ",", 
+      " ", "2", ",", " ", "0.01"}], "}"}], ",", "\n", " ", 
     RowBox[{"{", 
      RowBox[{
       RowBox[{"{", 
@@ -4729,8 +4729,9 @@ Cell[BoxData[
    3.976902022354658*^9}, {3.976902144671776*^9, 3.9769022514350777`*^9}, 
    3.976902300224144*^9, {3.9769026559234333`*^9, 3.976902674049303*^9}, {
    3.976945907260542*^9, 3.976945973132124*^9}, {3.977166567259409*^9, 
-   3.977166569229332*^9}, {3.9771666252424507`*^9, 3.977166632240341*^9}},
- CellLabel->"In[22]:=",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
+   3.977166569229332*^9}, {3.9771666252424507`*^9, 3.977166632240341*^9}, {
+   3.9772064021873436`*^9, 3.9772064104358654`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
 
 Cell[BoxData[
  TagBox[
@@ -4739,8 +4740,8 @@ Cell[BoxData[
     0.015, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`\[Alpha]$$], 0.7, "Resurrection rate \[Alpha]"}, 0, 
-      2, 0.01, ControlType -> Manipulator}, {{
+       Hold[$CellContext`\[Alpha]$$], 0.7, "Recovery rate \[Alpha]"}, 0, 2, 
+      0.01, ControlType -> Manipulator}, {{
        Hold[$CellContext`\[Gamma]$$], 0.015, "Removal rate \[Gamma]"}, 0, 2, 
       0.01, ControlType -> Manipulator}}, Typeset`size$$ = {
     531.4526953124999, {136.41836135208325`, 143.29668166458328`}}, 
@@ -4788,9 +4789,10 @@ $CellContext`Zf$}], {$CellContext`\[Delta], 0, 2, 0.05}]; ListLinePlot[{
           Part[$CellContext`finalValues, All, {1, 3}]}, 
          PlotLegends -> {"Final H", "Final C"}, 
          PlotStyle -> {{Blue, Thick}, {Red, Thick}}, PlotRange -> All, Frame -> 
-         True, FrameLabel -> {"\[Delta] (return rate)", "Final population"}]),
-       "Specifications" :> {{{$CellContext`\[Alpha]$$, 0.7, 
-          "Resurrection rate \[Alpha]"}, 0, 2, 
+         True, FrameLabel -> {
+          "\[Delta] (Re-entry rate)", "Final population"}]), 
+      "Specifications" :> {{{$CellContext`\[Alpha]$$, 0.7, 
+          "Recovery rate \[Alpha]"}, 0, 2, 
          0.01}, {{$CellContext`\[Gamma]$$, 0.015, "Removal rate \[Gamma]"}, 0,
           2, 0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
      ImageSizeCache->{
@@ -4805,8 +4807,9 @@ $CellContext`Zf$}], {$CellContext`\[Delta], 0, 2, 0.05}]; ListLinePlot[{
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.976950877993202*^9, 3.977166637810951*^9},
- CellLabel->"Out[22]=",ExpressionUUID->"06461e36-d403-4949-baad-48513a56ee9e"]
+ CellChangeTimes->{3.976950877993202*^9, 3.977166637810951*^9, 
+  3.977206416629242*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"ce32071d-1bee-054e-b6cb-d268b8c0c94e"]
 }, Open  ]],
 
 Cell["Varying R_0 using the dimensional equations?", "Text",
@@ -5133,13 +5136,13 @@ Cell[CellGroupData[{
 Cell[260096, 4567, 156, 3, 62, "Subtitle",ExpressionUUID->"118c48cb-a9dd-4c2d-949e-2b99b33098bf"],
 Cell[260255, 4572, 346, 7, 40, "Text",ExpressionUUID->"be54f028-a81a-4351-8531-2bda3d563d33"],
 Cell[CellGroupData[{
-Cell[260626, 4583, 6659, 149, 966, "Code",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
-Cell[267288, 4734, 3987, 74, 435, "Output",ExpressionUUID->"06461e36-d403-4949-baad-48513a56ee9e"]
+Cell[260626, 4583, 6711, 150, 966, "Code",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
+Cell[267340, 4735, 4017, 76, 435, "Output",ExpressionUUID->"ce32071d-1bee-054e-b6cb-d268b8c0c94e"]
 }, Open  ]],
-Cell[271290, 4811, 188, 3, 40, "Text",ExpressionUUID->"12cd55a9-2cde-244b-876b-f4b12e22f879"],
+Cell[271372, 4814, 188, 3, 40, "Text",ExpressionUUID->"12cd55a9-2cde-244b-876b-f4b12e22f879"],
 Cell[CellGroupData[{
-Cell[271503, 4818, 7270, 165, 1113, "Code",ExpressionUUID->"b83d0c06-4ba4-7c45-ad14-02f9a8712ac8"],
-Cell[278776, 4985, 4815, 90, 529, "Output",ExpressionUUID->"7865e9e6-5399-744e-abf4-3e52930d50da"]
+Cell[271585, 4821, 7270, 165, 1113, "Code",ExpressionUUID->"b83d0c06-4ba4-7c45-ad14-02f9a8712ac8"],
+Cell[278858, 4988, 4815, 90, 529, "Output",ExpressionUUID->"7865e9e6-5399-744e-abf4-3e52930d50da"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
