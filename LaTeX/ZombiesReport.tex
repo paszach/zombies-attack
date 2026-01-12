@@ -225,13 +225,9 @@ At the fixed point (0, 0, R);
 
 \[det(J) = 0\]
 
-Since the determinant of the matrix is zero, one of the eigenvalues must also be zero. The zero eigenvalue corresponds to a direction in which disruptions to the population do not get restored to the fixed point or blown up. 
-
-\textcolor{red}{Note to self: I don't think this is quite right here}
+Since the determinant of the matrix is zero, one of the eigenvalues must also be zero. The zero eigenvalue corresponds to a direction in which the linear system does not push or pull in that direction, and disruptions to the population do not get restored to the fixed point or blown up. System movement in that direction depends on non-linear terms, not the eigenvalues themselves.
 
 \subsection{Eigenvalues}
-
-\textcolor{red}{I think this section needs some fixing, I'm not sure what I've fucked up.}
 
 
 Solving the following equation for the eigenvalues;
@@ -253,13 +249,11 @@ Then, using the quadratic formula;
 
 From here, the fixed point(s) are substituted into the equation to find the remaining eigenvalues for each case.
 
-\textcolor{red}{Note to self: Simplify the quads a bit too many zeros!}
-
 For case $(H, 0, R)$;
 
-\[\lambda _{2,3} = \frac{(H - \gamma - (0)) \pm \sqrt{H^2 - 2H(0) - 2H\gamma + (0)^2 - 2(0)\gamma + \gamma ^2}}{2}\]
+\[\lambda _{2,3} = \frac{(H - \gamma - (0)) \pm \sqrt{((H) - \gamma - (0))^2 - 4((0)\gamma)}}{2}\]
 
-\[= \frac{(H - \gamma) \pm \sqrt{H^2 - 2H\gamma + \gamma ^2}}{2} = \frac{(H - \gamma) \pm \sqrt{(H-\gamma)^2}}{2}\] 
+\[ = \frac{(H - \gamma) \pm \sqrt{(H-\gamma)^2}}{2}\] 
 
 \[\lambda_2 = \frac{(H - \gamma) - (H-\gamma)}{2} = 0, \lambda_3 = \frac{(H - \gamma) + (H-\gamma)}{2} = H - \gamma\]
 

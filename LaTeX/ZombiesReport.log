@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  12 JAN 2026 00:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  12 JAN 2026 00:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -531,18 +531,18 @@ op.png (PNG copy)> <./Figures/Org/del,1/timepop.png (PNG copy)>] [8]
 File: Figures/Org/del,0.05/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,0.05/HCphase2.png>
 Package pdftex.def Info: Figures/Org/del,0.05/HCphase2.png  used on input line 
-300.
+294.
 (pdftex.def)             Requested size: 124.97906pt x 113.80852pt.
 <Figures/Org/del,0.5/HCphase2.png, id=208, 433.62pt x 430.60875pt>
 File: Figures/Org/del,0.5/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,0.5/HCphase2.png>
-Package pdftex.def Info: Figures/Org/del,0.5/HCphase2.png  used on input line 3
-04.
+Package pdftex.def Info: Figures/Org/del,0.5/HCphase2.png  used on input line 2
+98.
 (pdftex.def)             Requested size: 124.97906pt x 113.80852pt.
 <Figures/Org/del,1/HCphase2.png, id=209, 433.62pt x 430.60875pt>
 File: Figures/Org/del,1/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,1/HCphase2.png>
-Package pdftex.def Info: Figures/Org/del,1/HCphase2.png  used on input line 308
+Package pdftex.def Info: Figures/Org/del,1/HCphase2.png  used on input line 302
 .
 (pdftex.def)             Requested size: 124.97906pt x 113.80852pt.
  [9]
@@ -550,18 +550,18 @@ Package pdftex.def Info: Figures/Org/del,1/HCphase2.png  used on input line 308
 File: Figures/Org/del,0.05/CRphase.png Graphic file (type png)
 <use Figures/Org/del,0.05/CRphase.png>
 Package pdftex.def Info: Figures/Org/del,0.05/CRphase.png  used on input line 3
-22.
+16.
 (pdftex.def)             Requested size: 122.99411pt x 113.80852pt.
 <Figures/Org/del,0.5/CRphase.png, id=215, 433.62pt x 430.60875pt>
 File: Figures/Org/del,0.5/CRphase.png Graphic file (type png)
 <use Figures/Org/del,0.5/CRphase.png>
 Package pdftex.def Info: Figures/Org/del,0.5/CRphase.png  used on input line 32
-6.
+0.
 (pdftex.def)             Requested size: 122.99411pt x 113.80852pt.
 <Figures/Org/del,1/CRphase.png, id=216, 433.62pt x 430.60875pt>
 File: Figures/Org/del,1/CRphase.png Graphic file (type png)
 <use Figures/Org/del,1/CRphase.png>
-Package pdftex.def Info: Figures/Org/del,1/CRphase.png  used on input line 330.
+Package pdftex.def Info: Figures/Org/del,1/CRphase.png  used on input line 324.
 
 (pdftex.def)             Requested size: 122.99411pt x 113.80852pt.
 
@@ -572,7 +572,7 @@ y)> <./Figures/Org/del,0.5/CRphase.png (PNG copy)> <./Figures/Org/del,1/CRphase
 <Figures/Org/bif.png, id=226, 433.62pt x 286.671pt>
 File: Figures/Org/bif.png Graphic file (type png)
 <use Figures/Org/bif.png>
-Package pdftex.def Info: Figures/Org/bif.png  used on input line 366.
+Package pdftex.def Info: Figures/Org/bif.png  used on input line 360.
 (pdftex.def)             Requested size: 308.59187pt x 204.02336pt.
 
 
@@ -582,90 +582,90 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Figures/HCR2.png, id=231, 1459.70343pt x 579.41469pt>
 File: Figures/HCR2.png Graphic file (type png)
 <use Figures/HCR2.png>
-Package pdftex.def Info: Figures/HCR2.png  used on input line 397.
+Package pdftex.def Info: Figures/HCR2.png  used on input line 391.
 (pdftex.def)             Requested size: 308.59187pt x 122.48521pt.
  [12 <./Figures/Org/bif.png (PNG copy)> <./Figures/HCR2.png>]
 File: Figures/Org/del,0.5/timepop.png Graphic file (type png)
 <use Figures/Org/del,0.5/timepop.png>
 Package pdftex.def Info: Figures/Org/del,0.5/timepop.png  used on input line 42
-7.
+1.
 (pdftex.def)             Requested size: 178.53963pt x 170.72112pt.
 <Figures/Alt1/del,0.5/timepop,al,0.1.png, id=239, 433.62pt x 280.04625pt>
 File: Figures/Alt1/del,0.5/timepop,al,0.1.png Graphic file (type png)
 <use Figures/Alt1/del,0.5/timepop,al,0.1.png>
 Package pdftex.def Info: Figures/Alt1/del,0.5/timepop,al,0.1.png  used on input
- line 431.
+ line 425.
 (pdftex.def)             Requested size: 178.53963pt x 170.72112pt.
  [13 <./Figures/Alt1/del,0.5/timepop,al,0.1.png (PNG copy)>]
 File: Figures/Org/del,0.5/HCphase2.png Graphic file (type png)
 <use Figures/Org/del,0.5/HCphase2.png>
 Package pdftex.def Info: Figures/Org/del,0.5/HCphase2.png  used on input line 4
-54.
+48.
 (pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
 <Figures/Alt1/del,0.5/HCph,al,0.12.png, id=246, 433.62pt x 430.60875pt>
 File: Figures/Alt1/del,0.5/HCph,al,0.12.png Graphic file (type png)
 <use Figures/Alt1/del,0.5/HCph,al,0.12.png>
 Package pdftex.def Info: Figures/Alt1/del,0.5/HCph,al,0.12.png  used on input l
-ine 458.
+ine 452.
 (pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
 File: Figures/Org/bif.png Graphic file (type png)
 <use Figures/Org/bif.png>
-Package pdftex.def Info: Figures/Org/bif.png  used on input line 484.
+Package pdftex.def Info: Figures/Org/bif.png  used on input line 478.
 (pdftex.def)             Requested size: 178.54079pt x 118.03453pt.
 <Figures/Alt1/bif.png, id=247, 433.62pt x 281.25075pt>
 File: Figures/Alt1/bif.png Graphic file (type png)
 <use Figures/Alt1/bif.png>
-Package pdftex.def Info: Figures/Alt1/bif.png  used on input line 488.
+Package pdftex.def Info: Figures/Alt1/bif.png  used on input line 482.
 (pdftex.def)             Requested size: 178.54079pt x 115.80278pt.
  [14 <./Figures/Alt1/del,0.5/HCph,al,0.12.png>] [15 <./Figures/Alt1/bif.png (PN
 G copy)>]
 <Figures/HCR3.png, id=260, 1459.70343pt x 579.41469pt>
 File: Figures/HCR3.png Graphic file (type png)
 <use Figures/HCR3.png>
-Package pdftex.def Info: Figures/HCR3.png  used on input line 531.
+Package pdftex.def Info: Figures/HCR3.png  used on input line 525.
 (pdftex.def)             Requested size: 308.59187pt x 122.48521pt.
  [16 <./Figures/HCR3.png>]
 <Figures/Alt2/timepop,al,0.5.png, id=267, 433.62pt x 280.04625pt>
 File: Figures/Alt2/timepop,al,0.5.png Graphic file (type png)
 <use Figures/Alt2/timepop,al,0.5.png>
-Package pdftex.def Info: Figures/Alt2/timepop,al,0.5.png  used on input line 56
-4.
+Package pdftex.def Info: Figures/Alt2/timepop,al,0.5.png  used on input line 55
+8.
 (pdftex.def)             Requested size: 126.964pt x 113.81123pt.
 <Figures/Alt2/timepop,al,0.7.png, id=268, 433.62pt x 280.04625pt>
 File: Figures/Alt2/timepop,al,0.7.png Graphic file (type png)
 <use Figures/Alt2/timepop,al,0.7.png>
 Package pdftex.def Info: Figures/Alt2/timepop,al,0.7.png  used on input line 56
-8.
+2.
 (pdftex.def)             Requested size: 126.964pt x 113.81123pt.
 <Figures/Alt2/timepop,al,0.7,del,0.95.png, id=269, 433.62pt x 280.04625pt>
 File: Figures/Alt2/timepop,al,0.7,del,0.95.png Graphic file (type png)
 <use Figures/Alt2/timepop,al,0.7,del,0.95.png>
 Package pdftex.def Info: Figures/Alt2/timepop,al,0.7,del,0.95.png  used on inpu
-t line 572.
+t line 566.
 (pdftex.def)             Requested size: 126.964pt x 113.81123pt.
  [17 <./Figures/Alt2/timepop,al,0.5.png (PNG copy)> <./Figures/Alt2/timepop,al,
 0.7.png (PNG copy)> <./Figures/Alt2/timepop,al,0.7,del,0.95.png (PNG copy)>]
 <Figures/Alt2/HCphase2.png, id=275, 433.62pt x 430.60875pt>
 File: Figures/Alt2/HCphase2.png Graphic file (type png)
 <use Figures/Alt2/HCphase2.png>
-Package pdftex.def Info: Figures/Alt2/HCphase2.png  used on input line 606.
+Package pdftex.def Info: Figures/Alt2/HCphase2.png  used on input line 600.
 (pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
 <Figures/Alt2/CRphase2.png, id=276, 433.62pt x 430.60875pt>
 File: Figures/Alt2/CRphase2.png Graphic file (type png)
 <use Figures/Alt2/CRphase2.png>
-Package pdftex.def Info: Figures/Alt2/CRphase2.png  used on input line 610.
+Package pdftex.def Info: Figures/Alt2/CRphase2.png  used on input line 604.
 (pdftex.def)             Requested size: 178.53963pt x 170.71606pt.
 
 [18 <./Figures/Alt2/HCphase2.png> <./Figures/Alt2/CRphase2.png>]
 <Figures/Alt2/bif.png, id=284, 433.62pt x 281.25075pt>
 File: Figures/Alt2/bif.png Graphic file (type png)
 <use Figures/Alt2/bif.png>
-Package pdftex.def Info: Figures/Alt2/bif.png  used on input line 635.
+Package pdftex.def Info: Figures/Alt2/bif.png  used on input line 629.
 (pdftex.def)             Requested size: 308.59187pt x 200.16577pt.
 <Figures/Alt2/50runs.png, id=285, 433.62pt x 280.04625pt>
 File: Figures/Alt2/50runs.png Graphic file (type png)
 <use Figures/Alt2/50runs.png>
-Package pdftex.def Info: Figures/Alt2/50runs.png  used on input line 649.
+Package pdftex.def Info: Figures/Alt2/50runs.png  used on input line 643.
 (pdftex.def)             Requested size: 308.59187pt x 199.30853pt.
 
 
@@ -674,11 +674,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Figures/Alt2/return.png, id=286, 433.62pt x 281.25075pt>
 File: Figures/Alt2/return.png Graphic file (type png)
 <use Figures/Alt2/return.png>
-Package pdftex.def Info: Figures/Alt2/return.png  used on input line 658.
+Package pdftex.def Info: Figures/Alt2/return.png  used on input line 652.
 (pdftex.def)             Requested size: 308.59187pt x 200.16577pt.
 [19 <./Figures/Alt2/bif.png (PNG copy)>] [20 <./Figures/Alt2/50runs.png (PNG co
 py)> <./Figures/Alt2/return.png (PNG copy)>] [21]
-Overfull \hbox (8.43027pt too wide) in paragraph at lines 692--693
+Overfull \hbox (8.43027pt too wide) in paragraph at lines 686--687
 []\OT1/cmr/m/n/10.95 Real-world ap-prox-i-ma-tions for pa-ram-e-ters such as th
 e trans-
  []
@@ -742,7 +742,7 @@ msfonts/cm/cmsy10.pfb><C:/Users/micro/AppData/Local/Programs/MiKTeX/fonts/type1
 ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/micro/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/micro/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ZombiesReport.pdf (23 pages, 2107780 bytes).
+Output written on ZombiesReport.pdf (23 pages, 2107000 bytes).
 PDF statistics:
  407 PDF objects out of 1000 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)
