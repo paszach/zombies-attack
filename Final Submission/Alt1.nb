@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    245724,       4297]
-NotebookOptionsPosition[    243410,       4250]
-NotebookOutlinePosition[    243875,       4268]
-CellTagsIndexPosition[    243832,       4265]
+NotebookDataLength[    244774,       4240]
+NotebookOptionsPosition[    243201,       4204]
+NotebookOutlinePosition[    243666,       4222]
+CellTagsIndexPosition[    243623,       4219]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,10 +29,12 @@ Cell["Alteration 2: Self-Improvement", "Title",
 d00e48d9a50d"],
 
 Cell[TextData[{
- "In this model, the Cooked can infect the Human student population, \
+ StyleBox["The base model is a re-contextualised SIR model with renamed \
+parameters.", "Text"],
+ " In this alteration, the Cooked can infect the Human student population, \
 naturally reach threshhold and drop out of Imperial (Removed) although \
 students are driven to improve their study haits, giving them a way to \
-re-enter the Healthy student population.\n",
+re-enter the Healthy student population.\n\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -3265,12 +3267,13 @@ PSiy\
  "\n"
 }], "Text",
  CellChangeTimes->{{3.942742486261898*^9, 3.942742548960033*^9}, {
-  3.9767727481931305`*^9, 3.976772749134079*^9}, {3.976778215305498*^9, 
-  3.976778224526018*^9}, {3.9767782747663727`*^9, 3.9767782747663727`*^9}, {
-  3.976779682232416*^9, 3.9767797694124336`*^9}, {3.976780170210594*^9, 
-  3.976780170210594*^9}, {3.97678317463142*^9, 3.976783197902628*^9}, {
-  3.977168418395563*^9, 
-  3.9771684375742683`*^9}},ExpressionUUID->"8e96e7c4-78b6-47fe-9e10-\
+   3.9767727481931305`*^9, 3.976772749134079*^9}, {3.976778215305498*^9, 
+   3.976778224526018*^9}, {3.9767782747663727`*^9, 3.9767782747663727`*^9}, {
+   3.976779682232416*^9, 3.9767797694124336`*^9}, {3.976780170210594*^9, 
+   3.976780170210594*^9}, {3.97678317463142*^9, 3.976783197902628*^9}, {
+   3.977168418395563*^9, 3.9771684375742683`*^9}, {3.9772445261830254`*^9, 
+   3.977244535259285*^9}, 
+   3.9772455566539516`*^9},ExpressionUUID->"8e96e7c4-78b6-47fe-9e10-\
 9d909fe4168a"],
 
 Cell[CellGroupData[{
@@ -3287,7 +3290,7 @@ Cell["\<\
     \tC\[CloseCurlyQuote][t] == H[t] C[t] - \[Gamma]C[t] - \[Alpha]C[t]
    \tR\[CloseCurlyQuote][t] == \[Gamma]C[t]
    \t 
-Where \[Gamma]C is the Cooked removal rate and \[Alpha] is the self-recovery \
+Where \[Gamma] is the Cooked removal rate and \[Alpha] is the self-recovery \
 rate.\
 \>", "Text",
  CellChangeTimes->{{3.9427421017322273`*^9, 3.942742149577878*^9}, 
@@ -3296,8 +3299,8 @@ rate.\
    3.976693013478775*^9}, 3.9766936644825115`*^9, {3.976693812114624*^9, 
    3.9766938135271263`*^9}, {3.976772882564764*^9, 3.976772914238497*^9}, {
    3.9767797753379154`*^9, 3.9767797823663235`*^9}, {3.9771683841570206`*^9, 
-   3.9771683986298103`*^9}, {3.977168562524679*^9, 
-   3.9771685643360443`*^9}},ExpressionUUID->"8bc687ed-1191-444f-ba64-\
+   3.9771683986298103`*^9}, {3.977168562524679*^9, 3.9771685643360443`*^9}, 
+   3.977245554638172*^9},ExpressionUUID->"8bc687ed-1191-444f-ba64-\
 2d3628c7f229"],
 
 Cell[CellGroupData[{
@@ -3311,8 +3314,9 @@ Cell[BoxData[
      RowBox[{"used", " ", "term", " ", "in", " ", "mathmatica"}]}], ",", " ", 
     
     RowBox[{
-     RowBox[{"I", "'"}], "ve", " ", "defaulted", " ", "to", " ", "Z", " ", 
-     "for", " ", "now"}]}], "*)"}], "\n", "\n", 
+    "lower", " ", "case", " ", "c", " ", "will", " ", "be", " ", "used", " ", 
+     
+     RowBox[{"instead", "."}]}]}], "*)"}], "\n", "\n", 
   RowBox[{
    RowBox[{"Manipulate", "[", "\n", " ", 
     RowBox[{
@@ -3320,9 +3324,9 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"{", "\n", "   ", 
         RowBox[{
-        "eqns", ",", " ", "sol", ",", " ", "H", ",", " ", "Z", ",", " ", "R", 
-         ",", " ", "t", ",", " ", "Hfunc", ",", " ", "Zfunc", ",", " ", 
-         "Rfunc", ",", "\n", "   ", "phasePlotHZ", ",", " ", "phasePlotZR", ",",
+        "eqns", ",", " ", "sol", ",", " ", "H", ",", " ", "c", ",", " ", "R", 
+         ",", " ", "t", ",", " ", "Hfunc", ",", " ", "cfunc", ",", " ", 
+         "Rfunc", ",", "\n", "   ", "phasePlotHc", ",", " ", "phasePlotcR", ",",
           " ", "jMatrix", ",", " ", "parameterSpace", ",", "\n", "   ", 
          "detJ", ",", " ", "finalDetJ", ",", " ", "traceJ", ",", " ", 
          "finalTraceJ"}], "\n", "  ", "}"}], ",", "\n", "  ", "\n", "  ", 
@@ -3340,38 +3344,39 @@ Cell[BoxData[
              RowBox[{
               RowBox[{"-", 
                RowBox[{"H", "[", "t", "]"}]}], " ", 
-              RowBox[{"Z", "[", "t", "]"}]}], " ", "+", " ", 
+              RowBox[{"c", "[", "t", "]"}]}], " ", "+", " ", 
              RowBox[{"\[Alpha]", " ", 
-              RowBox[{"Z", "[", "t", "]"}]}]}]}], ",", "\n", "    ", 
+              RowBox[{"c", "[", "t", "]"}]}]}]}], ",", "\n", "    ", 
            RowBox[{
             RowBox[{
-             RowBox[{"Z", "'"}], "[", "t", "]"}], " ", "==", " ", 
+             RowBox[{"c", "'"}], "[", "t", "]"}], " ", "==", " ", 
             RowBox[{
              RowBox[{
               RowBox[{"H", "[", "t", "]"}], " ", 
-              RowBox[{"Z", "[", "t", "]"}]}], " ", "-", " ", 
+              RowBox[{"c", "[", "t", "]"}]}], " ", "-", " ", 
              RowBox[{"\[Gamma]", " ", 
-              RowBox[{"Z", "[", "t", "]"}]}], " ", "-", " ", 
+              RowBox[{"c", "[", "t", "]"}]}], " ", "-", " ", 
              RowBox[{"\[Alpha]", " ", 
-              RowBox[{"Z", "[", "t", "]"}]}]}]}], ",", "\n", "    ", 
+              RowBox[{"c", "[", "t", "]"}]}]}]}], ",", "\n", "    ", 
            RowBox[{
             RowBox[{
              RowBox[{"R", "'"}], "[", "t", "]"}], " ", "==", " ", 
             RowBox[{"\[Gamma]", " ", 
-             RowBox[{"Z", "[", "t", "]"}]}]}]}], "\n", "  ", "}"}]}], ";", 
+             RowBox[{"c", "[", "t", "]"}]}]}]}], "\n", "  ", "}"}]}], ";", 
         "\n", "  ", "\n", "  ", 
-        RowBox[{"(*", "dacobian", "*)"}], "\n", "  ", 
+        RowBox[{"(*", 
+         RowBox[{"Jacobian", " ", "Matrix"}], "*)"}], "\n", "  ", 
         RowBox[{"jMatrix", " ", "=", " ", 
          RowBox[{"{", "\n", "    ", 
           RowBox[{
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"-", "Z"}], ",", " ", 
+             RowBox[{"-", "c"}], ",", " ", 
              RowBox[{
               RowBox[{"-", "H"}], " ", "+", " ", "\[Alpha]"}], ",", " ", 
              "0"}], "}"}], ",", "\n", "    ", 
            RowBox[{"{", " ", 
-            RowBox[{"Z", ",", "  ", 
+            RowBox[{"c", ",", "  ", 
              RowBox[{
              "H", " ", "-", " ", "\[Gamma]", " ", "-", " ", "\[Alpha]"}], ",",
               " ", "0"}], "}"}], ",", "\n", "    ", 
@@ -3409,10 +3414,10 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "}"}]}]}], 
           "\n", "   ", "]"}]}], ";", "\n", "  ", "\n", "  ", 
-        RowBox[{"(*", " ", 
+        RowBox[{"(*", 
          RowBox[{
-         "let", "  ", "NDSolve", " ", "do", " ", "all", " ", "the", " ", 
-          "work"}], " ", "*)"}], "\n", "  ", 
+         "NDSolve", " ", "solves", " ", "the", " ", "system", " ", "of", " ", 
+          "equations"}], "*)"}], "\n", "  ", 
         RowBox[{"sol", " ", "=", " ", 
          RowBox[{"NDSolve", "[", "\n", "    ", 
           RowBox[{
@@ -3422,28 +3427,24 @@ Cell[BoxData[
               RowBox[{"H", "[", "0", "]"}], " ", "==", " ", 
               RowBox[{"H0", "/", "H0"}]}], ",", "\n", "     ", 
              RowBox[{
-              RowBox[{"Z", "[", "0", "]"}], " ", "==", " ", 
-              RowBox[{"Z0", "/", "H0"}]}], ",", "\n", "     ", 
+              RowBox[{"c", "[", "0", "]"}], " ", "==", " ", 
+              RowBox[{"c0", "/", "H0"}]}], ",", "\n", "     ", 
              RowBox[{
               RowBox[{"R", "[", "0", "]"}], " ", "==", " ", 
               RowBox[{"R0", "/", "H0"}]}]}], "\n", "    ", "}"}], ",", "\n", 
            "    ", 
            RowBox[{"{", 
-            RowBox[{"H", ",", " ", "Z", ",", " ", "R"}], "}"}], ",", "\n", 
+            RowBox[{"H", ",", " ", "c", ",", " ", "R"}], "}"}], ",", "\n", 
            "    ", 
            RowBox[{"{", 
             RowBox[{"t", ",", " ", "0", ",", " ", "tmax"}], "}"}]}], "\n", 
           "  ", "]"}]}], ";", "\n", "  ", "\n", "  ", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-         "Something", " ", "something", " ", "solution", " ", "functions"}], 
-         " ", "*)"}], "\n", "  ", 
         RowBox[{"Hfunc", " ", "=", " ", 
          RowBox[{"H", " ", "/.", " ", 
           RowBox[{"sol", "[", 
            RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\n", "  ", 
-        RowBox[{"Zfunc", " ", "=", " ", 
-         RowBox[{"Z", " ", "/.", " ", 
+        RowBox[{"cfunc", " ", "=", " ", 
+         RowBox[{"c", " ", "/.", " ", 
           RowBox[{"sol", "[", 
            RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\n", "  ", 
         RowBox[{"Rfunc", " ", "=", " ", 
@@ -3465,10 +3466,10 @@ Cell[BoxData[
                RowBox[{"H", "[", "tmax", "]"}], " ", "/.", " ", 
                RowBox[{"sol", "[", 
                 RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}], ",", "\n", "     ", 
-            RowBox[{"Z", " ", "->", " ", 
+            RowBox[{"c", " ", "->", " ", 
              RowBox[{"(", 
               RowBox[{
-               RowBox[{"Z", "[", "tmax", "]"}], " ", "/.", " ", 
+               RowBox[{"c", "[", "tmax", "]"}], " ", "/.", " ", 
                RowBox[{"sol", "[", 
                 RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}], ",", "\n", "     ", 
             RowBox[{"\[Gamma]", " ", "->", " ", "\[Gamma]"}], ",", "\n", 
@@ -3485,10 +3486,10 @@ Cell[BoxData[
                RowBox[{"H", "[", "tmax", "]"}], " ", "/.", " ", 
                RowBox[{"sol", "[", 
                 RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}], ",", "\n", "     ", 
-            RowBox[{"Z", " ", "->", " ", 
+            RowBox[{"c", " ", "->", " ", 
              RowBox[{"(", 
               RowBox[{
-               RowBox[{"Z", "[", "tmax", "]"}], " ", "/.", " ", 
+               RowBox[{"c", "[", "tmax", "]"}], " ", "/.", " ", 
                RowBox[{"sol", "[", 
                 RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}], ",", "\n", "     ", 
             RowBox[{"\[Gamma]", " ", "->", " ", "\[Gamma]"}], ",", "\n", 
@@ -3498,7 +3499,7 @@ Cell[BoxData[
         RowBox[{"(*", " ", 
          RowBox[{"Phase", " ", "Space", " ", "plotting"}], " ", "*)"}], "\n", 
         "  ", 
-        RowBox[{"phasePlotHZ", " ", "=", "\n", "   ", 
+        RowBox[{"phasePlotHc", " ", "=", "\n", "   ", 
          RowBox[{"StreamPlot", "[", "\n", "    ", 
           RowBox[{
            RowBox[{"Evaluate", "[", 
@@ -3506,17 +3507,17 @@ Cell[BoxData[
              RowBox[{
               RowBox[{
                RowBox[{
-                RowBox[{"-", "H"}], " ", "Z"}], " ", "+", " ", 
-               RowBox[{"\[Alpha]", " ", "Z"}]}], ",", "\n", "      ", 
+                RowBox[{"-", "H"}], " ", "c"}], " ", "+", " ", 
+               RowBox[{"\[Alpha]", " ", "c"}]}], ",", "\n", "      ", 
               RowBox[{
-               RowBox[{"H", " ", "Z"}], " ", "-", " ", 
-               RowBox[{"\[Gamma]", " ", "Z"}], " ", "-", " ", 
-               RowBox[{"\[Alpha]", " ", "Z"}]}]}], "\n", "    ", "}"}], "]"}],
+               RowBox[{"H", " ", "c"}], " ", "-", " ", 
+               RowBox[{"\[Gamma]", " ", "c"}], " ", "-", " ", 
+               RowBox[{"\[Alpha]", " ", "c"}]}]}], "\n", "    ", "}"}], "]"}],
             ",", "\n", "    ", 
            RowBox[{"{", 
             RowBox[{"H", ",", " ", "0", ",", " ", "1"}], "}"}], ",", " ", 
            RowBox[{"{", 
-            RowBox[{"Z", ",", " ", "0", ",", " ", "1"}], "}"}], ",", "\n", 
+            RowBox[{"c", ",", " ", "0", ",", " ", "1"}], "}"}], ",", "\n", 
            "    ", 
            RowBox[{"StreamStyle", " ", "->", " ", 
             RowBox[{"Directive", "[", 
@@ -3530,7 +3531,7 @@ Cell[BoxData[
             RowBox[{"{", 
              RowBox[{"\"\<H (Humans)\>\"", ",", " ", "\"\<C (Cooked)\>\""}], 
              "}"}]}]}], "\n", "   ", "]"}]}], ";", "\n", "  ", "\n", "  ", 
-        RowBox[{"phasePlotZR", " ", "=", "\n", "   ", 
+        RowBox[{"phasePlotcR", " ", "=", "\n", "   ", 
          RowBox[{"StreamPlot", "[", "\n", "    ", 
           RowBox[{
            RowBox[{"Evaluate", "[", 
@@ -3538,17 +3539,17 @@ Cell[BoxData[
              RowBox[{"{", "\n", "      ", 
               RowBox[{
                RowBox[{
-                RowBox[{"H", " ", "Z"}], " ", "-", " ", 
-                RowBox[{"\[Gamma]", " ", "Z"}], " ", "-", " ", 
-                RowBox[{"\[Alpha]", " ", "Z"}]}], ",", "\n", "      ", 
-               RowBox[{"\[Gamma]", " ", "Z"}]}], "\n", "    ", "}"}], " ", "/.",
+                RowBox[{"H", " ", "c"}], " ", "-", " ", 
+                RowBox[{"\[Gamma]", " ", "c"}], " ", "-", " ", 
+                RowBox[{"\[Alpha]", " ", "c"}]}], ",", "\n", "      ", 
+               RowBox[{"\[Gamma]", " ", "c"}]}], "\n", "    ", "}"}], " ", "/.",
               " ", 
              RowBox[{"{", 
               RowBox[{"H", " ", "->", " ", 
                RowBox[{"Hfunc", "[", "tmax", "]"}]}], "}"}]}], "]"}], ",", 
            "\n", "    ", 
            RowBox[{"{", 
-            RowBox[{"Z", ",", " ", "0", ",", " ", "1"}], "}"}], ",", " ", 
+            RowBox[{"c", ",", " ", "0", ",", " ", "1"}], "}"}], ",", " ", 
            RowBox[{"{", 
             RowBox[{"R", ",", " ", "0", ",", " ", "1"}], "}"}], ",", "\n", 
            "    ", 
@@ -3564,11 +3565,9 @@ Cell[BoxData[
             RowBox[{"{", 
              RowBox[{"\"\<C (Cooked)\>\"", ",", " ", "\"\<R (Removed)\>\""}], 
              "}"}]}]}], "\n", "   ", "]"}]}], ";", "\n", "\n", "    ", "\n", 
-        "            ", 
+        "  ", 
         RowBox[{"(*", " ", 
-         RowBox[{
-         "Make", " ", "it", " ", "actually", " ", "appear", " ", "on", " ", 
-          "the", " ", "page"}], " ", "*)"}], "\n", "  ", 
+         RowBox[{"Plotting", " ", "graphs"}], "*)"}], "\n", "  ", 
         RowBox[{"Column", "[", 
          RowBox[{"{", "\n", "    ", 
           RowBox[{
@@ -3577,7 +3576,7 @@ Cell[BoxData[
              RowBox[{"{", 
               RowBox[{
                RowBox[{"Hfunc", "[", "t", "]"}], ",", " ", 
-               RowBox[{"Zfunc", "[", "t", "]"}], ",", " ", 
+               RowBox[{"cfunc", "[", "t", "]"}], ",", " ", 
                RowBox[{"Rfunc", "[", "t", "]"}]}], "}"}], ",", "\n", "     ", 
              
              RowBox[{"{", 
@@ -3605,8 +3604,8 @@ Cell[BoxData[
                
                RowBox[{"\"\<Time (t)\>\"", ",", 
                 " ", "\"\<Population Fractions\>\""}], "}"}]}]}], "\n", 
-            "    ", "]"}], ",", "\n", "    ", "phasePlotHZ", ",", "\n", 
-           "    ", "phasePlotZR", ",", "\n", "    ", 
+            "    ", "]"}], ",", "\n", "    ", "phasePlotHc", ",", "\n", 
+           "    ", "phasePlotcR", ",", "\n", "    ", 
            RowBox[{"Show", "[", "\n", "     ", 
             RowBox[{"parameterSpace", ",", "\n", "     ", 
              RowBox[{"ListPlot", "[", 
@@ -3653,7 +3652,7 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-        "Z0", ",", " ", "0.05", ",", " ", "\"\<Initial Cooked (C0)\>\""}], 
+        "c0", ",", " ", "0.05", ",", " ", "\"\<Initial Cooked (C0)\>\""}], 
         "}"}], ",", " ", "0", ",", " ", "5000", ",", " ", "1"}], "}"}], ",", 
      "\n", " ", 
      RowBox[{"{", 
@@ -3703,149 +3702,192 @@ Cell[BoxData[
    3.9767800620615463`*^9, 3.976780137124777*^9}, {3.9768793277145233`*^9, 
    3.976879331773075*^9}, {3.9768793921171303`*^9, 3.9768793930268593`*^9}, {
    3.976950566433756*^9, 3.9769505726795807`*^9}, {3.97695060946842*^9, 
-   3.976950633757221*^9}},
- CellLabel->"In[8]:=",ExpressionUUID->"a54f7314-71ab-4641-8904-2e99c7a8588b"],
+   3.976950633757221*^9}, {3.977245611779707*^9, 3.977245616400028*^9}, {
+   3.9772457810161514`*^9, 3.977245826179308*^9}, 3.9772460917416363`*^9, {
+   3.9772461737103386`*^9, 
+   3.977246175555105*^9}},ExpressionUUID->"a54f7314-71ab-4641-8904-\
+2e99c7a8588b"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`H0$$ = 0.95, $CellContext`R0$$ = 
-    0, $CellContext`tmax$$ = 100, $CellContext`Z0$$ = 
-    0.05, $CellContext`\[Alpha]$$ = 0.7, $CellContext`\[Gamma]$$ = 0.015, 
-    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
-    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
-    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`\[Alpha]$$], 0.5, "Resurrection rate (\[Alpha])"}, 0,
-       2, 0.01, ControlType -> Manipulator}, {{
-       Hold[$CellContext`\[Gamma]$$], 0.015, 
+   DynamicModuleBox[{Wolfram`ErrorTools`V1`c0$$ = 0.05, 
+    Wolfram`ErrorTools`V1`H0$$ = 0.95, Wolfram`ErrorTools`V1`R0$$ = 0, 
+    Wolfram`ErrorTools`V1`tmax$$ = 100, Wolfram`ErrorTools`V1`\[Alpha]$$ = 
+    0.5, Wolfram`ErrorTools`V1`\[Gamma]$$ = 0.015, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[Wolfram`ErrorTools`V1`\[Alpha]$$], 0.5, 
+       "Resurrection rate (\[Alpha])"}, 0, 2, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[Wolfram`ErrorTools`V1`\[Gamma]$$], 0.015, 
        "Cooked removal rate (\[Gamma]_C)"}, 0, 2, 0.01, ControlType -> 
       Manipulator}, {{
-       Hold[$CellContext`H0$$], 0.95, "Initial humans (H0)"}, 0, 5000, 1, 
-      ControlType -> Manipulator}, {{
-       Hold[$CellContext`Z0$$], 0.05, "Initial Cooked (C0)"}, 0, 5000, 1, 
-      ControlType -> Manipulator}, {{
-       Hold[$CellContext`R0$$], 0, "Initial removed (R0)"}, 0, 5000, 1, 
-      ControlType -> Manipulator}, {{
-       Hold[$CellContext`tmax$$], 100, "Simulation time"}, 10, 1000000, 1, 
-      ControlType -> Manipulator}}, Typeset`size$$ = {
+       Hold[Wolfram`ErrorTools`V1`H0$$], 0.95, "Initial humans (H0)"}, 0, 
+      5000, 1, ControlType -> Manipulator}, {{
+       Hold[Wolfram`ErrorTools`V1`c0$$], 0.05, "Initial Cooked (C0)"}, 0, 
+      5000, 1, ControlType -> Manipulator}, {{
+       Hold[Wolfram`ErrorTools`V1`R0$$], 0, "Initial removed (R0)"}, 0, 5000, 
+      1, ControlType -> Manipulator}, {{
+       Hold[Wolfram`ErrorTools`V1`tmax$$], 100, "Simulation time"}, 10, 
+      1000000, 1, ControlType -> Manipulator}}, Typeset`size$$ = {
     358.7944921875, {395.22980408834485`, 402.1081244008449}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`H0$$ = 0.95, $CellContext`R0$$ = 
-        0, $CellContext`tmax$$ = 100, $CellContext`Z0$$ = 
-        0.05, $CellContext`\[Alpha]$$ = 0.5, $CellContext`\[Gamma]$$ = 0.015},
-       "ControllerVariables" :> {}, 
+      "Variables" :> {
+       Wolfram`ErrorTools`V1`c0$$ = 0.05, Wolfram`ErrorTools`V1`H0$$ = 0.95, 
+        Wolfram`ErrorTools`V1`R0$$ = 0, Wolfram`ErrorTools`V1`tmax$$ = 100, 
+        Wolfram`ErrorTools`V1`\[Alpha]$$ = 0.5, 
+        Wolfram`ErrorTools`V1`\[Gamma]$$ = 0.015}, 
+      "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
         Typeset`keyframeList$$}, "Body" :> 
-      Module[{$CellContext`eqns$, $CellContext`sol$, $CellContext`H$, \
-$CellContext`Z$, $CellContext`R$, $CellContext`t$, $CellContext`Hfunc$, \
-$CellContext`Zfunc$, $CellContext`Rfunc$, $CellContext`phasePlotHZ$, \
-$CellContext`phasePlotZR$, $CellContext`jMatrix$, \
-$CellContext`parameterSpace$, $CellContext`detJ$, $CellContext`finalDetJ$, \
-$CellContext`traceJ$, $CellContext`finalTraceJ$}, $CellContext`eqns$ = {
-          Derivative[
-            1][$CellContext`H$][$CellContext`t$] == \
-(-$CellContext`H$[$CellContext`t$]) $CellContext`Z$[$CellContext`t$] + \
-$CellContext`\[Alpha]$$ $CellContext`Z$[$CellContext`t$], 
-           Derivative[
-            1][$CellContext`Z$][$CellContext`t$] == \
-$CellContext`H$[$CellContext`t$] $CellContext`Z$[$CellContext`t$] - \
-$CellContext`\[Gamma]$$ $CellContext`Z$[$CellContext`t$] - $CellContext`\
-\[Alpha]$$ $CellContext`Z$[$CellContext`t$], 
-           Derivative[
-            1][$CellContext`R$][$CellContext`t$] == $CellContext`\[Gamma]$$ \
-$CellContext`Z$[$CellContext`t$]}; $CellContext`jMatrix$ = \
-{{-$CellContext`Z$, -$CellContext`H$ + $CellContext`\[Alpha]$$, 
-            0}, {$CellContext`Z$, $CellContext`H$ - $CellContext`\[Gamma]$$ - \
-$CellContext`\[Alpha]$$, 0}, {
-           0, $CellContext`\[Gamma]$$, 0}}; $CellContext`parameterSpace$ = 
-         ParametricPlot[{{$CellContext`d, 0}, {
-            0, $CellContext`t$}, {$CellContext`t$^2/
-             4, $CellContext`t$}}, {$CellContext`d, -10, 
-            10}, {$CellContext`t$, -10, 10}, 
-           PlotRange -> {{-10, 10}, {-10, 10}}]; $CellContext`sol$ = 
-         NDSolve[{$CellContext`eqns$, $CellContext`H$[
-             0] == $CellContext`H0$$/$CellContext`H0$$, $CellContext`Z$[
-             0] == $CellContext`Z0$$/$CellContext`H0$$, $CellContext`R$[
-             0] == $CellContext`R0$$/$CellContext`H0$$}, {$CellContext`H$, \
-$CellContext`Z$, $CellContext`R$}, {$CellContext`t$, 
-            0, $CellContext`tmax$$}]; $CellContext`Hfunc$ = 
-         ReplaceAll[$CellContext`H$, 
-           Part[$CellContext`sol$, 1]]; $CellContext`Zfunc$ = 
-         ReplaceAll[$CellContext`Z$, 
-           Part[$CellContext`sol$, 1]]; $CellContext`Rfunc$ = 
-         ReplaceAll[$CellContext`R$, 
-           Part[$CellContext`sol$, 1]]; $CellContext`traceJ$ = 
-         Tr[$CellContext`jMatrix$]; $CellContext`detJ$ = 
-         Det[$CellContext`jMatrix$]; $CellContext`finalTraceJ$ = 
-         ReplaceAll[$CellContext`traceJ$, {$CellContext`H$ -> ReplaceAll[
-              $CellContext`H$[$CellContext`tmax$$], 
-              Part[$CellContext`sol$, 1]], $CellContext`Z$ -> ReplaceAll[
-              $CellContext`Z$[$CellContext`tmax$$], 
-              
-              Part[$CellContext`sol$, 
-               1]], $CellContext`\[Gamma]$$ -> $CellContext`\[Gamma]$$, \
-$CellContext`\[Alpha]$$ -> $CellContext`\[Alpha]$$}]; $CellContext`finalDetJ$ = 
-         ReplaceAll[$CellContext`detJ$, {$CellContext`H$ -> ReplaceAll[
-              $CellContext`H$[$CellContext`tmax$$], 
-              Part[$CellContext`sol$, 1]], $CellContext`Z$ -> ReplaceAll[
-              $CellContext`Z$[$CellContext`tmax$$], 
-              
-              Part[$CellContext`sol$, 
-               1]], $CellContext`\[Gamma]$$ -> $CellContext`\[Gamma]$$, \
-$CellContext`\[Alpha]$$ -> $CellContext`\[Alpha]$$}]; \
-$CellContext`phasePlotHZ$ = StreamPlot[
+      Module[{Wolfram`ErrorTools`V1`eqns$, Wolfram`ErrorTools`V1`sol$, 
+         Wolfram`ErrorTools`V1`H$, Wolfram`ErrorTools`V1`c$, 
+         Wolfram`ErrorTools`V1`R$, Wolfram`ErrorTools`V1`t$, 
+         Wolfram`ErrorTools`V1`Hfunc$, Wolfram`ErrorTools`V1`cfunc$, 
+         Wolfram`ErrorTools`V1`Rfunc$, Wolfram`ErrorTools`V1`phasePlotHc$, 
+         Wolfram`ErrorTools`V1`phasePlotcR$, Wolfram`ErrorTools`V1`jMatrix$, 
+         Wolfram`ErrorTools`V1`parameterSpace$, Wolfram`ErrorTools`V1`detJ$, 
+         Wolfram`ErrorTools`V1`finalDetJ$, Wolfram`ErrorTools`V1`traceJ$, 
+         Wolfram`ErrorTools`V1`finalTraceJ$}, 
+        Wolfram`ErrorTools`V1`eqns$ = {
+          Derivative[1][Wolfram`ErrorTools`V1`H$][
+            Wolfram`ErrorTools`V1`t$] == (-
+              Wolfram`ErrorTools`V1`H$[Wolfram`ErrorTools`V1`t$]) 
+             Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`t$] + 
+            Wolfram`ErrorTools`V1`\[Alpha]$$ 
+             Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`t$], 
+           Derivative[1][Wolfram`ErrorTools`V1`c$][Wolfram`ErrorTools`V1`t$] == 
+           Wolfram`ErrorTools`V1`H$[Wolfram`ErrorTools`V1`t$] 
+             Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`t$] - 
+            Wolfram`ErrorTools`V1`\[Gamma]$$ 
+            Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`t$] - 
+            Wolfram`ErrorTools`V1`\[Alpha]$$ 
+            Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`t$], 
+           Derivative[1][Wolfram`ErrorTools`V1`R$][Wolfram`ErrorTools`V1`t$] == 
+           Wolfram`ErrorTools`V1`\[Gamma]$$ 
+            Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`t$]}; 
+        Wolfram`ErrorTools`V1`jMatrix$ = {{-
+            Wolfram`ErrorTools`V1`c$, -Wolfram`ErrorTools`V1`H$ + 
+            Wolfram`ErrorTools`V1`\[Alpha]$$, 0}, {
+           Wolfram`ErrorTools`V1`c$, Wolfram`ErrorTools`V1`H$ - 
+            Wolfram`ErrorTools`V1`\[Gamma]$$ - 
+            Wolfram`ErrorTools`V1`\[Alpha]$$, 0}, {
+           0, Wolfram`ErrorTools`V1`\[Gamma]$$, 0}}; 
+        Wolfram`ErrorTools`V1`parameterSpace$ = 
+         ParametricPlot[{{Wolfram`ErrorTools`V1`d, 0}, {
+            0, Wolfram`ErrorTools`V1`t$}, {
+            Wolfram`ErrorTools`V1`t$^2/4, Wolfram`ErrorTools`V1`t$}}, {
+           Wolfram`ErrorTools`V1`d, -10, 10}, {
+           Wolfram`ErrorTools`V1`t$, -10, 10}, 
+           PlotRange -> {{-10, 10}, {-10, 10}}]; 
+        Wolfram`ErrorTools`V1`sol$ = 
+         NDSolve[{
+           Wolfram`ErrorTools`V1`eqns$, Wolfram`ErrorTools`V1`H$[0] == 
+            Wolfram`ErrorTools`V1`H0$$/Wolfram`ErrorTools`V1`H0$$, 
+            Wolfram`ErrorTools`V1`c$[0] == 
+            Wolfram`ErrorTools`V1`c0$$/Wolfram`ErrorTools`V1`H0$$, 
+            Wolfram`ErrorTools`V1`R$[0] == 
+            Wolfram`ErrorTools`V1`R0$$/Wolfram`ErrorTools`V1`H0$$}, {
+           Wolfram`ErrorTools`V1`H$, Wolfram`ErrorTools`V1`c$, 
+            Wolfram`ErrorTools`V1`R$}, {
+           Wolfram`ErrorTools`V1`t$, 0, Wolfram`ErrorTools`V1`tmax$$}]; 
+        Wolfram`ErrorTools`V1`Hfunc$ = ReplaceAll[Wolfram`ErrorTools`V1`H$, 
+           Part[Wolfram`ErrorTools`V1`sol$, 1]]; 
+        Wolfram`ErrorTools`V1`cfunc$ = ReplaceAll[Wolfram`ErrorTools`V1`c$, 
+           Part[Wolfram`ErrorTools`V1`sol$, 1]]; 
+        Wolfram`ErrorTools`V1`Rfunc$ = ReplaceAll[Wolfram`ErrorTools`V1`R$, 
+           Part[Wolfram`ErrorTools`V1`sol$, 1]]; 
+        Wolfram`ErrorTools`V1`traceJ$ = Tr[Wolfram`ErrorTools`V1`jMatrix$]; 
+        Wolfram`ErrorTools`V1`detJ$ = Det[Wolfram`ErrorTools`V1`jMatrix$]; 
+        Wolfram`ErrorTools`V1`finalTraceJ$ = 
+         ReplaceAll[
+          Wolfram`ErrorTools`V1`traceJ$, {
+           Wolfram`ErrorTools`V1`H$ -> ReplaceAll[
+              Wolfram`ErrorTools`V1`H$[Wolfram`ErrorTools`V1`tmax$$], 
+              Part[Wolfram`ErrorTools`V1`sol$, 1]], Wolfram`ErrorTools`V1`c$ -> 
+            ReplaceAll[
+              Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`tmax$$], 
+              Part[Wolfram`ErrorTools`V1`sol$, 1]], 
+            Wolfram`ErrorTools`V1`\[Gamma]$$ -> 
+            Wolfram`ErrorTools`V1`\[Gamma]$$, 
+            Wolfram`ErrorTools`V1`\[Alpha]$$ -> 
+            Wolfram`ErrorTools`V1`\[Alpha]$$}]; 
+        Wolfram`ErrorTools`V1`finalDetJ$ = 
+         ReplaceAll[
+          Wolfram`ErrorTools`V1`detJ$, {Wolfram`ErrorTools`V1`H$ -> ReplaceAll[
+              Wolfram`ErrorTools`V1`H$[Wolfram`ErrorTools`V1`tmax$$], 
+              Part[Wolfram`ErrorTools`V1`sol$, 1]], Wolfram`ErrorTools`V1`c$ -> 
+            ReplaceAll[
+              Wolfram`ErrorTools`V1`c$[Wolfram`ErrorTools`V1`tmax$$], 
+              Part[Wolfram`ErrorTools`V1`sol$, 1]], 
+            Wolfram`ErrorTools`V1`\[Gamma]$$ -> 
+            Wolfram`ErrorTools`V1`\[Gamma]$$, 
+            Wolfram`ErrorTools`V1`\[Alpha]$$ -> 
+            Wolfram`ErrorTools`V1`\[Alpha]$$}]; 
+        Wolfram`ErrorTools`V1`phasePlotHc$ = StreamPlot[
            
-           Evaluate[{(-$CellContext`H$) $CellContext`Z$ + $CellContext`\
-\[Alpha]$$ $CellContext`Z$, $CellContext`H$ $CellContext`Z$ - $CellContext`\
-\[Gamma]$$ $CellContext`Z$ - $CellContext`\[Alpha]$$ $CellContext`Z$}], \
-{$CellContext`H$, 0, 1}, {$CellContext`Z$, 0, 1}, StreamStyle -> Directive[
+           Evaluate[{(-Wolfram`ErrorTools`V1`H$) Wolfram`ErrorTools`V1`c$ + 
+             Wolfram`ErrorTools`V1`\[Alpha]$$ Wolfram`ErrorTools`V1`c$, 
+             Wolfram`ErrorTools`V1`H$ Wolfram`ErrorTools`V1`c$ - 
+             Wolfram`ErrorTools`V1`\[Gamma]$$ Wolfram`ErrorTools`V1`c$ - 
+             Wolfram`ErrorTools`V1`\[Alpha]$$ Wolfram`ErrorTools`V1`c$}], {
+           Wolfram`ErrorTools`V1`H$, 0, 1}, {Wolfram`ErrorTools`V1`c$, 0, 1}, 
+           StreamStyle -> Directive[
              Arrowheads[0.02], Gray], StreamScale -> Medium, Frame -> True, 
-           FrameLabel -> {
-            "H (Humans)", "C (Cooked)"}]; $CellContext`phasePlotZR$ = 
-         StreamPlot[
+           FrameLabel -> {"H (Humans)", "C (Cooked)"}]; 
+        Wolfram`ErrorTools`V1`phasePlotcR$ = StreamPlot[
            Evaluate[
             
-            ReplaceAll[{$CellContext`H$ $CellContext`Z$ - $CellContext`\
-\[Gamma]$$ $CellContext`Z$ - $CellContext`\[Alpha]$$ $CellContext`Z$, \
-$CellContext`\[Gamma]$$ $CellContext`Z$}, {$CellContext`H$ -> \
-$CellContext`Hfunc$[$CellContext`tmax$$]}]], {$CellContext`Z$, 0, 
-            1}, {$CellContext`R$, 0, 1}, StreamStyle -> Directive[
+            ReplaceAll[{
+             Wolfram`ErrorTools`V1`H$ Wolfram`ErrorTools`V1`c$ - 
+              Wolfram`ErrorTools`V1`\[Gamma]$$ Wolfram`ErrorTools`V1`c$ - 
+              Wolfram`ErrorTools`V1`\[Alpha]$$ Wolfram`ErrorTools`V1`c$, 
+              Wolfram`ErrorTools`V1`\[Gamma]$$ Wolfram`ErrorTools`V1`c$}, {
+             Wolfram`ErrorTools`V1`H$ -> 
+              Wolfram`ErrorTools`V1`Hfunc$[Wolfram`ErrorTools`V1`tmax$$]}]], {
+           Wolfram`ErrorTools`V1`c$, 0, 1}, {Wolfram`ErrorTools`V1`R$, 0, 1}, 
+           StreamStyle -> Directive[
              Arrowheads[0.02], Gray], StreamScale -> Medium, Frame -> True, 
            FrameLabel -> {"C (Cooked)", "R (Removed)"}]; Column[{
            Plot[{
-             $CellContext`Hfunc$[$CellContext`t$], 
-             $CellContext`Zfunc$[$CellContext`t$], 
-             $CellContext`Rfunc$[$CellContext`t$]}, {$CellContext`t$, 
-             0, $CellContext`tmax$$}, PlotRange -> All, 
+             Wolfram`ErrorTools`V1`Hfunc$[Wolfram`ErrorTools`V1`t$], 
+             Wolfram`ErrorTools`V1`cfunc$[Wolfram`ErrorTools`V1`t$], 
+             Wolfram`ErrorTools`V1`Rfunc$[Wolfram`ErrorTools`V1`t$]}, {
+            Wolfram`ErrorTools`V1`t$, 0, Wolfram`ErrorTools`V1`tmax$$}, 
+            PlotRange -> All, 
             PlotLegends -> {"Humans (H)", "Cooked (C)", "Removed (R)"}, 
             PlotStyle -> {{Blue, Thick}, {Red, Thick}, {Purple, Thick}}, 
             Frame -> True, 
-            FrameLabel -> {
-             "Time (t)", 
-              "Population Fractions"}], $CellContext`phasePlotHZ$, \
-$CellContext`phasePlotZR$, 
-           Show[$CellContext`parameterSpace$, 
+            FrameLabel -> {"Time (t)", "Population Fractions"}], 
+           Wolfram`ErrorTools`V1`phasePlotHc$, 
+           Wolfram`ErrorTools`V1`phasePlotcR$, 
+           Show[Wolfram`ErrorTools`V1`parameterSpace$, 
             
-            ListPlot[{{$CellContext`finalDetJ$, $CellContext`finalTraceJ$}}, 
-             PlotStyle -> PointSize[Large]], Frame -> True, 
+            ListPlot[{{
+              Wolfram`ErrorTools`V1`finalDetJ$, 
+               Wolfram`ErrorTools`V1`finalTraceJ$}}, PlotStyle -> 
+             PointSize[Large]], Frame -> True, 
             FrameLabel -> {"Determinant", "Trace"}]}]], 
-      "Specifications" :> {{{$CellContext`\[Alpha]$$, 0.5, 
-          "Resurrection rate (\[Alpha])"}, 0, 2, 
-         0.01}, {{$CellContext`\[Gamma]$$, 0.015, 
-          "Cooked removal rate (\[Gamma]_C)"}, 0, 2, 
-         0.01}, {{$CellContext`H0$$, 0.95, "Initial humans (H0)"}, 0, 5000, 
-         1}, {{$CellContext`Z0$$, 0.05, "Initial Cooked (C0)"}, 0, 5000, 
-         1}, {{$CellContext`R0$$, 0, "Initial removed (R0)"}, 0, 5000, 
-         1}, {{$CellContext`tmax$$, 100, "Simulation time"}, 10, 1000000, 1}},
-       "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{413.4949453125, {544.5768119008449, 551.4551322133448}},
+      "Specifications" :> {{{
+         Wolfram`ErrorTools`V1`\[Alpha]$$, 0.5, 
+          "Resurrection rate (\[Alpha])"}, 0, 2, 0.01}, {{
+         Wolfram`ErrorTools`V1`\[Gamma]$$, 0.015, 
+          "Cooked removal rate (\[Gamma]_C)"}, 0, 2, 0.01}, {{
+         Wolfram`ErrorTools`V1`H0$$, 0.95, "Initial humans (H0)"}, 0, 5000, 
+         1}, {{Wolfram`ErrorTools`V1`c0$$, 0.05, "Initial Cooked (C0)"}, 0, 
+         5000, 1}, {{Wolfram`ErrorTools`V1`R0$$, 0, "Initial removed (R0)"}, 
+         0, 5000, 1}, {{Wolfram`ErrorTools`V1`tmax$$, 100, "Simulation time"},
+          10, 1000000, 1}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{413.4949453125, {529.3128119008448, 536.1911322133448}},
      
      SingleEvaluation->True],
     Deinitialization:>None,
@@ -3859,8 +3901,8 @@ $CellContext`phasePlotZR$,
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{
   3.9767735903675537`*^9, 3.976775946194439*^9, {3.976950592727045*^9, 
-   3.9769506398982964`*^9}},
- CellLabel->"Out[8]=",ExpressionUUID->"64a44f59-4ef0-904b-a59e-deba04646599"]
+   3.9769506398982964`*^9}, 3.9772446735224743`*^9, 3.977245559718689*^9},
+ CellLabel->"Out[52]=",ExpressionUUID->"7c210f27-745d-9843-95f5-871f23da5593"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -3871,125 +3913,17 @@ Cell[BoxData[""], "Input",
 
 Cell[CellGroupData[{
 
-Cell["Eigenvalues + vectors ", "Subtitle",
- CellChangeTimes->{{3.942654654793048*^9, 3.942654660767187*^9}, {
-  3.976778869322727*^9, 
-  3.976778875639572*^9}},ExpressionUUID->"5638177f-bfab-4185-b6a3-\
-d4098aef7e6f"],
-
-Cell["", "Text",
- CellChangeTimes->{{3.9427423579957733`*^9, 3.94274239542001*^9}, 
-   3.9767788670791817`*^9},ExpressionUUID->"54597e6d-a678-4646-b735-\
-a9f3295a97a7"],
-
-Cell[BoxData[
- RowBox[{"  ", 
-  RowBox[{"(*", " ", 
-   RowBox[{"Jacobian", " ", "matrix"}], " ", "*)"}], "\n", "  ", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"jMatrix", " ", "=", " ", 
-     RowBox[{"{", "\n", "    ", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"-", "Z"}], ",", " ", 
-         RowBox[{
-          RowBox[{"-", "H"}], " ", "+", " ", "\[Alpha]"}], ",", " ", "0"}], 
-        "}"}], ",", "\n", "    ", 
-       RowBox[{"{", " ", 
-        RowBox[{"Z", ",", "  ", 
-         RowBox[{"H", " ", "-", " ", "\[Gamma]", " ", "-", " ", "\[Alpha]"}], 
-         ",", " ", "0"}], "}"}], ",", "\n", "    ", 
-       RowBox[{"{", " ", 
-        RowBox[{"0", ",", "  ", "\[Gamma]", ",", " ", "0"}], "}"}]}], "\n", 
-      "  ", "}"}]}], ";"}], "\n", "\n", 
-   RowBox[{
-    RowBox[{"fixedPoint1", " ", "=", " ", 
-     RowBox[{"{", 
-      RowBox[{"Z", " ", "->", " ", "0"}], "}"}]}], ";"}], "\n", 
-   RowBox[{
-    RowBox[{"fixedPoint2", " ", "=", " ", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"H", " ", "->", " ", "0"}], ",", " ", 
-       RowBox[{"Z", " ", "->", " ", "0"}]}], "}"}]}], ";"}], "\n", "\n", 
-   RowBox[{
-    RowBox[{"genEigenVals", " ", "=", " ", 
-     RowBox[{"Eigenvalues", "[", "jMatrix", "]"}]}], ";"}], "\n", 
-   RowBox[{
-    RowBox[{"genEigenVects", " ", "=", " ", 
-     RowBox[{"Eigenvectors", "[", "jMatrix", "]"}]}], ";"}], "\n", 
-   RowBox[{"eigenValsP1", " ", "=", " ", 
-    RowBox[{"Eigenvalues", "[", 
-     RowBox[{"jMatrix", " ", "/.", " ", "fixedPoint1"}], "]"}]}], "\n", 
-   RowBox[{"eigenValsP2", " ", "=", " ", 
-    RowBox[{"Eigenvalues", "[", 
-     RowBox[{"jMatrix", " ", "/.", " ", "fixedPoint2"}], "]"}]}]}]}]], "Code",\
-
- CellChangeTimes->{{3.942647657815558*^9, 3.94264766181458*^9}, {
-   3.9426537459001427`*^9, 3.942653750286291*^9}, {3.942653844864902*^9, 
-   3.942653932221984*^9}, {3.942653997003188*^9, 3.9426540306140842`*^9}, {
-   3.9426540938642263`*^9, 3.942654100471195*^9}, {3.942654433757696*^9, 
-   3.942654444103928*^9}, {3.9426545654376373`*^9, 3.942654582602116*^9}, {
-   3.942721990830193*^9, 3.9427220153813467`*^9}, {3.9427231824902773`*^9, 
-   3.942723258206894*^9}, {3.942741740708407*^9, 3.942741769572427*^9}, {
-   3.942741829139409*^9, 3.942741829704959*^9}, {3.942742179158124*^9, 
-   3.942742184175264*^9}, 3.9767738936600323`*^9},
- CellLabel->"In[5]:=",ExpressionUUID->"641b2abc-ccb7-4968-82c2-7f860ddf323f"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"0", ",", "0", ",", 
-   RowBox[{"H", "-", "\[Alpha]", "-", "\[Gamma]"}]}], "}"}]], "Input",
- CellChangeTimes->{
-  3.976950582430252*^9},ExpressionUUID->"432ba75d-fc50-b344-89ce-\
-7ffd47d817fc"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"0", ",", "0", ",", 
-   RowBox[{
-    RowBox[{"-", "\[Alpha]"}], "-", "\[Gamma]Z"}]}], "}"}]], "Output",
- CellChangeTimes->{3.9767776537853527`*^9},
- CellLabel->"Out[11]=",ExpressionUUID->"2b170269-29b9-9342-8b4b-10940fc304aa"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"0", ",", "0", ",", 
-   RowBox[{"H", "-", "\[Gamma]Z"}]}], "}"}]], "Input",
- CellChangeTimes->{
-  3.976773459264641*^9, {3.976777671706293*^9, 
-   3.97677767298053*^9}},ExpressionUUID->"648bbb66-ac73-418b-8190-\
-38bf85e04482"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"-", "\[Gamma]Z"}], ",", "0", ",", "0"}], "}"}]], "Input",
- CellChangeTimes->{3.976773460027937*^9, 
-  3.9767776707643337`*^9},ExpressionUUID->"bfc0a47b-005d-43cb-8871-\
-66e4e5ff3939"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell["Bifurcation Analysis on final populations, H, R", "Subtitle",
  CellChangeTimes->{{3.942647657815558*^9, 3.94264766181458*^9}, {
   3.976950071818407*^9, 
   3.9769500771344776`*^9}},ExpressionUUID->"118c48cb-a9dd-4c2d-949e-\
 2b99b33098bf"],
 
-Cell["\<\
-Check for bifurcation by varying R_0 and observing the effect on the final H \
-and R values.\
-\>", "Text",
+Cell["Varying R_0 to see effect on final populations H C and R", "Text",
  CellChangeTimes->{{3.942742401079577*^9, 3.942742438790588*^9}, 
-   3.976773461612501*^9, {3.9769500832798653`*^9, 
-   3.9769500867192287`*^9}},ExpressionUUID->"be54f028-a81a-4351-8531-\
+   3.976773461612501*^9, {3.9769500832798653`*^9, 3.9769500867192287`*^9}, {
+   3.97724558076338*^9, 
+   3.9772455996226845`*^9}},ExpressionUUID->"be54f028-a81a-4351-8531-\
 2bda3d563d33"],
 
 Cell[CellGroupData[{
@@ -4013,7 +3947,7 @@ Cell[BoxData[
           RowBox[{"Module", "[", 
            RowBox[{
             RowBox[{"{", 
-             RowBox[{"sol", ",", " ", "Hf", ",", " ", "Zf", ",", " ", "Rf"}], 
+             RowBox[{"sol", ",", " ", "Hf", ",", " ", "cf", ",", " ", "Rf"}], 
              "}"}], ",", "\n", "     ", "\n", "     ", 
             RowBox[{
              RowBox[{"sol", " ", "=", " ", 
@@ -4029,36 +3963,36 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"-", "\[Beta]"}], " ", 
                     RowBox[{"H", "[", "t", "]"}], " ", 
-                    RowBox[{"Z", "[", "t", "]"}]}], " ", "+", 
+                    RowBox[{"c", "[", "t", "]"}]}], " ", "+", 
                     RowBox[{"\[Alpha]", " ", 
-                    RowBox[{"Z", "[", "t", "]"}]}]}]}], ",", "\n", "        ", 
+                    RowBox[{"c", "[", "t", "]"}]}]}]}], ",", "\n", "        ", 
                    RowBox[{
                     RowBox[{
-                    RowBox[{"Z", "'"}], "[", "t", "]"}], " ", "==", " ", 
+                    RowBox[{"c", "'"}], "[", "t", "]"}], " ", "==", " ", 
                     RowBox[{
                     RowBox[{"\[Beta]", " ", 
                     RowBox[{"H", "[", "t", "]"}], " ", 
-                    RowBox[{"Z", "[", "t", "]"}]}], " ", "-", " ", 
+                    RowBox[{"c", "[", "t", "]"}]}], " ", "-", " ", 
                     RowBox[{"\[Gamma]", " ", 
-                    RowBox[{"Z", "[", "t", "]"}]}], " ", "-", " ", 
+                    RowBox[{"c", "[", "t", "]"}]}], " ", "-", " ", 
                     RowBox[{"\[Alpha]", " ", 
-                    RowBox[{"Z", "[", "t", "]"}]}]}]}], ",", "\n", "        ", 
+                    RowBox[{"c", "[", "t", "]"}]}]}]}], ",", "\n", "        ", 
                    RowBox[{
                     RowBox[{
                     RowBox[{"R", "'"}], "[", "t", "]"}], " ", "==", " ", 
                     RowBox[{"\[Gamma]", " ", 
-                    RowBox[{"Z", "[", "t", "]"}]}]}], ",", "\n", "        ", 
+                    RowBox[{"c", "[", "t", "]"}]}]}], ",", "\n", "        ", 
                    RowBox[{
                     RowBox[{"H", "[", "0", "]"}], " ", "==", " ", "0.95"}], ",",
                     "\n", "        ", 
                    RowBox[{
-                    RowBox[{"Z", "[", "0", "]"}], " ", "==", " ", "0.05"}], ",",
+                    RowBox[{"c", "[", "0", "]"}], " ", "==", " ", "0.05"}], ",",
                     "\n", "        ", 
                    RowBox[{
                     RowBox[{"R", "[", "0", "]"}], " ", "==", " ", "0"}]}], 
                   "\n", "       ", "}"}], ",", "\n", "       ", 
                  RowBox[{"{", 
-                  RowBox[{"H", ",", " ", "Z", ",", " ", "R"}], "}"}], ",", 
+                  RowBox[{"H", ",", " ", "c", ",", " ", "R"}], "}"}], ",", 
                  "\n", "       ", 
                  RowBox[{"{", 
                   RowBox[{"t", ",", " ", "0", ",", " ", "10000"}], "}"}]}], 
@@ -4069,16 +4003,16 @@ Cell[BoxData[
               RowBox[{
                RowBox[{"H", "[", "10000", "]"}], " ", "/.", " ", "sol"}]}], ";",
               "\n", "     ", 
-             RowBox[{"Zf", " ", "=", " ", 
+             RowBox[{"cf", " ", "=", " ", 
               RowBox[{
-               RowBox[{"Z", "[", "10000", "]"}], " ", "/.", " ", "sol"}]}], ";",
+               RowBox[{"c", "[", "10000", "]"}], " ", "/.", " ", "sol"}]}], ";",
               "\n", "     ", 
              RowBox[{"Rf", " ", "=", " ", 
               RowBox[{
                RowBox[{"R", "[", "10000", "]"}], " ", "/.", " ", "sol"}]}], ";",
               "\n", "     ", "\n", "     ", 
              RowBox[{"{", 
-              RowBox[{"R0", ",", " ", "Hf", ",", " ", "Zf", ",", " ", "Rf"}], 
+              RowBox[{"R0", ",", " ", "Hf", ",", " ", "cf", ",", " ", "Rf"}], 
               "}"}]}]}], "\n", "    ", "]"}]}], "\n", "   ", "]"}], ",", "\n",
          "   ", 
         RowBox[{"{", 
@@ -4154,74 +4088,93 @@ Cell[BoxData[
    3.9769505087097282`*^9, 3.976950526554617*^9}, {3.9769506600724487`*^9, 
    3.97695068329879*^9}, {3.9769507191478233`*^9, 3.976950778592745*^9}, {
    3.976953283843176*^9, 3.9769532872557144`*^9}},
- CellLabel->"In[21]:=",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
+ CellLabel->"In[60]:=",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`\[Alpha]$$ = 0.5, $CellContext`\[Gamma]$$ = 
-    0.015, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
-    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
-    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`\[Gamma]$$], 0.015, "Removal rate \[Gamma]"}, 0, 2, 
-      0.01, ControlType -> Manipulator}, {{
-       Hold[$CellContext`\[Alpha]$$], 0.5, "Ressurection rate \[Alpha]"}, 0, 
-      2, 0.01, ControlType -> Manipulator}}, Typeset`size$$ = {
+   DynamicModuleBox[{Wolfram`ErrorTools`V1`\[Alpha]$$ = 0.5, 
+    Wolfram`ErrorTools`V1`\[Gamma]$$ = 0.015, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[Wolfram`ErrorTools`V1`\[Gamma]$$], 0.015, 
+       "Removal rate \[Gamma]"}, 0, 2, 0.01, ControlType -> Manipulator}, {{
+       Hold[Wolfram`ErrorTools`V1`\[Alpha]$$], 0.5, 
+       "Ressurection rate \[Alpha]"}, 0, 2, 0.01, ControlType -> 
+      Manipulator}}, Typeset`size$$ = {
     531.4526953124999, {136.41836135208325`, 143.29668166458328`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`\[Alpha]$$ = 0.5, $CellContext`\[Gamma]$$ = 
-        0.015}, "ControllerVariables" :> {}, 
+      "Variables" :> {
+       Wolfram`ErrorTools`V1`\[Alpha]$$ = 0.5, 
+        Wolfram`ErrorTools`V1`\[Gamma]$$ = 0.015}, 
+      "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
-        Typeset`keyframeList$$}, "Body" :> ($CellContext`finalValues = Table[
+        Typeset`keyframeList$$}, 
+      "Body" :> (Wolfram`ErrorTools`V1`finalValues = Table[
           
-          With[{$CellContext`\[Beta]$ = $CellContext`R0 \
-($CellContext`\[Gamma]$$ + $CellContext`\[Alpha]$$)}, 
+          With[{Wolfram`ErrorTools`V1`\[Beta]$ = 
+            Wolfram`ErrorTools`V1`R0 (Wolfram`ErrorTools`V1`\[Gamma]$$ + 
+              Wolfram`ErrorTools`V1`\[Alpha]$$)}, 
            
-           Module[{$CellContext`sol$, $CellContext`Hf$, $CellContext`Zf$, \
-$CellContext`Rf$}, $CellContext`sol$ = Part[
+           Module[{Wolfram`ErrorTools`V1`sol$, Wolfram`ErrorTools`V1`Hf$, 
+             Wolfram`ErrorTools`V1`cf$, Wolfram`ErrorTools`V1`Rf$}, 
+            Wolfram`ErrorTools`V1`sol$ = Part[
                
                NDSolve[{
-                Derivative[
-                  1][$CellContext`H][$CellContext`t] == \
-(-$CellContext`\[Beta]$) $CellContext`H[$CellContext`t] \
-$CellContext`Z[$CellContext`t] + $CellContext`\[Alpha]$$ \
-$CellContext`Z[$CellContext`t], 
-                 Derivative[
-                  1][$CellContext`Z][$CellContext`t] == $CellContext`\[Beta]$ \
-$CellContext`H[$CellContext`t] $CellContext`Z[$CellContext`t] - $CellContext`\
-\[Gamma]$$ $CellContext`Z[$CellContext`t] - $CellContext`\[Alpha]$$ \
-$CellContext`Z[$CellContext`t], 
-                 Derivative[
-                  1][$CellContext`R][$CellContext`t] == \
-$CellContext`\[Gamma]$$ $CellContext`Z[$CellContext`t], $CellContext`H[0] == 
-                 0.95, $CellContext`Z[0] == 0.05, $CellContext`R[0] == 
-                 0}, {$CellContext`H, $CellContext`Z, $CellContext`R}, \
-{$CellContext`t, 0, 10000}], 1]; $CellContext`Hf$ = ReplaceAll[
-               $CellContext`H[10000], $CellContext`sol$]; $CellContext`Zf$ = 
-             ReplaceAll[
-               $CellContext`Z[10000], $CellContext`sol$]; $CellContext`Rf$ = 
-             ReplaceAll[
-               $CellContext`R[
-               10000], $CellContext`sol$]; {$CellContext`R0, \
-$CellContext`Hf$, $CellContext`Zf$, $CellContext`Rf$}]], {$CellContext`R0, 0, 
-           2, 0.05}]; ListLinePlot[{
-          Part[$CellContext`finalValues, All, {1, 2}], 
-          Part[$CellContext`finalValues, All, {1, 3}], 
-          Part[$CellContext`finalValues, All, {1, 4}]}, 
+                Derivative[1][Wolfram`ErrorTools`V1`H][
+                  Wolfram`ErrorTools`V1`t] == (-
+                    Wolfram`ErrorTools`V1`\[Beta]$) 
+                   Wolfram`ErrorTools`V1`H[Wolfram`ErrorTools`V1`t] 
+                   Wolfram`ErrorTools`V1`c[Wolfram`ErrorTools`V1`t] + 
+                  Wolfram`ErrorTools`V1`\[Alpha]$$ 
+                   Wolfram`ErrorTools`V1`c[Wolfram`ErrorTools`V1`t], 
+                 Derivative[1][Wolfram`ErrorTools`V1`c][
+                  Wolfram`ErrorTools`V1`t] == 
+                 Wolfram`ErrorTools`V1`\[Beta]$ 
+                   Wolfram`ErrorTools`V1`H[Wolfram`ErrorTools`V1`t] 
+                   Wolfram`ErrorTools`V1`c[Wolfram`ErrorTools`V1`t] - 
+                  Wolfram`ErrorTools`V1`\[Gamma]$$ 
+                  Wolfram`ErrorTools`V1`c[Wolfram`ErrorTools`V1`t] - 
+                  Wolfram`ErrorTools`V1`\[Alpha]$$ 
+                  Wolfram`ErrorTools`V1`c[Wolfram`ErrorTools`V1`t], 
+                 Derivative[1][Wolfram`ErrorTools`V1`R][
+                  Wolfram`ErrorTools`V1`t] == 
+                 Wolfram`ErrorTools`V1`\[Gamma]$$ 
+                  Wolfram`ErrorTools`V1`c[Wolfram`ErrorTools`V1`t], 
+                 Wolfram`ErrorTools`V1`H[0] == 0.95, 
+                 Wolfram`ErrorTools`V1`c[0] == 0.05, 
+                 Wolfram`ErrorTools`V1`R[0] == 0}, {
+                Wolfram`ErrorTools`V1`H, Wolfram`ErrorTools`V1`c, 
+                 Wolfram`ErrorTools`V1`R}, {
+                Wolfram`ErrorTools`V1`t, 0, 10000}], 1]; 
+            Wolfram`ErrorTools`V1`Hf$ = ReplaceAll[
+               Wolfram`ErrorTools`V1`H[10000], Wolfram`ErrorTools`V1`sol$]; 
+            Wolfram`ErrorTools`V1`cf$ = ReplaceAll[
+               Wolfram`ErrorTools`V1`c[10000], Wolfram`ErrorTools`V1`sol$]; 
+            Wolfram`ErrorTools`V1`Rf$ = ReplaceAll[
+               Wolfram`ErrorTools`V1`R[10000], Wolfram`ErrorTools`V1`sol$]; {
+             Wolfram`ErrorTools`V1`R0, Wolfram`ErrorTools`V1`Hf$, 
+              Wolfram`ErrorTools`V1`cf$, Wolfram`ErrorTools`V1`Rf$}]], {
+          Wolfram`ErrorTools`V1`R0, 0, 2, 0.05}]; ListLinePlot[{
+          Part[Wolfram`ErrorTools`V1`finalValues, All, {1, 2}], 
+          Part[Wolfram`ErrorTools`V1`finalValues, All, {1, 3}], 
+          Part[Wolfram`ErrorTools`V1`finalValues, All, {1, 4}]}, 
          PlotLegends -> {"Final H", "Final C", "Final R"}, 
          PlotStyle -> {{Blue, Thick}, {Red, Thick}, {Purple, Thick}}, 
          PlotRange -> All, Frame -> True, 
          FrameLabel -> {"RO (Reproduction Rate)", "Final population"}]), 
-      "Specifications" :> {{{$CellContext`\[Gamma]$$, 0.015, 
-          "Removal rate \[Gamma]"}, 0, 2, 
-         0.01}, {{$CellContext`\[Alpha]$$, 0.5, "Ressurection rate \[Alpha]"},
+      "Specifications" :> {{{
+         Wolfram`ErrorTools`V1`\[Gamma]$$, 0.015, "Removal rate \[Gamma]"}, 0,
+          2, 0.01}, {{
+         Wolfram`ErrorTools`V1`\[Alpha]$$, 0.5, "Ressurection rate \[Alpha]"},
           0, 2, 0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
      ImageSizeCache->{
       582.2726953124999, {204.26136916458324`, 211.13968947708327`}},
@@ -4242,8 +4195,9 @@ $CellContext`Hf$, $CellContext`Zf$, $CellContext`Rf$}]], {$CellContext`R0, 0,
    3.9769488521079063`*^9, 3.9769494984934425`*^9, 3.976949549205868*^9, {
    3.9769495962455463`*^9, 3.976949610183279*^9}, {3.9769496654416504`*^9, 
    3.9769496876227627`*^9}, 3.9769497333912354`*^9, 3.9769507287726936`*^9, {
-   3.976950772192297*^9, 3.976950782195364*^9}, 3.97695331309256*^9},
- CellLabel->"Out[21]=",ExpressionUUID->"e557395d-f14b-5445-9e0e-39165badf042"]
+   3.976950772192297*^9, 3.976950782195364*^9}, 3.97695331309256*^9, 
+   3.9772447234739075`*^9, 3.977245566762308*^9},
+ CellLabel->"Out[60]=",ExpressionUUID->"5e47f107-a2ea-b844-96ce-ef456f4de933"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -4269,33 +4223,22 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[576, 22, 375, 6, 115, "Title",ExpressionUUID->"d1ad6ba4-f57b-4596-bc28-d00e48d9a50d"],
-Cell[954, 30, 197344, 3243, 329, "Text",ExpressionUUID->"8e96e7c4-78b6-47fe-9e10-9d909fe4168a"],
+Cell[954, 30, 197531, 3246, 382, "Text",ExpressionUUID->"8e96e7c4-78b6-47fe-9e10-9d909fe4168a"],
 Cell[CellGroupData[{
-Cell[198323, 3277, 308, 5, 62, "Subtitle",ExpressionUUID->"80faa2d1-17c8-4679-a3e3-13b219300588"],
-Cell[198634, 3284, 875, 16, 145, "Text",ExpressionUUID->"8bc687ed-1191-444f-ba64-2d3628c7f229"],
+Cell[198510, 3280, 308, 5, 62, "Subtitle",ExpressionUUID->"80faa2d1-17c8-4679-a3e3-13b219300588"],
+Cell[198821, 3287, 896, 16, 145, "Text",ExpressionUUID->"8bc687ed-1191-444f-ba64-2d3628c7f229"],
 Cell[CellGroupData[{
-Cell[199534, 3304, 18635, 402, 2715, "Code",ExpressionUUID->"a54f7314-71ab-4641-8904-2e99c7a8588b"],
-Cell[218172, 3708, 8476, 154, 1116, "Output",ExpressionUUID->"64a44f59-4ef0-904b-a59e-deba04646599"]
+Cell[199742, 3307, 18588, 401, 2694, "Code",ExpressionUUID->"a54f7314-71ab-4641-8904-2e99c7a8588b"],
+Cell[218333, 3710, 10843, 194, 1085, "Output",ExpressionUUID->"7c210f27-745d-9843-95f5-871f23da5593"]
 }, Open  ]],
-Cell[226663, 3865, 154, 3, 33, "Input",ExpressionUUID->"bfaf7c9c-d0bf-e946-b7bf-02d279b3c7be"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[226854, 3873, 217, 4, 62, "Subtitle",ExpressionUUID->"5638177f-bfab-4185-b6a3-d4098aef7e6f"],
-Cell[227074, 3879, 168, 3, 40, "Text",ExpressionUUID->"54597e6d-a678-4646-b735-a9f3295a97a7"],
-Cell[227245, 3884, 2395, 54, 334, "Code",ExpressionUUID->"641b2abc-ccb7-4968-82c2-7f860ddf323f"],
-Cell[CellGroupData[{
-Cell[229665, 3942, 232, 6, 33, "Input",ExpressionUUID->"432ba75d-fc50-b344-89ce-7ffd47d817fc"],
-Cell[229900, 3950, 265, 6, 38, "Output",ExpressionUUID->"2b170269-29b9-9342-8b4b-10940fc304aa"]
-}, Open  ]],
-Cell[230180, 3959, 265, 7, 33, "Input",ExpressionUUID->"648bbb66-ac73-418b-8190-38bf85e04482"],
-Cell[230448, 3968, 235, 6, 33, "Input",ExpressionUUID->"bfc0a47b-005d-43cb-8871-66e4e5ff3939"]
+Cell[229191, 3907, 154, 3, 33, "Input",ExpressionUUID->"bfaf7c9c-d0bf-e946-b7bf-02d279b3c7be"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[230720, 3979, 243, 4, 62, "Subtitle",ExpressionUUID->"118c48cb-a9dd-4c2d-949e-2b99b33098bf"],
-Cell[230966, 3985, 319, 7, 40, "Text",ExpressionUUID->"be54f028-a81a-4351-8531-2bda3d563d33"],
+Cell[229382, 3915, 243, 4, 62, "Subtitle",ExpressionUUID->"118c48cb-a9dd-4c2d-949e-2b99b33098bf"],
+Cell[229628, 3921, 326, 5, 40, "Text",ExpressionUUID->"be54f028-a81a-4351-8531-2bda3d563d33"],
 Cell[CellGroupData[{
-Cell[231310, 3996, 7259, 160, 1071, "Code",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
-Cell[238572, 4158, 4798, 87, 435, "Output",ExpressionUUID->"e557395d-f14b-5445-9e0e-39165badf042"]
+Cell[229979, 3930, 7259, 160, 1071, "Code",ExpressionUUID->"03b3971d-f201-4bd4-b434-92eed75fd976"],
+Cell[237241, 4092, 5920, 107, 435, "Output",ExpressionUUID->"5e47f107-a2ea-b844-96ce-ef456f4de933"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
