@@ -1,26 +1,27 @@
 \contentsline {section}{\numberline {1}Context}{3}{section.1}%
 \contentsline {section}{\numberline {2}Basic SIR Model}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Parameters}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Governing Equations}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Natural Units}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Fixed Points}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Stability Analysis}{7}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Eigenvalues}{7}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Phase Space Analysis}{9}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Control Parameter / Threshold}{10}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Model Evaluation}{11}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.1}Assumptions}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Parameters}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Governing Equations}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Natural Units}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Fixed Points}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Stability Analysis}{8}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Eigenvalues}{8}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Phase Space Analysis}{9}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Control Parameter / Threshold}{11}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Model Evaluation}{11}{subsection.2.10}%
 \contentsline {section}{\numberline {3}First Alteration}{11}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Governing Equations}{12}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Natural Units}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Natural Units}{13}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Fixed Point Analysis}{13}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Nullcline Analysis}{13}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Control Parameter / Threshold}{15}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.4}Nullcline Analysis}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Control Parameter / Threshold}{14}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Model Evaluation}{15}{subsection.3.6}%
 \contentsline {section}{\numberline {4}Second Alteration}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Governing Equations}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}Governing Equations}{15}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Natural Units}{16}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Fixed Point Analysis}{16}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Stability \& Phase Space}{18}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Stability \& Phase Space}{17}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Control Parameter / Threshold}{18}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Model Evaluation}{18}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Conclusion}{20}{section.5}%
+\contentsline {subsection}{\numberline {4.6}Model Evaluation}{19}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Conclusion}{21}{section.5}%

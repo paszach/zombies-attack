@@ -22,12 +22,12 @@
 
 \begin{document}
 
-\title{Modelling \& Simulation Report}
+\title{Modelling Outbreaks of Unhealthy Study Habits on Campus.}
 \author{Michael Langton - 02237216}
 \maketitle
 
 \begin{center}
-GitHub link to code: \href{https://github.com/paszach/zombies-attack/}{\texttt{https://github.com/paszach/zombies-attack|}}
+GitHub link to code: \href{https://github.com/paszach/zombies-attack/}{\texttt{https://github.com/paszach/zombies-attack}}
 \end{center}
 
 \pagebreak
@@ -37,81 +37,102 @@ GitHub link to code: \href{https://github.com/paszach/zombies-attack/}{\texttt{h
 
 \section{Context}
 
-An unexpected outbreak has recently spread through Imperial, causing chaos during deadline season. Students are having their humanity stripped by a contagious bad academic habits. 
+An unexpected outbreak has recently spread through Imperial, causing chaos during deadline season. Students with once healthy study habits are having their time management skills corrupted by contagious bad academic habits. 
 
-Although not too dissimilar from the behaviour of regular Imperial students, remaining students are being cautioned to stay away from individuals that appear to be stumbling around aimlessly after carrying out all-nighters. Disaster analysts have determined that the outbreak of mindless husks, dubbed the 'Cooked,' for their seemingly fried brains, originated from the underneath the Huxley tunnels.
+Remaining healthy students are being cautioned to stay away from individuals that appear to be stumbling around aimlessly after carrying out all-nighters. Disaster analysts have determined that the outbreak of students with bad habits, dubbed the 'Cooked,' for their seemingly fried brains, originated from the underneath the Huxley tunnels.
 
-Although the outbreak started amongst the JMC department, it was quickly observed that the unhealthy habits that form the basis of students becoming Cooked spreads throughout group projects, with Cooked students passing on their unhealthy academic habits to regular students. Through multi-department modules, these habits have started to spread on a school-wide basis, with Cooked students popping up in all departments.
+Although the outbreak started in the JMC department, it was quickly observed that the unhealthy habits that make students Cooked spread throughout group projects, leading to Cooked students passing on their unhealthy academic habits to students with healthy habits. Through multi-department modules, these habits started to spread across the entirety of campus. After these bad habits take hold, students lose the ability to keep on top of their work, resulting in bad grades, or worse—failing to the point of dropping out.
 
-In an attempt to understand and hopefully mitigate the impact of this outbreak, I have been enlisted as the only remaining student with a educational license to Wolfram Mathematica. My aim is to utilise my modelling and simulation knowledge to model the current known characteristics of the outbreak in order to determine the fate of Imperial as we know it. I will assess different strategies to combat the Cooked, as well as providing analysis on the efficacy of different strategies combat unhealthy habits.
+In an attempt to understand and hopefully mitigate the impact of this outbreak, I have been enlisted as the only remaining student with a educational license to Wolfram Mathematica. My aim is to utilise my modelling and simulation knowledge to model the current known characteristics of the outbreak in order to determine the fate of Imperial as we know it. I will assess different strategies to combat the spread of unhealthy habits, evaluating my model as I go.
 \\
 
 If I get Cooked whilst writing this report, I've uploaded all my code to GitHub, in hope it will be found and used for good: 
-\href{https://github.com/paszach/zombies-attack/}{\texttt{https://github.com/paszach/zombies-attack|}}
+\href{https://github.com/paszach/zombies-attack/}{\texttt{https://github.com/paszach/zombies-attack}}
 \\
 
-This report begins with constructing a basic model to represent the spread of the Cooked. As more information is discovered about their characteristics, the model will be built on to better represent the behaviours of the system, including what remaining students can to do reclaim student hub from the Cooked.
+This report begins with constructing a basic model to represent the spread of the Cooked. Improvements will be made on the model to closer reflect reality, culminating in a strategy on how Imperial can prevent (or control) a disastrous outbreak.
 
-From initial observations, I'll be using an SIR model as the starting point. 
+From initial observations, an SIR model will be used as a starting point. 
 
 \section{Basic SIR Model}
 
-The SIR model has been proven vital in understanding the approach used to tackle pandemics such as COVID-19. Although traditionally used for spread of infectious diseases, it can also be adapted for our cooked students since the spread of unhealthy habits can be likened to an infection.\cite{smith_mathematical_2014}. 
-\\
-The basic SIR model is a compartmental system which represents three states a member of the population can be in.
+The SIR model has been proven vital in understanding the approach used to tackle pandemics such as COVID-19. The basic SIR model is a compartmental system which has three states a member of the population can be in.
 \begin{description}
-\item[Susceptible] Members of the susceptible population are those which have not yet been infected and are susceptible to becoming infected.
-\item[Infected] Infected members of the population spread the disease by infecting members of the susceptible population. Once infected, infected members stay infected and contagious for a period of time. 
-\item[Removed] Once the infectious period of an infected member has subsided, they enter the removed population. Members of the removed population are unable to become reinfected by members of the infected population.
+\item[Susceptible:] Those who have not yet been infected.
+\item[Infected:] Those who spread disease by infecting members of the susceptible population. Once infected, infected members stay infected and contagious for a period of time. 
+\item[Removed:] Those who were infected then leave the infectious period and enter the removed population. Members of the removed population are unable to become reinfected.
 \end{description}
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
   \includegraphics[width=0.7\linewidth]{Figures/SIR.png}
   \caption{Diagram of basic SIR model.}
 \end{figure}
 
-This model will be the starting point of simulating the imperial outbreak, and can be contextualised as follows, as an altered 'HCR' model;
+
+The SIR model can also be adapted to model the outbreak of Cooked students, since the spread of unhealthy habits can be likened to an infection\cite{smith_mathematical_2014}. Bad study have been seen to spread through group projects to students with healthy habits. Once bad habits take hold, students are doomed to fail and be forced to drop out. This model will be the starting point of simulating the Imperial outbreak, and can be contextualised as an altered 'HCR' model;
 
 \begin{description}
-\item[Healthy] Students, or members of the healthy student population that have healthy study habits and have not yet been influenced by the Cooked, and are susceptible to becoming infected.
-\item[Cooked] The Cooked can infect healthy students with their unhealthy habits. Once infected, Cooked stay cooked until it gets too much to handle, and they drop out. 
-\item[Removed] Removed now becomes Cooked students that have dropped out of Imperial. Cooked in the removed or 'drop out' population are unable to return to their studies (re-enter the Healthy or Cooked student population).
+\item[Healthy:] These students (members of the Healthy student population) have healthy study habits. They are susceptible to being influenced by the bad study habits of Cooked students, resulting in them joining the Cooked population.
+\item[Cooked:] Cooked students can infect healthy students with their unhealthy study habits. Once bad habits have taken hold, students' grades decline, until they fail the course, and must drop out. 
+\item[Removed:] Once students have dropped out due to their failing grades, they cannot return to their studies (re-enter the Healthy or Cooked student population).
 \end{description}
 
-\subsection{Parameters}
+\subsection{Assumptions}
+
+Several assumptions have been made in order to comply with the limitations of an HCR (SIR) model;
 
 \begin{description}
-\item[$\beta_c$] The transmission parameter $\beta_c$ defines the number of healthy students that a cooked student is able to 'Cook' per unit time. If the total population without any modelled infection is $P$, then the the number per unit time one cooked student can Cook on average is given by $\beta_c P$. This value is harder to give an approximation for, as in the real world there are many factors that effect change in human behaviour/habits. However, for the simplification of the model, a binomial distribution has been used to calculate the probability that in a given project group (5 people), there are two or more students with unhealthy habits (10-40\% of students). This yields a probability of ~ 26.27\%. A range of 8-60\% will be used to investigate the behaviour of the model.
-This means that the probability that a given cooked and healthy student randomly make contact is $\frac{H}{P}$ and thus the new Cookeds per unit time can be expressed as a product of these two expressions;
-
-\[(\beta_cP)(\frac{H}{P})Z = \beta_cHC\]
-
-\item[$\gamma_c$] This is the removal, or drop-out rate that at which the Cooked naturally drop out of Imperial. For now, reasons for dropping out are completely independent of the healthy student population, i.e. not due to healthy students encouraging cooked students to drop out or by any direct effect of the healthy population. As drop out rates tend to be ~ 1.55\%, a range of between 0 and 5\% will be used to investigate the system.
-
+\item[Closed Population:] The total population of the student body is a constant, $P = H + C + R$. No new students are enrolling to Imperial, and none are leaving for reasons other than being forced to drop out.
+\item[Homogenous Mixing:] Every individual student is equally likely to interact with every other student. There is no seperation between courses, department, or undergrad/postgrad students.
+\item[Identical Individuals:] Students are equally likely to be influenced by bad study habits, and equally 'infectious' once bad study habits have been contracted.
+\item[Removal of Events:] There are no events which have influence over the spread-ability of bad habits, such as deadlines or graduation.
+\item[Compartments are discrete:] Students move instantaneously between H, C and R states, as opposed to bad habits slowly setting in.
 \end{description}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-  \includegraphics[width=0.7\linewidth]{Figures/HCR1.png}
+  \includegraphics[width=0.7\linewidth]{Figures/HCR0.png}
   \caption{Diagram of basic HCR model.}
 \end{figure}
 
+\subsection{Parameters}
+
+The parameters that drive the HCR model have been added to the diagram (Fig. 3).
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=0.7\linewidth]{Figures/HCR1.png}
+  \caption{Diagram of basic HCR model with labelled transition rates.}
+\end{figure}
+
+\begin{description}
+\item[$\beta_c$:] The transmission parameter $\beta_c$ defines the rate at which a Cooked student transmits their bad habits to healthy students. If the number of healthy students is $H$, and $P$ is the total population, the average rate at which one Cooked student spreads their bad habits is $\beta_c \frac{H}{P}$ per unit time.
+
+Therefore, the total number of new Cooked students per unit time can be expressed as a product of the per Cooked student spread rate $\beta_c \frac{H}{P}$ and the total number of Cooked students, $C$;
+
+\[(\beta_c)(\frac{H}{P})C, P = 1 \therefore C' = \beta_c H C\]
+
+\item[$\gamma_c$:] This is the removal, or drop-out rate that at which the Cooked drop out of Imperial. Dropping out is independent of the healthy student population, i.e. not due to healthy students encouraging cooked students to drop out or any other factor driven by $H$.
+
+In real life, Imperial drop out rates tend to be ~ 1.55\%\cite{noauthor_student_nodate}. A range of between 0 and 5\% will be used to investigate the system.
+\end{description}
+
+
+
 \subsection{Governing Equations}
 
-Implementing these parameters we have the basic equations that form the HCR model;
+Now the parameters are defined, the basic set of equations that form the HCR model can be shown. Each equation shows a change in population, H, C or R. Positive terms show that students are joining the population, and negative terms show students that are leaving the population.
 
 \[H' = - \beta_cHC\]
 \[C' = \beta_cHC-\gamma_cC\]
 \[R' = \gamma_cC\]
 
-Each of these is a simple numerical equation showing the change in the population of each category. Positive terms show what entities are moving to that population, and negative show entities that are leaving that population.
-
 
 \subsection{Natural Units}
 
-$\beta_c$ is the only term in the governing equations that has units ($t^-1$), therefore the equation can be non-dimentionalised by using the following equation.
+Since the population has already been normalised ($H + C + R = 1$), $\beta_c$ is the only term in the governing equations that has units: ($t^{-1}$). Therefore the equation can be non-dimensionalised by using the following equation.
 
 \[t = k\hat{t}\]
 
@@ -123,7 +144,7 @@ Now, applying this to the original first equation of the healthy population;
 
 \[H' = \frac{dH}{dt} = \frac{d}{dt}(H) = \frac{1}{k}\cdot\frac{dH}{d\hat{t}} = -\beta_c HC \therefore \frac{dH}{d\hat{t}} = -k\beta_c HC\]
 
-Now, choosing $k = \frac{1}{\beta_C}$ for simplicity, our equation becomes;
+From this point onward, primes represent derivatives with respect to the dimensionless time ($\hat{t}$). Now, choosing $k = \frac{1}{\beta_c}$ for simplicity, our equation becomes;
 
 \[\frac{dH}{d\hat{t}} = H' = -HC\]
 
@@ -134,9 +155,9 @@ This process can be repeated for the C and R equations, yielding the dimensionle
 \[C' = HC-\frac{\gamma_c}{\beta_c}C\]
 \[R' = \frac{\gamma_c}{\beta_c}C\]
 
-Using natural units helps makes understanding the behaviour of a model easier. In this instance, scaling the model relative to the infection rate ensured that the time scale will encapsulate one of the most important physical properties of the system. As populations are normalised to 1 in the initial conditions, only time must be non-dimentionalised. 
+Natural units makes understanding the behaviour of a model easier due to being able to compare models which have different initial parameters. In this instance, scaling the model relative to the infection rate ensures that the time scale will encapsulate one of the most important physical properties of the system. 
 
-For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c} = \gamma$, and all accented symbols will be dropped.
+For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c} = \gamma$.
 
 \[H' = - HC\]
 \[C' = HC-\gamma C\]
@@ -144,19 +165,20 @@ For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c
 
 \subsection{Fixed Points}
 
-Fixed points, or equilibrium points, can be found by equating the above differential equations to 0. The phrase `fixed point' is used as once the fixed point is reached, there is no possible change to the populations in the system for all future time.
+Once a fixed point is reached, there is no possible change to the populations in the system. Fixed points can be found by equating the governing differential equations in the system to 0.
 
-\[H' = - HC = 0\]
+\[H' = - HC = 0 \therefore H \text{or} C = 0\]
 \[C' = HC-\gamma C = 0\]
-\[R' = \gamma C = 0\]
+\[R' = \gamma C = 0, \gamma > ) \therefore C = 0\]
 
-From the last equation, $R' = \gamma C = 0$, as $\gamma$ is a constant $>0$ (assumption), $C = 0$. Taking the first of these equations, either $H = 0$ or $C = 0$, as their product must equal zero.  This presents us with two cases wherein $H$ can also be zero, or non-zero.
+Therefore, there are two fixed points;
+
 \begin{description}
-\item[$(0, 0, R)$] This can be interpreted as the scenario where there are only members of the removed population left.
-\item[$(H, 0, R)$] This can be interpreted as the scenario where there are no Cooked on campus, and the healthy students have managed to influence all of the student population to have healthy habits.
+\item[$(0, 0, R)$:] In this scenario, every single student has dropped out of Imperial after becoming Cooked and subsequently failing. 
+\item[$(H, 0, R)$:] In this scenario, although a small Cooked population was present initially, they all dropped out before their bad habits took hold of the entire campus.
 \end{description}
 
-As a note, the initial parameters for running Wolfram are that $H_0 = 0.95, C_0 = 0.05$, an approximation for the percentage that enter Imperial with unhealthy habits, with total student population =1.
+The initial parameters used in the model (set as default in Wolfram Mathmatica but adjustable using the sliders) are: $H_0 = 0.95, C_0 = 0.05$. $C = 0.05$ is an approximation for the percentage of total students already have poor study habits upon enrollment.
 
 \begin{figure}[H]
 \centering
@@ -173,80 +195,65 @@ As a note, the initial parameters for running Wolfram are that $H_0 = 0.95, C_0 
 \caption{$\gamma = 1$}
 \end{subfigure}
 
-\caption{H (blue), C (red) and R (purple) population change over time at different $\gamma$ values.}
+\caption{Population change over time at different $\gamma$ values. (H (blue), C (red) and R (purple)).}
 \end{figure}
 
-These fixed points show that co-existence is impossible, as for there to be co-existence, C must be $>0$. If $C > 0$, then $R' > 0$ which would result in a non-stationary system, and a fixed point with co-existence cannot exist. This will be discussed further—as we know, the percentage of unhealthy students stabilises at ~20\% of the student population.
+These fixed points show that co-existence is impossible, as for there to be co-existence, C must be $>0$. If $C > 0$, then $R' > 0$ which would result in a non-stationary system.
 
-Both fixed point states can be seen in the time evolution graphs below, with Case 1's graph tending toward an ($H=0, C=0, R=R$) state, and Case 2's graph tending toward ($H=H, C=0, R=R$).
+Both fixed points can be seen in Fig. 4, where the populations level off.
 
-As total population in the system is conserved, and R does not influence H or C, the system can be reduced to 2 dimensions, and further analysis will be done in 2-dimensional (H, C) phase space. 
+As total population in the system is conserved, and R does not influence H or C, the system can be reduced to 2 dimensions.
+
+
+\[H' = - HC \]
+\[C' = HC-\gamma C\]
+
 
 \subsection{Stability Analysis}
 
-Stability analysis shows what happens when the parameters of the system start close-by, but not equalling to a fixed point. Practically, this will help us to understand whether if we manage to reach the (H, 0, R) state in which the healthy students have triumphed, will the re-introduction of one or two Cooked send Imperial into mass shut-down again? Or will the Cooked population quickly decline back to 0?
+Stability analysis shows what happens when state variables of the system start close to a fixed point. Practically, this will help us to understand whether if we manage to reach the (H, 0, R) state in which the healthy students have prevailed, will the re-introduction of one or two Cooked students cause mass drop-outs again? Or will the Cooked population quickly decline back to 0?
 
-Due to co-existence not being possible (shown above), stability analysis for co-existence will not be performed for this system equations. We can, however, perform stability analysis for the two fixed points found earlier.
+To carry out stability analysis for the identified fixed points, a Jacobian matrix will be formed to represent the system. 
 
-To carry out stability analysis for the two above fixed points, a Jacobian matrix will be formed to represent the system. Following this, we will use eigenanalysis, as well as examining the determinant and trace of the matrices
-
-The system matrix is:
-
-\[ J(H, C, R) = 
+\[ J(H, C) = 
 \begin{bmatrix}
--C & -H & 0\\
-C  &  H-\gamma & 0\\
-0 & \gamma & 0
+-C & -H\\
+C  &  H-\gamma\\
 \end{bmatrix}\]
 
-As the Jacobian in singular (R does not influence H or C),
+At the fixed point (0, 0, R);
 
 \[det(J) = 0\]
 
-The determinant can also be expressed as a product of the eigenvalues. Since the determinant is 0, one of the eigenvalues must also be 0. This means that there will be a direction in which disruptions do not get restored to the fixed point or blown up.
+Since the determinant of the matrix is zero, one of the eigenvalues must also be zero. The zero eigenvalue corresponds to a direction in which disruptions to the population do not get restored to the fixed point or blown up. 
 
-Since the Jacobian has zero eigenvalues, linear analysis alone is inconclusive and non-linear analysis methods must be used.
-
+\textcolor{red}{Note to self: I don't think this is quite right here}
 
 \subsection{Eigenvalues}
+
+\textcolor{red}{I think this section needs some fixing, I'm not sure what I've fucked up.}
+
 
 Solving the following equation for the eigenvalues;
 
 \[det(J-\lambda I) = 
 \begin{vmatrix}
--C-\lambda & -H & 0\\
-C  &  H-\gamma-\lambda & 0\\
-0 & \gamma & -\lambda
-\end{vmatrix}
-= 0\]
-\[-\lambda 
-\begin{vmatrix}
 -C-\lambda & -H \\
-C & H-\gamma-\lambda
+C  &  H-\gamma-\lambda \\
 \end{vmatrix}
 = 0\]
 
-\[-\lambda ( (-C-\lambda)(H - \gamma - \lambda ) + HC) = 0\]
-\[\lambda ( (C+\lambda)(H - \gamma - \lambda ) + HC) = 0\]
-
-At this point, we can immediately remove a factor of $\lambda$ as the first eigenvalue.
-
+\[(-C-\lambda)(H - \gamma - \lambda ) - (-H)(C) = 0\]
 \[(C+ \lambda ) (H - \gamma - \lambda ) - HC = 0\]
-\[(-1)\lambda ^2 + (H - \gamma - C)\lambda - C\lambda = 0\]
+\[(-1)\lambda ^2 + (H - \gamma - C)\lambda - C\gamma = 0\]
 
 Then, using the quadratic formula;
 
-\[\lambda _{2,3} = \frac{(H - \gamma - C) \pm \sqrt{H^2 - 2HC - 2H\gamma + C^2 - 2C\gamma + \gamma ^2}}{2}\]
+\[\lambda _{2,3} = \frac{(H - \gamma - C) \pm \sqrt{(H - \gamma - C)^2 - 4(C\gamma)}}{2}\]
 
-From here, the fixed points are substituted into the equation to find the remaining eigenvalues for each case.
+From here, the fixed point(s) are substituted into the equation to find the remaining eigenvalues for each case.
 
-For case $(0, 0, R)$;
-
-\[\lambda _{2,3} = \frac{((0) - \gamma - (0)) \pm \sqrt{(0)^2 - 2(0)(0) - 2(0)\gamma + (0)^2 - (0)\gamma + \gamma ^2}}{2}\]
-\[= \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2} = \frac{(- \gamma) \pm \sqrt{\gamma ^2}}{2}\]
-
-\[\therefore \lambda_2 = \frac{- \gamma + \gamma}{2} = \frac{0}{2} = 0, \lambda _{3} = \frac{- \gamma - \gamma}{2} = -\gamma\]
-
+\textcolor{red}{Note to self: Simplify the quads a bit too many zeros!}
 
 For case $(H, 0, R)$;
 
@@ -261,30 +268,31 @@ To summarise:
 \begin{center}
 \begin{tabular}{ |c|c|c|c| } 
  \hline
- Fixed Point & $\lambda_1$ & $\lambda_2$ & $\lambda_3$\\ 
+ Fixed Point & $\lambda_1$ & $\lambda_2$\\ 
   \hline
- (0, 0, R) & 0 & H - $\gamma$ & 0 \\ 
+ (0, 0, R) & 0 &  - $\gamma$ \\ 
   \hline
- (H, 0, R) & 0 & -$\gamma$ & 0 \\ 
+ (H, 0, R) & 0 & H-$\gamma$  \\ 
  \hline
 \end{tabular}
 \end{center}
 
-For $\lambda_2$ in Case 1, the sign of the eigenvalue depends on the values of H and $\gamma$. Once at the fixed point (0, 0, R), stability  is dependent on the manner in which the perturbations end up arising. If H suddenly = 5, then $\gamma$ must be $> 5$ to ensure the system evolves back to the fixed point ($\lambda_2 < 0$), otherwise if $\gamma < 5$, the system will become unstable as $\lambda_2 > 0$.
+This model will always converge to a state with form (H, 0, R), for (0, 0, R), H = 0. 
 
-However in Case 2, $\gamma$ is always negative, as $\gamma > 0$. From this we can interpret that there is stability in this direction, and any small perturbations will quickly re-normalise back to the fixed point.
+For $\lambda_2$ at (H,0,R), the sign of the eigenvalue depends on the values of H and $\gamma$. Once at the fixed point (H, 0, R), stability  is dependent on the manner in which the perturbations end up arising. If  $\gamma > H$, $\lambda_2 < 0$, and perturbations in C decay, resulting in the system returning to a disease free state quickly. Otherwise if $\gamma < H$, the system will become unstable as $\lambda_2 > 0$ and perturbations in C will grow.
 
-Due to the presence of zero-eigenvalues we can interpret that the behaviour in these directions as driven by non-linear terms in the system. To better analyse the system behaviour, we will next carry out nullcline analysis.
+In the case where H = 0, (0, 0 , R), $\lambda_2$ is always negative, as $\gamma > 0$. From this we can interpret that there is stability in this direction, and any small perturbations will quickly decay.
+
+Due to the presence of zero-eigenvalues we can interpret that the behaviour in these directions is driven by non-linear terms in the system. This results in the presence of a family of fixed points on the line (H, 0, R). Whatever value of H the system has, as soon as the population of unhealthy students (C) = 0, the system stops changing. To better analyse the system behaviour, we will next carry out nullcline analysis.
 
 \subsection{Phase Space Analysis}
 
-Nullclines are lines in which the rate of change of variables are = 0. For the current HCR system, these nullclines will be straight lines aligned with the x or y axis of the phase space graph. This is due to the presence of fixed points–when the healthy student population reaches the fixed point value, the nullcline is reached and only the cooked student population will decline, with no change in the healthy student population.
+Nullclines are lines where the rate of change of variables is zero. For the current HCR model, these are aligned with the x or y axis of the phase space graph. This is due to the presence of fixed points–when the healthy student population reaches the fixed point value, the nullcline is reached and only the Cooked student population will decline, with no change in the Healthy student population.
 
-Phase space analysis gives us a way to see these nullclines, and therefore examine the way in which the population of healthy student and cooked student will evolve over time from different states. 
+Phase space analysis gives us a way to see these nullclines, and therefore examine the way in which the population of Healthy students and Cooked students will evolve over time from different states. 
 
-The behaviour of the system is governed by the factor removal rate $\gamma$, and the initial starting conditions. Phase space diagrams show the behaviours over a range of initial population conditions, so the graphs are generated solely from differing values of $\gamma$.
+The behaviour of the system is governed by the removal rate $\gamma$, and the initial starting conditions. Phase space diagrams show the behaviours over a range of initial population conditions, so the graphs are generated solely from differing values of $\gamma$.
 
-Three graphs have been generated, one with a low removal rate (0.05), one with a mid-level removal rate (0.5) and one with a high level removal rate (2.0). To restate, these numbers represent the rate at which the Cooked naturally enter the removed population, without the influence of any external factors. As total population is conserved, only H and C need to be analysed.
 
 \begin{figure}[H]
 \centering
@@ -301,9 +309,12 @@ Three graphs have been generated, one with a low removal rate (0.05), one with a
 \caption{$\gamma = 1$}
 \end{subfigure}
 
-\caption{Healthy to Cooked behaviour at different $\gamma$ values.}
+\caption{Phase plots (H vs. C) — at different $\gamma$ values.}
 \end{figure}
 
+
+
+Three graphs have been generated, one with a low removal rate (0.05), one with a mid-level removal rate (0.5) and one with a high level removal rate (2.0). To restate, these numbers represent the rate at which the Cooked naturally enter the removed population, without the influence of any external factors. Varying $\gamma$ does not change the location of the vertical nullcline, simply the speed at which the arrows converge on it. Varying $\gamma$ also has an effect on H, as can be seen in Fig.5 (a-c), the arrows pointing into the x-axis all converge between $H = 0$ and H =$\gamma$.
 
 \begin{figure}[H]
 \centering
@@ -320,36 +331,34 @@ Three graphs have been generated, one with a low removal rate (0.05), one with a
 \caption{$\gamma = 1$}
 \end{subfigure}
 
-\caption{Phase space (H vs. C) — Cooked to Removed behaviour at different $\gamma$ values.}
+\caption{Phase space (C vs. R) — at different $\gamma$ values.}
 \end{figure}
 
-\textcolor{red}{how do eigenvalues correspond to the direction 'stability in this direction'}
+Phase plots for (C vs. R) show the influence of $\gamma$, with increasing $\gamma$ values returning steeper arrows representing rapid removal of C to R. This corresponds to Cooked students dropping out of Imperial faster.
 
-In all of the phase space diagrams in Figure 5, we can see that the arrows point toward a decline in both populations, representing the healthy students gradually being Cooked and the Cooked gradually entering the Removed population.
+In both sets of phase space diagrams in Figure 5 \& 6, the arrows point toward a decline in both H and C populations, representing the healthy students gradually being Cooked and the Cooked gradually dropping out.
 
 \begin{description}
-\item[$\gamma = 0.05$, 0,0,R] In Figure 5 (a), we can see that with a very low removal rate, the Cooked are very successful at Cooking the remaining students on campus. By the time that almost all of the healthy students are Cooked, the Cooked have only just begun to enter the Removed population. It can be seen that all arrows are converging around the point (0,0), which aligns with our fixed point.
+\item[$\gamma = 0.05$, 0,0,R:] In Figure 5,6 (a), we can see that with a very low removal rate, the Cooked are very successful at Cooking the remaining students on campus. By the time that almost all of the healthy students are Cooked, the Cooked have only just begun to enter the Removed population. It can be seen that all arrows are converging around the point (0,0).
 
-\item[$\gamma = 0.5$, Small H,0,R] With a mid-level removal rate, the Cooked have an initial gain in population, but the gain quickly levels out and then declines. This graph also shows that the healthy population eventually stabilises above 0 when there are no remaining Cooked present.
+\item[$\gamma = 0.5$, Small H,0,R:] With a mid-level removal rate In Figure 5,6 (b), the Cooked have an initial gain in population, but the gain quickly levels out and then declines. The arrows converging onto the x-axis show that the healthy population eventually stabilises above 0 when there are no remaining Cooked present.
 
-\item[$\gamma = 1$, Large H,0,R] In contrast, in Figure 5 (c), the Cooked population is in constant gradual decline over time. This decline in Cooked is slowed by larger initial values of healthy population, but always ends with the Cooked population converging toward 0. Also, it can be seen that the healthy population stabilises at higher values than in Fig 5. (b). 
+\item[$\gamma = 1$, Large H,0,R:] In contrast, in Figure 5 (c), the Cooked population is in constant gradual decline over time. This decline in Cooked is slowed by larger initial values of Healthy population, but always ends with the Cooked population converging toward 0. Also, it can be seen that the healthy population stabilises at a wider range of values (0 to $\gamma$) than in Fig 5. (c).
 \end{description}
 
 
-\textcolor{red}{insert region-by-region explanation using nullclines}
-
 \subsection{Control Parameter / Threshold}
 
-$R_0$ is the basic reproduction number, measuring how many healthy students a cooked student can influence before dropping out, and can be expressed as;
+$R_0$ is the basic reproduction number, defined as the expected number of Healthy students a single Cooked student is able to influence before dropping out, and can be expressed as;
 
 \[R_0 = \frac{\beta_c}{\gamma}\]
 
 This also represents the threshold at which the cooked student population either grows or declines.
 
 \begin{description}
-\item[$R_0 < 1$] Each cooked student, on average produces less than one student with poor habits before they drop out, leading the final healthy student population greater than the removed population.
-\item[$R_0 = 1$] Each cooked student would influence one healthy student on average, leading to a final state where removed and healthy populations are equal in size.
-\item[$R_0 > 1$] Each cooked student is able to influence more than one healthy student, leading the final healthy student population less than than the removed population.
+\item[$R_0 < 1$:] Each cooked student, on average produces less than one student with poor habits before they drop out, leading the final healthy student population greater than the removed population.
+\item[$R_0 = 1$:] Each cooked student influences one healthy student on average.
+\item[$R_0 > 1$:] Each cooked student is able to influence more than one healthy student, leading the final healthy student population to be less than than the removed population.
 \end{description}
 
 \begin{figure}[h]
@@ -360,24 +369,28 @@ This also represents the threshold at which the cooked student population either
 
 \subsection{Model Evaluation}
 
-Although this model gives us helpful insight into important factors influencing the outcome of the Cooked take-over, such as maximising $\lambda$ for higher stabilisation rates of the Healthy Population, in this model there is no way for the healthy students to influence the situation. This model implies that the best hope for Imperial is for the students to all leave campus and just wait for the Cooked to run out of energy and enter the Removed population.
+This model gives us helpful insight into important factors influencing the outcome of the Cooked take-over, such as the drop-out rate $\gamma$ and transmission rate $\beta_c$. It is simple and clearly interpretable. This model highlights that increasing $\gamma$ is an effective strategy for stabilising the Healthy student population.
 
-However, whilst trying to research into how this all started, I found a link for students to be able to book 'well-being meetings.' Maybe these meetings can provide the Cooked students with a way to enter the normal student population again-or even for normal students to learn some management strategies to ensure they never get Cooked in the first place!
+However, it also implies that the best hope for Imperial is for all of the Healthy students to leave campus and wait for the Cooked to drop out in isolation before returning to campus. This model does not model any agency for Cooked student trying to improve their study habits or intervention measures.
 
 \section{First Alteration}
 
-With the introduction of well-being meetings, we must update our model. Now, there is a sub-group of healthy students who are Immune to becoming Cooked, as well as a way for the Cooked to re-enter the healthy student population. After the outbreak, the well-being meetings were given priority access to the Cooked, meaning that the number of 'Immune' students is a constant number of healthy students.
-This effect can be simplified as removing the Immune students from the system completely. 
+By modelling Cooked student's efforts to improve their study habits, a way for the Cooked to re-enter the Healthy student population is created. 
 
 \subsection{Governing Equations}
 
-Adding in the terms to represent the Un-Cooked students rejoining the Healthy student population ($\alpha_c C$), and the Cooked rejoining the healthy student population after their well-being meetings ($-\alpha_c C$), we have our new system of equations.
+A new parameter $\alpha$, can be defined as the 'recovery' rate, representing how quickly the Cooked students can improve their habits and re-enter the Healthy student population. The bigger $\alpha$ is, the more Cooked students successfully form new Healthy habits.
 
 \[H' = - \beta_cHC + \alpha_c C\]
 \[C' = \beta_cHC-\gamma_cC - \alpha_c C\]
 \[R' = \gamma_cC\]
 
-This new parameter $\alpha$ is the 'resurrection' rate, influencing how quickly the Cooked can re-enter the typical student population. The bigger $\alpha$ is, the quicker well-being meetings can be carried out.
+With parameters;
+\begin{description}
+\item[$\alpha$:] Self-recovery rate of Cooked students
+\end{description}
+
+The system diagram can also be updated to show this.
 
 \begin{figure}[h]
 \centering
@@ -387,61 +400,32 @@ This new parameter $\alpha$ is the 'resurrection' rate, influencing how quickly 
 
 \subsection{Natural Units}
 
-The same process from earlier will be used to non-dimentionalise the equations. For the Healthy population;
-
-\[H' = \frac{dH}{dt} = \frac{d}{dt}(H) = \frac{1}{k}\cdot\frac{dH}{d\hat{t}} = -\beta_c HC + \alpha_c C\]
-
-\[\therefore \frac{dH}{d\hat{t}} = -k\beta_c HC + k\alpha_c C\]
-
-Now, choosing $k = \frac{1}{\beta_C}$ for simplicity, our equation becomes;
-
-\[\frac{dH}{d\hat{t}} = H' = -HC + \frac{\alpha_c}{\beta_c}C\]
-
-This process can be repeated for the C and R equations, yielding the dimensionless system of equations;
-
-\[H' = -HC + \frac{\alpha_c}{\beta_c}C, \quad C' = HC-\frac{\gamma_c}{\beta_c}C - \frac{\alpha_c}{\beta_c}C, \quad R' = \frac{\gamma_c}{\beta_c}C\]
-
-And again repeating the process of scaling the model relative to the initial population ($H_0$). Therefore our system of equations becomes;
-
-\[H' = - \tilde{H}\tilde{C} + \frac{\alpha_c}{\beta_c}\tilde{C}, , \quad C' = \tilde{H}\tilde{C}-\frac{\gamma_c}{\beta_c}\tilde{C} -\frac{\alpha_c}{\beta_c}\tilde{C}, \quad R' = \frac{\gamma_c}{\beta_c}\tilde{C}\]
-
-For readability and simplicity, from this point onward, $\frac{\gamma_c}{\beta_c} = \gamma, \frac{\alpha_c}{\beta_c} = \alpha $, and all accented symbols will be dropped.
+The same process from earlier will be used to non-dimensionalise the equations in the model, yielding the dimensionless system of equations;
 
 \[H' = - HC + \alpha	C, \quad C' = HC-\gamma C - \alpha	C, \quad R' = \gamma C\]
 
 \subsection{Fixed Point Analysis}
 
-Carrying out fixed point analysis again would yield the same results, as the equilibrium conditions of the system to not change through the addition of the $\alpha$ terms, as for equilibrium C=0 still. This means that the determinant of the Jacobian will still always be 0, and there will still be zero-eigenvalues.
+Fixed point analysis will not be repeated as it shows that the location of the equilibrium points remains unchanged—(H, 0, R). 
 
 \[H' = - HC + \alpha	C = 0\]
 \[C' = HC-\gamma C - \alpha	C = 0\]
 \[R' = \gamma C = 0\]
 
-Instead, we will look at a reduced subsystem, as HC determines the entire behaviour of the system. Our system can be re-written as such;
+Instead, the reduced subsystem will be examined. Similarly to in Section 1, H and C determine the entire behaviour of the system, and the system can therefore be re-written two dimensionally as such;
 
 \[H' =  (\alpha	- H) C\]
 \[C' = (H-\gamma  - \alpha	)C \]
 
 \begin{description}
-\item[Effects on rates of change] The addition of the $\alpha$ factors slows down the rate at which the healthy population gets Cooked, and also speeds up the rate of reduction of the Cooked population.
+\item[Slowing the Spread of Bad Habits:] The addition of the $\alpha$ terms slows down the rate at which the healthy population gets Cooked, and also speeds up the rate of reduction of the Cooked population. This can be seen in the gradient of the population curved in Fig. 8. As $\alpha$ is increased, the gradients become steeper, reaching the fixed point faster.
 \end{description}
-
-We can also see from $C' = (H-\gamma  - \alpha	)C $, that in a healthy only population, if the number of Cooked introduced is less than $\gamma + \alpha$ then the Cooked population will decline, and if more than $\gamma + \alpha$ then the Cooked population will grow.
-
-\subsection{Nullcline Analysis}
-
-\textcolor{red}{join this with logic of previous + add nullcline explanation explicitly for the previous section}
-
-\[H' =  (\alpha	- H) C = 0\]
-\[C' = (H-\gamma  - \alpha)C = 0\]
-
-Another way to interpret this is to examine the change in the nullclines. Previously, the nullclines were at H = 0 and H = $\gamma$. The introduction of the alpha factors have shifted the nullclines by a factor of $\alpha$. The nullclines are now at H = $\alpha$ and H = $\gamma + \alpha$.
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.45\textwidth}
 \includegraphics[width=0.9\linewidth, height=6cm]{Figures/Org/del,0.5/timepop} 
-\caption{No alpha, $\gamma = 0.5$}
+\caption{$\gamma = 0.5$, $\alpha = 0$}
 \end{subfigure}
 \begin{subfigure}{0.45\textwidth}
 \includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/timepop,al,0.1} 
@@ -449,16 +433,26 @@ Another way to interpret this is to examine the change in the nullclines. Previo
 \end{subfigure}
 
 
-\caption{H (blue), C (red) and R (purple) population change over time with the addition of well-being meetings.}
+\caption{Population change over time with student-self improvement. (H (blue), C (red) and R (purple)).}
 \end{figure}
 
-The shift by $\alpha$ can be seen in the time population graph in all three populations, H and R are shifted up and down respectively, and the peak of C is shifted down by $\alpha$. The effect can also be seen in the phase space diagram, with the nullcline shifting from $H = 0$ to $H = \alpha$.
+
+The final populations of H and R are altered by a shift $\alpha$,  visible in the time population graphs (Fig. 9). H is shifted up, R down,  and additionally the peak of C is shifted down by $\alpha$. 
+
+
+
+\subsection{Nullcline Analysis}
+
+Once again, to indentify the nullclines;
+
+\[H' =  (\alpha	- H) C = 0 \therefore H = \alpha\]
+\[C' = (H-\gamma  - \alpha)C = 0 \therefore H = \alpha + \gamma\]
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.45\textwidth}
 \includegraphics[width=0.9\linewidth, height=6cm]{Figures/Org/del,0.5/HCphase2}
-\caption{No alpha, $\gamma = 0.5$}
+\caption{$\gamma = 0.5$, $\alpha = 0$}
 \end{subfigure}
 \begin{subfigure}{0.45\textwidth}
 \includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt1/del,0.5/HCph,al,0.12}
@@ -468,33 +462,69 @@ The shift by $\alpha$ can be seen in the time population graph in all three popu
 \caption{Phase space (H vs C) plots with nullclines shown in green.}
 \end{figure}
 
-Additionally, in the phase space diagrams, the nullcline shifts to the right by $\alpha$, which can be seen  by the sudden change in direction of the arrows either side of the nullcline.
+
+Another way to interpret the effect on the model by student self-recovery is to examine the change in the nullclines. Previously, the nullclines were at H = 0 and H = $\gamma$. The introduction of the alpha terms have shifted the nullclines by a factor of $\alpha$. The nullclines are now at H = $\alpha$ and H = $\gamma + \alpha$ (Fig. 10).
+
 
 \subsection{Control Parameter / Threshold}
 
-$R_0$, our basic reproduction number now becomes;
+It can also be seen from $C' = (H-\gamma  - \alpha	)C $, that in a Healthy only population, if $H > \gamma + \alpha$ then  $C' > 0$ and the Cooked population will grow, and if $H < \gamma + \alpha$ then $C' < 0$ and the Cooked population will decay.
+
+$R_0$, our basic reproduction number is therefore modified;
 
 \[R_0 = \frac{\beta_c}{\gamma + \alpha}\]
 
-The threshold value remains the same at $R_0 = 1$, but with the introduction of well-being meetings (and therefore the introduction of $\alpha$ parameters), if values of $\beta$ and $\gamma$ remain the same, $R_0$ will be lower, resulting in a lower number of healthy students being influenced by each individual cooked student. 
+The threshold value remains the same at $R_0 = 1$, however the introduction of student-self improvement (represented by $\alpha$), reduces the value of $R_0$ for fixed $beta$ and $\gamma$. This lowers the expected number of Healthy students influenced by each individual Cooked student. 
 
-\begin{figure}[h]
+
+
+\begin{figure}[H]
 \centering
-  \includegraphics[width=0.7\linewidth]{Figures/Alt1/bif.png}
-  \caption{Effect of varying reproduction rate ($R_0$) on final populations.}
+\begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=0.9\linewidth]{Figures/Org/bif.png}
+  \caption{$R_0$ vs. Final populations ($\alpha = 0$)}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=0.9\linewidth]{Figures/Alt1/bif.png}
+  \caption{$R_0$ vs. Final populations ($\alpha = 0.5$)}
+\end{subfigure}
+
+\caption{Effect of varying reproduction rate ($R_0$) on final populations.}
 \end{figure}
 
 
-This shows that if the transmission rate $R_0$ is less than 1, then waiting for all of the unhealthy students' habits to just die out is a viable strategy without losing any students. If poor academic habits spread faster than unhealthy students drop out, then the total student body will end up dropping out unless further interventions are applied.
+This shows that if the basic reproduction rate $R_0$ is less than 1, then all bad habits will die out without requiring further intervention. In this circumstance, any small introduction of unhealthy habits decays naturally. 
+
+However, if $R_0 > 1$, poor academic habits spread faster than unhealthy students are forced to drop out, leading to growth in the Cooked population and heading toward mass drop-outs.
 
 
 \subsection{Model Evaluation}
 
-However, in the real world, struggling students are not left to struggle alone, and there are larger, more impactful interventions that can be implemented aside from well-being meetings.
+Allowing re-entry to the Healthy student population removed the unrealistic expectation that the decline of the student population is irreversible and inevitable.
+
+Where previously the only option for Cooked students was to passively wait until they had to drop out—the inclusion of $\alpha$ accounts for struggling students actively trying to improve their own study habits.
+
+However, in the real world, struggling students are not left to struggle alone, and there are interventions and resources that can be provided by Imperial to support unhealthy students to improve their habits. As well as this, Imperial provides mitigating circumstances which prevent many students from having to retake modules, failing, or dropping out.
 
 \section{Second Alteration}
 
-With the introduction of well-being meetings, Imperial has seen an improvement in the number of students dropping out. To try to improve this even further, the availability of well-being meetings has been increased. During well-being meetings, the staff have realised that providing students with the option of mitigating circumstances and the option to take a year out if things get really bad, they can dramatically reduce the number of drop-outs.
+Imperial offers study skills workshops and well-being meetings to empower students to improve how they manage their academic workload. In an attempt to provide more support to students in bas circumstances, Imperial also provides students with mitigating circumstances and the option to take a year out if things get really bad.
+
+\subsection{Governing Equations}
+
+As opposed to Cooked students dropping out entirely, the introduction of mitigating circumstances ($\delta$) means that the group of would-be drop-outs are receiving support to prevent them from dropping out. These interventions ensure the overwhelming majority of Imperial students can remain in Imperial, however students that are given assistance to remain at Imperial do not return as Healthy as they were upon enrolment. Instead, students that were in the Removed group re-enter the Cooked student population.
+
+With the addition of mitigating circumstances, the system of equations becomes;
+
+\[H' = - \beta_cHC + \alpha_c C\]
+\[C' = \beta_cHC-\gamma_cC - \alpha_cC + \delta_c R\]
+\[R' = \gamma_cC - \delta_c R\]
+
+With parameters;
+\begin{description}
+\item[$\alpha$:] Recovery rate of Cooked students, increased by the introduction of well-being meetings. 
+\item[$\delta$:] Representing Mitigating Circumstances, shows the rate of would-be drop-outs re-entering the Cooked population.
+\end{description}
 
 \begin{figure}[h]
 \centering
@@ -502,17 +532,9 @@ With the introduction of well-being meetings, Imperial has seen an improvement i
   \caption{Introduction of mitigating circumstances and interruption of studies.}
 \end{figure}
 
-\subsection{Governing Equations}
-
-As opposed to cooked students dropping out entirely, the introduction of mitigating circumstances means that some of the drop-out group can be supported to prevent drop out or to return back to Imperial. These interventions ensure the overwhelming majority of Imperial students can remain in Imperial, however students that are given assistance to remain at Imperial re-enter the cooked student population, as they return in a more fragile state than when they first started.
-
-\[H' = - \beta_cHC + \alpha_c C\]
-\[C' = \beta_cHC-\gamma_cC - \alpha_cC + \delta_c R\]
-\[R' = \gamma_cC - \delta_c R\]
-
 \subsection{Natural Units}
 
-After repeating the same non-dimensionalisation process as in Section 3, our new system of equations is;
+Repeating the same non-dimensionalisation process as in the previous 2 models, the new system of equations is;
 
 \[H' = - HC + \alpha C\]
 \[C' =  HC-\gamma C - \alpha C + \delta R\]
@@ -520,41 +542,63 @@ After repeating the same non-dimensionalisation process as in Section 3, our new
 
 \subsection{Fixed Point Analysis}
 
-In the previous sections, the determinant of the Jacobian representing the system of equations was zero due to R being a 'sink.' Now that R flows back into C, the sink is gone, and a non-trivial fixed point is present.
+In the previous sections, transition to R was an irreversible 'sink.' Now that R flows back into C, the sink is gone, and a non-trivial (endemic equilibrium) fixed point is present.
 
-This gives a fixed point where the value of C is not zero;
+Equating our equations for H and R to 0;
 
-\[H' = - HC + \alpha C = 0 \therefore C(\alpha - H) = 0 \therefore H = \alpha\]
-\[R' = \gamma C - \delta R = 0 \therefore R = \frac{\gamma C}{\delta} \therefore\]
+\[C(\alpha - H) = 0\]
+\[R = \frac{\gamma}{\delta} C\]
 
-This demonstrates that for cooked students to exist in equilibrium, the population of healthy students becomes fixed at H = $\alpha$. Increasing the 'well-being rate' directly increases the steady-state number of healthy students.
+For the endemic equilibrium, C does not = 0, therfore, $H = \alpha$. Substituting these into the total population constraint ($H + C + R = 1)$;
+
+\[\alpha	+ C + \frac{\gamma}{\delta}C = 1 \therefore C(1 + \frac{\gamma}{\delta}) = 1 - \alpha\]
+\[\therefore C = \frac{1 - \alpha}{1 + \frac{\gamma}{\delta}}, R = \frac{\gamma}{\delta} (\frac{1 - \alpha}{1 + \frac{\gamma}{\delta}})\]
+
+This gives us an equilibrium equation, so long as $0 <\alpha \geq 1, C \geq 0, R \geq 0,$ and $0 \leq H \leq 1$. If $\alpha \geq 1$, the top of the fraction would become negative.
+
+This demonstrates that for Cooked students to exist in equilibrium ($C \neq 0$), the population of healthy students becomes fixed at H = $\alpha$. Increasing the 'recovery rate' directly increases the steady-state number of healthy students.
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.45\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt2/timepop,al,0.5} 
-\caption{$\alpha = 0.5$}
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt2/timepop,al,0.5} 
+\caption{Time population graph, $\alpha = 0.5$, $\delta = 0.05$}
 \end{subfigure}
-\begin{subfigure}{0.45\textwidth}
-\includegraphics[width=0.9\linewidth, height=6cm]{Figures/Alt2/timepop,al,0.7} 
-\caption{$\alpha = 0.7$}
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt2/timepop,al,0.7} 
+\caption{Time population graph, $\alpha = 0.7$, $\delta = 0.05$}
+\end{subfigure}
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{Figures/Alt2/timepop,al,0.7,del,0.95} 
+\caption{Time population graph, $\alpha = 0.7$, $\delta = 0.95$}
 \end{subfigure}
 
 
-\caption{Impact of increasing $\alpha$ from 0.5 to 0.7.}
+\caption{Impact of increasing $\alpha$ from 0.5 to 0.7, $\delta$ from 0.05 to 0.95.}
 \end{figure}
 
+The effects of varying $\alpha$ and $\gamma$ can be been in Fig. 13 (a-c). 
 
-(not sure how to word the robustness testing, but I did the monte carlo ensemble ?)
-
-\begin{figure}[h]
-\centering
-  \includegraphics[width=0.7\linewidth]{Figures/Alt2/50runs}
-  \caption{Running simulation x50 with random noise ($\alpha= 0.7, \delta = 0.05$.)}
-\end{figure}
-
+\begin{description}
+\item[Varying $\alpha$:] Once again a shift by $\alpha$ is observed in the final student populations (Fig. 13 (a,b)), increasing the Healthy student population and decreasing the Cooked population. The peak of Cooked student population is also suppressed, as well as the final number of students receiving mitigation (Removed).
+\item[Varying $\delta$:] Increasing $\delta$ does not effect the final population of Healthy students, which remains determined by $\alpha$. However, increasing $\delta$ does reduce the number of students in the final Removed population and raise the final Cooked population. This shift aligns with the interpretation of $\delta$ as the rate at which struggling students can be supported by mitigating circumstances, increasing the number of Removed students that can re-enter the Cooked student population.
+\end{description}
 
 \subsection{Stability \& Phase Space}
+
+Recalculating the Jacobian for the reduced 2D system and evaluating at the endemic equilibrium ($H = \alpha, C = \frac{1 - \alpha}{1 + \frac{\gamma}{\delta}}$) yields;
+
+\[J(H,C) = 
+\begin{bmatrix}
+-C & 0\\
+C - \delta &  -(\gamma + \delta)\\
+\end{bmatrix}\]
+
+Therefore the eigenvalues are:
+
+\[\lambda_1 = -C = -\frac{1 - \alpha}{1 + \frac{\gamma}{\delta}}, \lambda_2 = -(\gamma + \delta)\]
+
+Since all of the parameters are positive and $\alpha < 1$, both eigenvalues are both real and negative. This shows that the endemic equilibrium is a stable node. 
 
 \begin{figure}[H]
 \centering
@@ -567,17 +611,24 @@ This demonstrates that for cooked students to exist in equilibrium, the populati
 \caption{Phase space (C vs. R)}
 \end{subfigure}
 
-\caption{Phase space plots showing sinkhole (H vs C) and equilibrium line (C v. R)}
+\caption{Phase space plots showing sinkhole (H vs C) and equilibrium line (C v. R) in green.}
 \end{figure}
 
-\textcolor{red}{I need some good explanation of these graph shapes here, I don't know what the shapes are called or how to explain them}
+This behaviour can also be seen in the phase space diagrams (Fig. 14(a)), where the arrows converge inward toward the green dot representing the endemic equilibrium point. Within the relevant region, this equilibrium point functions as a global attractor. This means that the system converges to this point regardless of the initial number of Cooked students with poor study habits. In predator-prey systems, the feedback loops often result in oscillatory behaviour, however the feedback in this model is overdamped, preventing cyclic outbreaks. Regardless of the number of initial students with poor habits, the system converges toward a the endemic equilibrium state, in which a constant population of students present that maintain their bad study habits.
+
+Setting C' or R' = 0 permits solving for the CR-nullcline. 
+
+\[R' = \gamma C - \delta R = 0 \therefore R = \frac{\gamma}{\delta} C \]
+\[C' = HC -(\gamma +  \alpha) C + \delta R = 0 \therefore R = \frac{\gamma + \alpha - H)C}{\delta}, H = \alpha \therefore R = \frac{\gamma}{\delta} C  \]
+
+This line (shown in green Fig 14.(b)) represents the line in which endemic equilibrium is reached, where $H = \alpha$.
+
 
 \subsection{Control Parameter / Threshold}
 
-Another graph can be created to visualise the final populations when varying reproduction rate, however since $\gamma$ no longer permanently removes zombies, the our basic reproduction number now becomes;
+Another graph can be created to visualise the final populations when varying reproduction rate. Since $\delta$ influences the transition of Removed students re-entering the Cooked population, basic reproduction number remains the same as in the previous section. This is due to $R_0$ measuring an initial growth of C when starting from a majority Healthy population, where R $\approx 0$.
 
-\[R_0 = \frac{\beta_c}{\alpha}\]
-
+\[R_0 = \frac{\beta_c}{\alpha + \gamma}\]
 
 \begin{figure}[h!]
 \centering
@@ -585,26 +636,36 @@ Another graph can be created to visualise the final populations when varying rep
   \caption{Effect of varying reproduction rate ($R_0$) on final populations.}
 \end{figure}
 
-Now, $\delta$ effects the final equilibrium values of the populations as well as the convergence speed, but once again does not shift the bifurcation point.
+$\delta$ effects the final equilibrium populations and the speed that the system converges, but does not change the bifurcation point, because the basic reproduction number remains unchanged.
 
-
-The system has a single stable unhealthy habit free fixed point (C = 0), however as $R_0$ increases past the critical threshold ($R_0 = 1$), a transcritical bifurcation occurs, with a new stable state emerging. The Cooked population is now able to exist indefinitely (endemic equilibrium).
+The system always has a fixed point with no Cooked students present (C = 0), which is stable when $R_0 < 1$. As $R_0$ increases past the critical threshold ($R_0 = 1$), a transcritical bifurcation occurs (as seen by a sharp curve upward in Fig. 15.) The state with no Cooked students loses stability and a new stable state emerges. This state is endemic equilibrium, in which $H = \alpha$, and the proportion of students in the Cooked and Removed populations is dependent on $\gamma$ and $\delta$. In this state, the Cooked students can co-exist indefinitely, alongside the Healthy students.
 
 \subsection{Model Evaluation}
 
-\begin{figure}[h!]
+To investigate the robustness of the model, a Monte Carlo ensemble simulation was carried out.
+
+\begin{figure}[h]
 \centering
-  \includegraphics[width=0.7\linewidth]{Figures/Alt2/return}
-  \caption{Sensitivity analysis of 'Mitigating Circumstances'}
+  \includegraphics[width=0.7\linewidth]{Figures/Alt2/50runs}
+  \caption{Running simulation x50 with random noise ($\alpha= 0.7, \delta = 0.05$.)}
 \end{figure}
 
-As the return rate $\delta$ increases, the stable state population of unhealthy student population also increases. This correlates well to real-world application, as the more Imperial is able to encourage struggling students to keep going without actually improving their long-term situations, the more unhealthy students will be stuck in a state of needing repeated support interventions.
 
-Although the addition of mitigating circumstances and another rise in well-being meetings has had the desired effect of eradicating drop-outs, the pay-off is that the cooked student population now stabilises above zero. No students are dropping out of Imperial, but a high proportion of students are left struggling.
+The Monte Carlo ensemble simulation shows the results of 50 runs with randomized parameters ($\pm 3\%$). The thickness of the resulting population bands indicates the sensitivity of the model. Generally, the the bands follow follow the same general curve shown previously, demonstrating that the model is somewhat stable—small changes in parameter estimates will not lead to wildly different predictions about the impact of bad habit spread.
 
-This poses a question—is it better to have a student population that is completely healthy but at the expense of a large number of drop-outs? Or is it better to have a population of students that are constantly struggling, yet are given a large amount of lifelines in order to support them with staying in academia?
+\begin{figure}[H]
+\centering
+  \includegraphics[width=0.7\linewidth]{Figures/Alt2/return}
+  \caption{Sensitivity analysis of varying 'Mitigating Circumstances' (H (blue), C (red)).}
+\end{figure}
 
-At a high-pressure university such as Imperial, this constant population of struggling students is very representative of reality. As discussed earlier, up to 40\% of students partake in all-nighters and other unhealthy studying habits.
+As the recovery rate $\delta$ increases, the final population of unhealthy Cooked students also increases (Fig. 17). This correlates well to real-world application, as the more Imperial is able to encourage struggling students to keep going without actually improving their long-term situations, the more unhealthy students will be stuck in a state of needing repeated support interventions.
+
+Although the addition of mitigating circumstances and well-being meetings had the desired effect of eradicating drop-outs, the pay-off is that the cooked student population now stabilises above zero. No students are dropping out of Imperial, but a high proportion of students are left struggling.
+
+This poses a question—is it better to have a student population that is completely healthy but at the expense of a large number of drop-outs? Or is it better to have a population of struggling students that are given mitigations to prevent dropping out, but perpertuating their struggle?
+
+At a high-pressure university such as Imperial, this constant population of struggling students is very representative of reality. As discussed earlier, up to 40\% of students partake in all-nighters and other unhealthy studying habits\cite{small_sleep_2025}.
 
 
 \section{Conclusion}
@@ -612,22 +673,25 @@ At a high-pressure university such as Imperial, this constant population of stru
 To summarise;
 
 \begin{description}
-\item[Original HCR Model] Demonstrated that without any intervention, the unhealthy habits of the cooked students naturally burn out alongside them. These high drop-out rates sacrifice large percentages of the student population to ensure that anyone with bad habits is kicked out/drops out and does not influence other students. Only two possible outcomes were total student eradication, or only students with healthy habits prevailing, dependent on the value of $\gamma$.
-\item[Well-Being Meetings] The introduction of well-being meetings delayed the collapse of the student population, but could only prevent collapse if the number of students with poor habits was low initially (add critical value).
-\item[Mitigating Circumstances] The introduction of more extreme support created a closed loop system. This prevented total collapse of the student population, but at the cost of the permanent presence of students with unhealthy habits.
+\item[Original HCR Model:] Demonstrated that without any intervention, the unhealthy habits of the cooked students naturally burn out alongside them. These high drop-out rates sacrifice large percentages of the student population to ensure that anyone with bad habits is kicked out/drops out and does not influence other students. The only two possible outcomes were total student eradication, or only students with healthy habits prevailing, dependent on the value of $\gamma$.
+\item[Self-improvement of Students:] The addition of terms to model the students' drive to improve their own study habits delayed the collapse of the student population, but could only prevent collapse if the number of students with poor habits was below a critical threshold ($1 - (\gamma + \alpha$).
+\item[Mitigating Circumstances \& Well-being Meetings:] The introduction of more extreme support measures created a closed loop system. This prevented total collapse of the student population, but at the cost of the permanent presence of students with unhealthy habits.
 \end{description}
 
 So, my recommendations to improve overall student well-being and stop all the students getting cooked?
 
 
 \begin{description}
-\item[Maximise well-being resources] The model reveals that maximising $\alpha$ is the critical metric, determining the value at which the healthy student population tends to. Therefore, maximising $\alpha$ is far more valuable than maxmimising $\delta$ if total eradication of unhealthy habits is desired. In section 4.3, we discovered that the population is strictly limited by $\alpha$. Therefore, to ensure that at least 80\% of the student body maintains healthy working habits, the university must sufficiently fund long-term interventions for students. This could include well-being meetings, mental health support, mentoring, study skills building workshops, etc. Merely mitigating drop-out by increasing $\delta$ without increasing $\alpha$ will result in an academic environment rife with poor study habits being—high student retention, very low student well-being \& academic performance. 
+\item[Maximise Well-being Resources:] The model reveals that maximising $\alpha$, representing students' self-improvement directly determines the final Healthy student population. Therefore, maximising $\alpha$ is far more valuable than maxmimising $\delta$ if the goal is elimination of unhealthy habits. Section 4.3 demonstrates that the Healthy population is strictly limited by $\alpha$. Therefore, to ensure that at least 80\% of the student body maintains healthy study habits, the university must sufficiently fund long-term interventions for students. This could include well-being meetings, mentoring, and study skills building workshops. Only increasing $\delta$ (mitigation of dire circumstances) without increasing $\alpha$ may result in an academic environment rife with poor study habits—high student retention but at the cost of low student well-being \& academic performance. 
 \end{description}
 
 For future improvements to the model;
 \begin{description}
-\item[Improve Robustness] Although Monte Carlo ensemble simulations were run, improvements can be made to the stability of the model. The model is robust to small fluctuations in initial student numbers, however the model breaks down when noise is > 0.03, which is not robust enough to adequately rely on in real-world scenarios. Although the percentage change of students over one year is only a 3\% increase, the increase over the last five years is over 14\%.
-\item[Model departmental spread] It was assumed that the student mix was homogenous, however a more realistic model would consider that students tend to frequent their departments and a few key shared spaces. This is another vital modelling process in pandemic modelling in which frequency of central location visitation is limited, similar to lockdown during COVID-19.
+\item[Improve Robustness:] Although Monte Carlo ensemble simulations were performed, the model is sensitive to larger fluctuations in initial student numbers. Noise levels above 0.03 cause instability, which is significant when modelling real-world scenarios. According to Imperial statistics, although the percentage change of students over one year is only 3\%, the increase over the last five years is over 14\%\cite{noauthor_student_nodate}.
+\item[Model Departmental Spread:] It was assumed that the student mix was homogenous, however a more realistic model would consider that students tend to frequent their departments and a few key shared spaces. This is another vital modelling process in pandemic modelling in which frequency of central location visitation is limited, similar to lockdown during COVID-19.
+\item[Calibrate Against Real Data:] Real-world approximations for parameters such as the transmission rate $\beta_c$ are difficult to determine, as there are many factors that effect change in human behaviour. According to studies, around 10-40\% of students at university display unhealthy study habits such as all-nighters\cite{small_sleep_2025}. After conducting a small survey with current Imperial students, it was found that in an average group project size of 5, it would take 2 or more students with poor study habits to influence the entire group. A binomial distribution was then used to calculate the probability that in a group of 5, there are at least two students with unhealthy habits. This yields a probability of ~ 26.27\%. Benchmarking parameters against other existing infections/university statistics would increase both the accuracy and usefulness of the model.
+\item[Event Modelling:] Events such as deadlines and holidays have a massive impact on the well-being of the overall student body and would play a vital role in a model of Imperial student wellness. Implementing this could prove useful for Imperial to work out how to minimise deadline stress and maximise impact of holiday rest.
+\item[Custom Student Parameters:] This model assumed a homogenous mix of identical students, however in reality there are some types of students who have more influence over other's behaviour, those who are naturally more likely to become Cooked, build poor habits, or that are more susceptible to being influenced by others. Could interventions take priority for students more susceptible than others?
 \end{description}
 
 

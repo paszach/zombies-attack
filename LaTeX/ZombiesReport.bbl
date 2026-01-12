@@ -26,4 +26,17 @@ R.~Smith?, Ed., \emph{\BIBforeignlanguage{eng}{Mathematical modelling of
   zombies}}.\hskip 1em plus 0.5em minus 0.4em\relax Ottawa: University of
   Ottawa Press, 2014.
 
+\bibitem{noauthor_student_nodate}
+\BIBentryALTinterwordspacing
+``\BIBforeignlanguage{English}{Student {Information}, admissions \&
+  withdrawals}.'' [Online]. Available:
+  \url{https://www.imperial.ac.uk/about/university-secretary/institutional-compliance-and-risk-management/request-report-and-access/disclosure-log/student-information/student-information-admissions--withdrawals/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{small_sleep_2025}
+\BIBentryALTinterwordspacing
+B.~Small, ``Sleep {Isn}'t {Optional},'' May 2025. [Online]. Available:
+  \url{https://thecatseye.org/7185/showcase/sleep-isnt-optional-toxic-all-nighter-culture/}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
